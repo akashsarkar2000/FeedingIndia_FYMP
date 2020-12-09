@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "723415169533",
+    "project_id": "feedingindia-12f79",
+    "storage_bucket": "feedingindia-12f79.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723415169533:android:c5d8bdd8021d0f3e0d4194",
+        "android_client_info": {
+          "package_name": "com.example.feedingindia_semi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "723415169533-97c4051g56tiieefescg5m2l1ueam8td.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9-eM99p0ktjquCmtqLFa0XpNcqbZN2xs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "723415169533-97c4051g56tiieefescg5m2l1ueam8td.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

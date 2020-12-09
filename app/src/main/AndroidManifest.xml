@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.feedingindia_semi">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SettingEditActivityDonor"
+            android:parentActivityName="SettingActivityDonor"/>
+        <activity android:name=".CharityListActivityDonor"
+            android:parentActivityName="MainSelectionActivityDonor"/>
+        <activity android:name=".MainSelectionActivityDonor" />
+        <activity android:name=".SettingActivityDonor"
+            android:parentActivityName="MainSelectionActivityDonor"/>
+        <activity
+            android:name=".RequirementDetailsActivityDonor"
+            android:parentActivityName=".MainSelectionActivityDonor" />
+        <activity
+            android:name=".CharityDescriptionActivityDonor"
+            android:parentActivityName=".MainActivityDonor" />
+        <activity android:name=".MainActivityDonor"
+            android:parentActivityName=".MainSelectionActivityDonor"/>
+        <activity android:name=".RegisterActivityDonor" />
+        <activity android:name=".LoginActivityDonor" />
+        <activity
+            android:name=".ChatActivity"
+            android:parentActivityName=".MainActivityCharity" />
+        <activity
+            android:name=".PostActivityCharity"
+            android:parentActivityName=".MainActivityCharity" />
+        <activity
+            android:name=".SelectionPostRequirementActivityCharity"
+            android:parentActivityName=".MainActivityCharity" />
+        <activity
+            android:name=".RequirementActivityCharity"
+            android:parentActivityName=".RequirementActivityCharity" />
+        <activity
+            android:name=".RequirementEditActivityCharity"
+            android:parentActivityName=".RequirementActivityCharity" />
+        <activity
+            android:name=".DonorListActivityCharity"
+            android:parentActivityName=".MainActivityCharity" />
+        <activity
+            android:name=".SettingActivityCharity"
+            android:parentActivityName=".SelectionPostRequirementActivityCharity"
+            tools:targetApi="jelly_bean" />
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity
+            android:name=".SettingEditActivityCharity"
+            android:parentActivityName=".SettingActivityCharity"
+            tools:targetApi="jelly_bean" />
+        <activity android:name=".RegisterActivityCharity" />
+        <activity android:name=".LoginActivityCharity"/>
+        <activity android:name=".MainActivityCharity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>
