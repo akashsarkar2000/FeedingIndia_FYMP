@@ -51,8 +51,12 @@ public class RequirementActivityCharity extends AppCompatActivity {
         mUserDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String requirements = dataSnapshot.child("requirements").getValue().toString();
-                mRequirement.setText(requirements);
+                try {
+                    String requirements = dataSnapshot.child("requirements").getValue().toString();
+                    mRequirement.setText(requirements);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
             };
 
             @Override
