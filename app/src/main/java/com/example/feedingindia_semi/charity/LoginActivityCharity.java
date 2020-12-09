@@ -1,6 +1,4 @@
-package com.example.feedingindia_semi;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.feedingindia_semi.charity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +14,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.feedingindia_semi.R;
+import com.example.feedingindia_semi.donor.LoginActivityDonor;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
@@ -23,11 +23,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 
-public class LoginActivityDonor extends AppCompatActivity {
+public class LoginActivityCharity extends AppCompatActivity {
 
     private EditText mEmail, mPassword;
     Button login;
-    TextView registerDonor, loginCharity;
+    TextView registerCharity, loginDonor;
     boolean isEmailValid, isPasswordValid;
     TextInputLayout emailError, passError;
     private ProgressDialog mLoginProgress;
@@ -37,34 +37,32 @@ public class LoginActivityDonor extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_donor);
+        setContentView(R.layout.activity_login_charity);
 
         mEmail = findViewById(R.id.email);
         mPassword = findViewById(R.id.password);
-        registerDonor = findViewById(R.id.login_to_register_donor);
+        registerCharity = findViewById(R.id.login_to_register_charity);
         emailError = findViewById(R.id.emailError);
         passError = findViewById(R.id.passError);
         mLoginProgress = new ProgressDialog(this);
         mAuth = FirebaseAuth.getInstance();
-        login = findViewById(R.id.login_donor_button);
-        loginCharity = findViewById(R.id.to_login_charity);
+        login = findViewById(R.id.login_charity_button);
+        loginDonor = findViewById(R.id.to_login_donor);
 
-
-        registerDonor.setOnClickListener(new View.OnClickListener() {
+        registerCharity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // redirect to RegisterActivity
-                Intent intent = new Intent(getApplicationContext(), RegisterActivityDonor.class);
+                Intent intent = new Intent(getApplicationContext(), RegisterActivityCharity.class);
                 startActivity(intent);
             }
         });
 
-
-        loginCharity.setOnClickListener(new View.OnClickListener() {
+        loginDonor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // redirect to RegisterActivity
-                Intent intent = new Intent(getApplicationContext(), LoginActivityCharity.class);
+                Intent intent = new Intent(getApplicationContext(), LoginActivityDonor.class);
                 startActivity(intent);
             }
         });
@@ -88,7 +86,6 @@ public class LoginActivityDonor extends AppCompatActivity {
             }
         });
     }
-
 
     // Email Password Validation Check //
     public void SetValidation() {
@@ -122,7 +119,6 @@ public class LoginActivityDonor extends AppCompatActivity {
 
     }
 
-
     // Login Button Function //
     private void loginUser(String email, String password) {
 
@@ -132,20 +128,17 @@ public class LoginActivityDonor extends AppCompatActivity {
                 if (task.isSuccessful()) {
 
                     mLoginProgress.dismiss();
-                    Intent mainIntent = new Intent(LoginActivityDonor.this, MainSelectionActivityDonor.class);
-                    Toast.makeText(LoginActivityDonor.this, "Login Successful, Welcome to Donor Section", Toast.LENGTH_LONG).show();
+                    Intent mainIntent = new Intent(LoginActivityCharity.this, MainActivityCharity.class);
+                    Toast.makeText(LoginActivityCharity.this, "Login Successful, Welcome to Charity Section", Toast.LENGTH_LONG).show();
                     mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);  // this line is to stick to main page after login
                     startActivity(mainIntent);
                     finish();
                 } else {
                     mLoginProgress.hide();
-                    Toast.makeText(LoginActivityDonor.this, "Cannot Sign in. Please check the details and try again", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivityCharity.this, "Cannot Sign in. Please check the details and try again", Toast.LENGTH_LONG).show();
                 }
             }
         });
     }
 
-
 }
-
-

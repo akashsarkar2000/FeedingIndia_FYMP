@@ -1,4 +1,4 @@
-package com.example.feedingindia_semi;
+package com.example.feedingindia_semi.donor;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +15,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.feedingindia_semi.R;
+import com.example.feedingindia_semi.UsersCharity;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
@@ -23,53 +25,47 @@ import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class DonorListActivityCharity extends AppCompatActivity {
-
+public class CharityListActivityDonor extends AppCompatActivity {
 
     private Toolbar mToolbar;
     private RecyclerView mUsersList;
     private DatabaseReference mUsersDatabase;
     private ProgressDialog mProgressDialog;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_donor_list_charity);
+        setContentView(R.layout.activity_charity_list_donor);
 
-        mToolbar = findViewById(R.id.all_users_appBar);
+        mToolbar = findViewById(R.id.donor_all_users_appBar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("All Connected Donors");
+        getSupportActionBar().setTitle("All Connected Charities");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        mUsersDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child("Donor");
+        mUsersDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child("Charity");
 
-        mUsersList = findViewById(R.id.id_all_donors_list);
+        mUsersList = findViewById(R.id.id_all_charity_list);
         mUsersList.setHasFixedSize(true);
         mUsersList.setLayoutManager(new LinearLayoutManager(this));
 
-
-        mProgressDialog = new ProgressDialog(DonorListActivityCharity.this);
-        mProgressDialog.setTitle("Loading All Donors");
-        mProgressDialog.setMessage("Please wait while we load all the donors...");
+        mProgressDialog = new ProgressDialog(CharityListActivityDonor.this);
+        mProgressDialog.setTitle("Loading All Charities");
+        mProgressDialog.setMessage("Please wait while we load all the charities...");
         mProgressDialog.setCanceledOnTouchOutside(false);
         mProgressDialog.show();
-
-
     }
 
     @Override
     protected void onStart() {
         super.onStart();
 
-
-        FirebaseRecyclerOptions<Users> options=
-                new FirebaseRecyclerOptions.Builder<Users>()
-                        .setQuery(mUsersDatabase,Users.class)
+        FirebaseRecyclerOptions<UsersCharity> options=
+                new FirebaseRecyclerOptions.Builder<UsersCharity>()
+                        .setQuery(mUsersDatabase,UsersCharity.class)
                         .setLifecycleOwner(this)
                         .build();
 
-        FirebaseRecyclerAdapter<Users, UsersViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Users, UsersViewHolder>(options) {
+        FirebaseRecyclerAdapter<UsersCharity, UsersViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<UsersCharity, UsersViewHolder>(options) {
 
 
             @NonNull
@@ -80,28 +76,22 @@ public class DonorListActivityCharity extends AppCompatActivity {
             }
 
             @Override
-            protected void onBindViewHolder(@NonNull UsersViewHolder usersViewHolder, int position, @NonNull Users users) {
+            protected void onBindViewHolder(@NonNull UsersViewHolder usersViewHolder, int position, @NonNull UsersCharity users_charity) {
 
-
-                usersViewHolder.setName(users.getName());
-                usersViewHolder.setUserStatus(users.getStatus());
-                usersViewHolder.setUserImage(users.getThumb_image(),getApplicationContext());
-
+                usersViewHolder.setName(users_charity.getName());
+                usersViewHolder.setUserStatus(users_charity.getStatus());
+                usersViewHolder.setUserImage(users_charity.getThumb_image(),getApplicationContext());
                 final String user_id = getRef(position).getKey();
-
                 mProgressDialog.dismiss();
-
                 usersViewHolder.mView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
 
-                        Intent profileIntent = new Intent(DonorListActivityCharity.this, MainActivityCharity.class);
+                        Intent profileIntent = new Intent(CharityListActivityDonor.this, MainSelectionActivityDonor.class);
                         profileIntent.putExtra("user_id",user_id);
                         startActivity(profileIntent);
-
                     }
                 });
-
             }
         };
         mUsersList.setAdapter(firebaseRecyclerAdapter);
@@ -138,3 +128,10 @@ public class DonorListActivityCharity extends AppCompatActivity {
 
     }
 }
+
+
+
+
+
+
+

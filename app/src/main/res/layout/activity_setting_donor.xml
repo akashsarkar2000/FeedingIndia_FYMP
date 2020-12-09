@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#2E048E"
-    tools:context=".SettingActivityDonor">
+    tools:context=".donor.SettingActivityDonor">
 
     <include
         android:id="@+id/account_setting_appBar"

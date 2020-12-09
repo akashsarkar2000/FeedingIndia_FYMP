@@ -1,7 +1,7 @@
-package com.example.feedingindia_semi;
+package com.example.feedingindia_semi.donor;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
@@ -11,34 +11,38 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.example.feedingindia_semi.charity.PostActivityCharity;
+import com.example.feedingindia_semi.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ServerValue;
 
-
-public class MainActivityCharity extends AppCompatActivity {
+public class MainSelectionActivityDonor extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private DatabaseReference mUserRef;
     private Toolbar mToolbar;
-    LottieAnimationView settingCharity, donorList, requirement, chatSection;
+    LottieAnimationView settingDonor, charityList, connectedCharity, chatSection;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        settingCharity = findViewById(R.id.setting_pic);
-        donorList = findViewById(R.id.donor_details_pic);
-        requirement = findViewById(R.id.selection_posts_requirements_pic);
-        chatSection = findViewById(R.id.chat_section_pic);
+        setContentView(R.layout.activity_main_selection_donor);
+
+        settingDonor = findViewById(R.id.donor_setting_pic);
+        charityList = findViewById(R.id.charity_list_pic);
+        connectedCharity = findViewById(R.id.charity_details_pic);
+        chatSection = findViewById(R.id.donor_chat_section_pic);
 
         mAuth = FirebaseAuth.getInstance();
-        mToolbar = findViewById(R.id.main_page_toolbar);
+        mToolbar = findViewById(R.id.donor_main_page_toolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("Feeding India : Charity");
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);  /// FOR BACK BUTTON
+        getSupportActionBar().setTitle("Feeding India : Donor");
+//      getSupportActionBar().setDisplayHomeAsUpEnabled(true);  /// FOR BACK BUTTON
+
 
         chatSection.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,42 +53,42 @@ public class MainActivityCharity extends AppCompatActivity {
             }
         });
 
-        settingCharity.setOnClickListener(new View.OnClickListener() {
+        settingDonor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // redirect to RegisterActivity
-                Intent intent = new Intent(getApplicationContext(), SettingActivityCharity.class);
+                Intent intent = new Intent(getApplicationContext(), SettingActivityDonor.class);
                 startActivity(intent);
             }
         });
 
-        donorList.setOnClickListener(new View.OnClickListener() {
+        charityList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // redirect to RegisterActivity
-                Intent intent = new Intent(getApplicationContext(), DonorListActivityCharity.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivityDonor.class);
                 startActivity(intent);
             }
         });
 
-        requirement.setOnClickListener(new View.OnClickListener() {
+        connectedCharity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // redirect to RegisterActivity
-                Intent intent = new Intent(getApplicationContext(), SelectionPostRequirementActivityCharity.class);
+                Intent intent = new Intent(getApplicationContext(), CharityListActivityDonor.class);
                 startActivity(intent);
             }
         });
 
 
-        if(mAuth.getCurrentUser() != null){
-            mUserRef = FirebaseDatabase.getInstance().getReference().child("Users").child("Charity").child(mAuth.getCurrentUser().getUid());
+        if (mAuth.getCurrentUser() != null) {
+            mUserRef = FirebaseDatabase.getInstance().getReference().child("Users").child("Donor").child(mAuth.getCurrentUser().getUid());
         }
     }
 
     // FUNCTION FOR LOGOUT AND LOGIN
     private void sendToStart() {
-        Intent startIntent = new Intent (MainActivityCharity.this, LoginActivityCharity.class);
+        Intent startIntent = new Intent (MainSelectionActivityDonor.this, LoginActivityDonor.class);
         startActivity(startIntent);
         finish();
     }
@@ -137,3 +141,4 @@ public class MainActivityCharity extends AppCompatActivity {
 
 
 }
+

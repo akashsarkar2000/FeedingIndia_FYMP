@@ -1,9 +1,11 @@
-package com.example.feedingindia_semi;
+package com.example.feedingindia_semi.charity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
+
+import com.example.feedingindia_semi.R;
 
 public class PostActivityCharity extends AppCompatActivity {
 

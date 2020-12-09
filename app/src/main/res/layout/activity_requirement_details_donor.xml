@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#00796B"
-    tools:context=".RequirementDetailsActivityDonor">
+    tools:context=".donor.RequirementDetailsActivityDonor">
 
     <include
         android:id="@+id/requirements_details_page_toolbar"

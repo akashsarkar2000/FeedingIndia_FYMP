@@ -8,7 +8,7 @@
     android:background="#321063"
     android:padding="16dp"
     android:scrollbarThumbVertical="@null"
-    tools:context=".RegisterActivityDonor">
+    tools:context=".donor.RegisterActivityDonor">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"

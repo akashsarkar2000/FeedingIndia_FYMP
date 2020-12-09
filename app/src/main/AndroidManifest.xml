@@ -13,55 +13,55 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SettingEditActivityDonor"
-            android:parentActivityName="SettingActivityDonor"/>
-        <activity android:name=".CharityListActivityDonor"
-            android:parentActivityName="MainSelectionActivityDonor"/>
-        <activity android:name=".MainSelectionActivityDonor" />
-        <activity android:name=".SettingActivityDonor"
-            android:parentActivityName="MainSelectionActivityDonor"/>
+        <activity android:name=".donor.SettingEditActivityDonor"
+            android:parentActivityName=".donor.SettingActivityDonor"/>
+        <activity android:name=".donor.CharityListActivityDonor"
+            android:parentActivityName=".donor.MainSelectionActivityDonor"/>
+        <activity android:name=".donor.MainSelectionActivityDonor" />
+        <activity android:name=".donor.SettingActivityDonor"
+            android:parentActivityName=".donor.MainSelectionActivityDonor"/>
         <activity
-            android:name=".RequirementDetailsActivityDonor"
-            android:parentActivityName=".MainSelectionActivityDonor" />
+            android:name=".donor.RequirementDetailsActivityDonor"
+            android:parentActivityName=".donor.MainSelectionActivityDonor" />
         <activity
-            android:name=".CharityDescriptionActivityDonor"
-            android:parentActivityName=".MainActivityDonor" />
-        <activity android:name=".MainActivityDonor"
-            android:parentActivityName=".MainSelectionActivityDonor"/>
-        <activity android:name=".RegisterActivityDonor" />
-        <activity android:name=".LoginActivityDonor" />
+            android:name=".donor.CharityDescriptionActivityDonor"
+            android:parentActivityName=".donor.MainActivityDonor" />
+        <activity android:name=".donor.MainActivityDonor"
+            android:parentActivityName=".donor.MainSelectionActivityDonor"/>
+        <activity android:name=".donor.RegisterActivityDonor" />
+        <activity android:name=".donor.LoginActivityDonor" />
         <activity
             android:name=".ChatActivity"
-            android:parentActivityName=".MainActivityCharity" />
+            android:parentActivityName=".charity.MainActivityCharity" />
         <activity
-            android:name=".PostActivityCharity"
-            android:parentActivityName=".MainActivityCharity" />
+            android:name=".charity.PostActivityCharity"
+            android:parentActivityName=".charity.MainActivityCharity" />
         <activity
-            android:name=".SelectionPostRequirementActivityCharity"
-            android:parentActivityName=".MainActivityCharity" />
+            android:name=".charity.SelectionPostRequirementActivityCharity"
+            android:parentActivityName=".charity.MainActivityCharity" />
         <activity
-            android:name=".RequirementActivityCharity"
-            android:parentActivityName=".RequirementActivityCharity" />
+            android:name=".charity.RequirementActivityCharity"
+            android:parentActivityName=".charity.RequirementActivityCharity" />
         <activity
-            android:name=".RequirementEditActivityCharity"
-            android:parentActivityName=".RequirementActivityCharity" />
+            android:name=".charity.RequirementEditActivityCharity"
+            android:parentActivityName=".charity.RequirementActivityCharity" />
         <activity
-            android:name=".DonorListActivityCharity"
-            android:parentActivityName=".MainActivityCharity" />
+            android:name=".charity.DonorListActivityCharity"
+            android:parentActivityName=".charity.MainActivityCharity" />
         <activity
-            android:name=".SettingActivityCharity"
-            android:parentActivityName=".SelectionPostRequirementActivityCharity"
+            android:name=".charity.SettingActivityCharity"
+            android:parentActivityName=".charity.SelectionPostRequirementActivityCharity"
             tools:targetApi="jelly_bean" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
         <activity
-            android:name=".SettingEditActivityCharity"
-            android:parentActivityName=".SettingActivityCharity"
+            android:name=".charity.SettingEditActivityCharity"
+            android:parentActivityName=".charity.SettingActivityCharity"
             tools:targetApi="jelly_bean" />
-        <activity android:name=".RegisterActivityCharity" />
-        <activity android:name=".LoginActivityCharity"/>
-        <activity android:name=".MainActivityCharity">
+        <activity android:name=".charity.RegisterActivityCharity" />
+        <activity android:name=".charity.LoginActivityCharity"/>
+        <activity android:name=".charity.MainActivityCharity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,4 +1,4 @@
-package com.example.feedingindia_semi;
+package com.example.feedingindia_semi.charity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.example.feedingindia_semi.R;
 
 public class SelectionPostRequirementActivityCharity extends AppCompatActivity {
     private Toolbar mToolbar;

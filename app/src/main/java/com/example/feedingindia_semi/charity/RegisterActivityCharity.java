@@ -1,4 +1,4 @@
-package com.example.feedingindia_semi;
+package com.example.feedingindia_semi.charity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.feedingindia_semi.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
@@ -24,39 +25,37 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 
-public class RegisterActivityDonor extends AppCompatActivity {
+public class RegisterActivityCharity extends AppCompatActivity {
 
-    EditText donorName, mEmail, mPhone, mPassword, mProfession;
+    EditText charityName, mEmail, mPhone, mPassword, charityRegistration;
     Button register;
     TextView login;
-    boolean isNameValid, isEmailValid, isPhoneValid, isPasswordValid, isProfessionValid;
-    TextInputLayout nameError, emailError, phoneError, passError, professionError;
+    boolean isNameValid, isEmailValid, isPhoneValid, isPasswordValid, isRegistrationValid;
+    TextInputLayout nameError, emailError, phoneError, passError, registrationError;
     private FirebaseAuth mAuth;
     private ProgressDialog mRegProgress;
     private DatabaseReference mDatabase;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register_donor);
+        setContentView(R.layout.activity_register_charity);
         mRegProgress = new ProgressDialog(this);
 
-        donorName = findViewById(R.id.donor_name);
+        charityName = findViewById(R.id.name);
         mEmail = findViewById(R.id.email);
         mPhone = findViewById(R.id.phone);
-        mProfession =  findViewById(R.id.profession);
+        charityRegistration =  findViewById(R.id.registration);
         mPassword = findViewById(R.id.password);
-        register = findViewById(R.id.register_donor_button);
 
-        login = findViewById(R.id.register_to_login_donor);
+        register = findViewById(R.id.register_charity_button);
+        login = findViewById(R.id.register_to_login_charity);
 
         nameError = findViewById(R.id.nameError);
         emailError = findViewById(R.id.emailError);
         phoneError = findViewById(R.id.phoneError);
         passError = findViewById(R.id.passError);
-        professionError =  findViewById(R.id.professionError);
+        registrationError =  findViewById(R.id.registrationError);
 
         // FIREBASE AUTH
         mAuth = FirebaseAuth.getInstance();
@@ -65,19 +64,19 @@ public class RegisterActivityDonor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                final String donor_name = donorName.getText().toString();
+                final String charity_name = charityName.getText().toString();
                 String email = mEmail.getText().toString();
                 String phone = mPhone.getText().toString();
-                String profession = mProfession.getText().toString();
+                String charityReg = charityRegistration.getText().toString();
                 String password = mPassword.getText().toString();
                 SetValidation();
-                if (!TextUtils.isEmpty(donor_name) || !TextUtils.isEmpty(profession) || !TextUtils.isEmpty(email) || !TextUtils.isEmpty(phone) || !TextUtils.isEmpty(password)){
+                if (!TextUtils.isEmpty(charity_name) || !TextUtils.isEmpty(email) || !TextUtils.isEmpty(phone) || !TextUtils.isEmpty(charityReg) || !TextUtils.isEmpty(password)){
                     // PROGRESS BAR //
                     mRegProgress.setTitle("Registering User");
                     mRegProgress.setMessage("Please wait while we create your account !");
                     mRegProgress.setCanceledOnTouchOutside(false);
                     mRegProgress.show();
-                    register_user(donor_name, profession, email, phone, password);
+                    register_user(charity_name, email, phone, charityReg, password);
                 }
 
             }
@@ -87,13 +86,13 @@ public class RegisterActivityDonor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // redirect to LoginActivity
-                Intent intent = new Intent(getApplicationContext(), LoginActivityDonor.class);
+                Intent intent = new Intent(getApplicationContext(), LoginActivityCharity.class);
                 startActivity(intent);
             }
         });
     }
 
-    private void register_user(final String donor_name, final String profession, final String email, final String phone, final String password) {
+    private void register_user(final String charity_name, final String email, final String phone, final String charityReg, final String password) {
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -101,14 +100,19 @@ public class RegisterActivityDonor extends AppCompatActivity {
                     FirebaseUser current_user = FirebaseAuth.getInstance().getCurrentUser();
                     assert current_user != null;
                     String uid = current_user.getUid();
-                    mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child("Donor").child(uid);
+                    mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child("Charity").child(uid);
                     HashMap<String,String> userMap = new HashMap<>();
-                    userMap.put("donor_name",donor_name);
-                    userMap.put("profession",profession);
+                    userMap.put("charity_name",charity_name);
                     userMap.put("email",email);
                     userMap.put("phone",phone);
+                    userMap.put("charityReg",charityReg);
                     userMap.put("password", password);
+                    userMap.put("charity_address","Hi, This is our charity address");
                     userMap.put("status","Hi there, I'm using Feeding India Application");
+                    userMap.put("description","Hi, This is our charity description");
+                    userMap.put("requirements","Currently no requirements are available from charity, check after uploading details");
+                    userMap.put("post_description","Write post/requirements description");
+                    userMap.put("post_image","default");
                     userMap.put("image","default");
                     userMap.put("thumb_image","default");
                     mDatabase.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -116,8 +120,8 @@ public class RegisterActivityDonor extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()){
                                 mRegProgress.dismiss();
-                                Intent mainIntent = new Intent(RegisterActivityDonor.this, LoginActivityDonor.class);
-                                Toast.makeText(RegisterActivityDonor.this,"Account created successfully, now login",Toast.LENGTH_LONG).show();
+                                Intent mainIntent = new Intent(RegisterActivityCharity.this, LoginActivityCharity.class);
+                                Toast.makeText(RegisterActivityCharity.this,"Account created successfully, now login",Toast.LENGTH_LONG).show();
                                 mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 startActivity(mainIntent);
                                 finish();
@@ -127,7 +131,7 @@ public class RegisterActivityDonor extends AppCompatActivity {
                 }
                 else{
                     mRegProgress.hide();
-                    Toast.makeText(RegisterActivityDonor.this,"Cannot Register. Please check the form and try again",Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegisterActivityCharity.this,"Cannot Sign in. Please check the form and try again",Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -136,7 +140,7 @@ public class RegisterActivityDonor extends AppCompatActivity {
 
     public void SetValidation() {
         // Check for a valid name.
-        if (donorName.getText().toString().isEmpty()) {
+        if (charityName.getText().toString().isEmpty()) {
             nameError.setError(getResources().getString(R.string.name_error));
             isNameValid = false;
         } else  {
@@ -166,12 +170,12 @@ public class RegisterActivityDonor extends AppCompatActivity {
         }
 
         // Check for a registration name.
-        if (mProfession.getText().toString().isEmpty()) {
-            professionError.setError(getResources().getString(R.string.profession_error));
-            isProfessionValid = false;
+        if (charityRegistration.getText().toString().isEmpty()) {
+            registrationError.setError(getResources().getString(R.string.registration_error));
+            isRegistrationValid = false;
         } else  {
-            isProfessionValid = true;
-            professionError.setErrorEnabled(false);
+            isRegistrationValid = true;
+            registrationError.setErrorEnabled(false);
         }
 
         // Check for a valid password.
@@ -186,7 +190,7 @@ public class RegisterActivityDonor extends AppCompatActivity {
             passError.setErrorEnabled(false);
         }
 
-        if (isNameValid && isEmailValid && isPhoneValid && isPasswordValid && isProfessionValid) {
+        if (isNameValid && isEmailValid && isPhoneValid && isPasswordValid && isRegistrationValid) {
             Toast.makeText(getApplicationContext(), "Please Wait", Toast.LENGTH_SHORT).show();
         }
 

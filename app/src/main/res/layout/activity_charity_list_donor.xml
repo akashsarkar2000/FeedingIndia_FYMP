@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CharityListActivityDonor">
+    tools:context=".donor.CharityListActivityDonor">
 
     <include
         android:id="@+id/donor_all_users_appBar"

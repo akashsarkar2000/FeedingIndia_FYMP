@@ -8,7 +8,7 @@
     android:background="#18471A"
     android:gravity="center"
     android:padding="16dp"
-    tools:context=".LoginActivityDonor">
+    tools:context=".donor.LoginActivityDonor">
 
 
     <TextView
