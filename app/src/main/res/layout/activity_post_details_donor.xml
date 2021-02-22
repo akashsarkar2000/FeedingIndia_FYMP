@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#816112"
-    tools:context=".charity.PostActivityCharity">
+    tools:context=".donor.PostDetailsActivityDonor">
 
     <include
-        android:id="@+id/post_requirements_page_toolbar"
+        android:id="@+id/donor_post_page_toolbar"
         layout="@layout/app_bar_layout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +37,7 @@
             android:layout_marginTop="15dp"
             android:foregroundGravity="center"
             android:gravity="center"
-            android:hint="Charity Name"
+            android:hint="Nagpur Charity"
             android:textColor="#3E0E0E"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -62,7 +62,7 @@
             android:layout_marginTop="440dp"
             android:background="#EACD9D"
             android:gravity="center"
-            android:hint="No description available"
+            android:hint="This event is happend in March 2020, we visited one orphanage and give them food, clothes and many more thing."
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="15sp"
@@ -81,7 +81,7 @@
                 android:layout_height="340dp"
                 android:layout_gravity="center"
                 android:foregroundGravity="center"
-                tools:srcCompat="@drawable/default_image" />
+                tools:srcCompat="@drawable/aaa" />
 
         </androidx.cardview.widget.CardView>
 
@@ -89,17 +89,17 @@
     </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/post_charity_edit_image"
+        android:id="@+id/donor_post_like"
         android:layout_width="156dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="212dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
-        android:backgroundTint="#E64A19"
+        android:backgroundTint="#0288D1"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        android:text="@string/edit_image"
+        android:text="Like"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -111,22 +111,22 @@
         tools:ignore="UnknownIdInLayout" />
 
     <Button
-        android:id="@+id/post_charity_edit_information"
+        android:id="@+id/donor_post_dislike"
         android:layout_width="156dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:backgroundTint="#388E3C"
+        android:backgroundTint="#5E605E"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        android:text="@string/edit_information"
+        android:text="Dislike"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/post_charity_edit_image"
+        app:layout_constraintBottom_toBottomOf="@+id/donor_post_like"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.966"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/post_charity_edit_image"
+        app:layout_constraintTop_toTopOf="@+id/donor_post_like"
         app:layout_constraintVertical_bias="0.0" />
 
 

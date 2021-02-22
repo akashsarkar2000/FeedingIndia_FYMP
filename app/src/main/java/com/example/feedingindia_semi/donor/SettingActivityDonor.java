@@ -95,7 +95,7 @@ public class SettingActivityDonor extends AppCompatActivity {
                 mStatus.setText(status);
 
                 if (!image.equals("default")) {
-                    Picasso.with(SettingActivityDonor.this).load(image).networkPolicy(NetworkPolicy.OFFLINE).placeholder(R.drawable.default_image)
+                    Picasso.get().load(image).networkPolicy(NetworkPolicy.OFFLINE).placeholder(R.drawable.default_image)
                             .into(mDisplayImage, new Callback() {
                                 @Override
                                 public void onSuccess() {
@@ -103,9 +103,9 @@ public class SettingActivityDonor extends AppCompatActivity {
                                 }
 
                                 @Override
-                                public void onError() {
+                                public void onError(Exception e) {
 
-                                    Picasso.with(SettingActivityDonor.this).load(image).placeholder(R.drawable.default_image).into(mDisplayImage);
+                                    Picasso.get().load(image).placeholder(R.drawable.default_image).into(mDisplayImage);
 
                                 }
                             });
