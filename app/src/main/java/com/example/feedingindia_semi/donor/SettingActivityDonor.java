@@ -96,19 +96,7 @@ public class SettingActivityDonor extends AppCompatActivity {
 
                 if (!image.equals("default")) {
                     Picasso.get().load(image).networkPolicy(NetworkPolicy.OFFLINE).placeholder(R.drawable.default_image)
-                            .into(mDisplayImage, new Callback() {
-                                @Override
-                                public void onSuccess() {
-
-                                }
-
-                                @Override
-                                public void onError(Exception e) {
-
-                                    Picasso.get().load(image).placeholder(R.drawable.default_image).into(mDisplayImage);
-
-                                }
-                            });
+                            .into(mDisplayImage);
                 }
             }
 

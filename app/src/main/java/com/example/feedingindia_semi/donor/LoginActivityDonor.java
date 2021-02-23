@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -32,7 +33,8 @@ public class LoginActivityDonor extends AppCompatActivity {
     boolean isEmailValid, isPasswordValid;
     TextInputLayout emailError, passError;
     private ProgressDialog mLoginProgress;
-
+    private SharedPreferences preferences;
+    private SharedPreferences.Editor editor;
     private FirebaseAuth mAuth;
 
     @Override
@@ -49,7 +51,8 @@ public class LoginActivityDonor extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         login = findViewById(R.id.login_donor_button);
         loginCharity = findViewById(R.id.to_login_charity);
-
+        preferences = getSharedPreferences("login",MODE_PRIVATE);
+        editor = preferences.edit();
 
         registerDonor.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,11 +134,14 @@ public class LoginActivityDonor extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-
                     mLoginProgress.dismiss();
                     Intent mainIntent = new Intent(LoginActivityDonor.this, MainSelectionActivityDonor.class);
                     Toast.makeText(LoginActivityDonor.this, "Login Successful, Welcome to Donor Section", Toast.LENGTH_LONG).show();
                     mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);  // this line is to stick to main page after login
+                    editor.putBoolean("donor",true);
+                    editor.apply();
+                    editor.putBoolean("charity",false);
+                    editor.apply();
                     startActivity(mainIntent);
                     finish();
                 } else {

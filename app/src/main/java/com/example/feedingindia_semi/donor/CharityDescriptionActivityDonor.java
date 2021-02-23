@@ -8,10 +8,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.feedingindia_semi.charity.PostActivityCharity;
 import com.example.feedingindia_semi.R;
@@ -42,7 +44,7 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
     private DatabaseReference mFriendDatabase;
     private DatabaseReference mRootRef;
     private String mCurrent_state;
-
+    private String charityKey;
 //    public ProfileActivity(DatabaseReference mFriendReqDatabase) {
 //        this.mFriendReqDatabase = mFriendReqDatabase;
 //    }
@@ -85,7 +87,13 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // redirect to LoginActivity
+
+                if(getCharityKey() == null){
+                    Toast.makeText(CharityDescriptionActivityDonor.this, "Please Wait", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 Intent intent = new Intent(getApplicationContext(), RequirementDetailsActivityDonor.class);
+                intent.putExtra("key",charityKey);
                 startActivity(intent);
             }
         });
@@ -125,20 +133,26 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
         mUsersDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String charity_name = Objects.requireNonNull(dataSnapshot.child("charity_name").getValue()).toString();
-                String charity_address = Objects.requireNonNull(dataSnapshot.child("charity_address").getValue()).toString();
-                String phone = Objects.requireNonNull(dataSnapshot.child("phone").getValue()).toString();
-                String image = Objects.requireNonNull(dataSnapshot.child("image").getValue()).toString();
-                String description = Objects.requireNonNull(dataSnapshot.child("description").getValue()).toString();
+                try {
+                    Log.i("key",dataSnapshot.getKey());
+                    String charity_name = Objects.requireNonNull(dataSnapshot.child("charity_name").getValue()).toString();
+                    String charity_address = Objects.requireNonNull(dataSnapshot.child("charity_address").getValue()).toString();
+                    String phone = Objects.requireNonNull(dataSnapshot.child("phone").getValue()).toString();
+                    String image = Objects.requireNonNull(dataSnapshot.child("image").getValue()).toString();
+                    String description = Objects.requireNonNull(dataSnapshot.child("description").getValue()).toString();
+                    setCharityKey(dataSnapshot.getKey());
+                    mCharityName.setText(charity_name);
+                    mCharityAddress.setText(charity_address);
+                    mCharityPhone.setText(phone);
+                    mCharityDescription.setText(description);
 
-                mCharityName.setText(charity_name);
-                mCharityAddress.setText(charity_address);
-                mCharityPhone.setText(phone);
-                mCharityDescription.setText(description);
+                    Picasso.get().load(image).placeholder(R.drawable.default_image).into(mCharityImages);
+                    mProgressDialog.dismiss();
+                }catch (Exception e){
 
-                Picasso.get().load(image).placeholder(R.drawable.default_image).into(mCharityImages);
-                mProgressDialog.dismiss();
-
+                    Toast.makeText(CharityDescriptionActivityDonor.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(CharityDescriptionActivityDonor.this,MainSelectionActivityDonor.class));
+                }
 
 //                mFriendReqDatabase.child(mCurrentUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
 //                    @Override
@@ -209,8 +223,15 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
             }
         });
 
-        }
+    }
 
+    public void setCharityKey(String charityKey) {
+        this.charityKey = charityKey;
+    }
+
+    public String getCharityKey() {
+        return charityKey;
+    }
 }
 
 

@@ -42,6 +42,7 @@ public class CharityListActivityDonor extends AppCompatActivity {
         getSupportActionBar().setTitle("All Connected Charities");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
         mUsersDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child("Charity");
 
         mUsersList = findViewById(R.id.id_all_charity_list);
@@ -80,7 +81,7 @@ public class CharityListActivityDonor extends AppCompatActivity {
 
                 usersViewHolder.setName(users_charity.getName());
                 usersViewHolder.setUserStatus(users_charity.getStatus());
-                usersViewHolder.setUserImage(users_charity.getThumb_image(),getApplicationContext());
+                usersViewHolder.setUserImage(users_charity.getThumb_image(),CharityListActivityDonor.this);
                 final String user_id = getRef(position).getKey();
                 mProgressDialog.dismiss();
                 usersViewHolder.mView.setOnClickListener(new View.OnClickListener() {

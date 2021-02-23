@@ -4,9 +4,7 @@
     package="com.example.feedingindia_semi">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -15,10 +13,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".donor.PostDetailsActivityDonor" android:parentActivityName=".donor.RequirementDetailsActivityDonor"/>
-        <activity
-            android:name=".charity.PostEditActivityCharity"
-            android:parentActivityName=".charity.PostActivityCharity" />
+        <activity android:name=".BaseActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".donor.SettingEditActivityDonor"
             android:parentActivityName=".donor.SettingActivityDonor" />
@@ -45,7 +46,7 @@
             android:parentActivityName=".charity.MainActivityCharity" />
         <activity
             android:name=".charity.PostActivityCharity"
-            android:parentActivityName=".charity.SelectionPostRequirementActivityCharity" />
+            android:parentActivityName=".charity.MainActivityCharity" />
         <activity
             android:name=".charity.SelectionPostRequirementActivityCharity"
             android:parentActivityName=".charity.MainActivityCharity" />
@@ -72,11 +73,7 @@
         <activity android:name=".charity.RegisterActivityCharity" />
         <activity android:name=".charity.LoginActivityCharity" />
         <activity android:name=".charity.MainActivityCharity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <meta-data
