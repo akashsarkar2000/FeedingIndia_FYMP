@@ -1,0 +1,546 @@
+Index: app/src/main/res/layout/activity_requirement_details_donor.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"#00796B\"\r\n    tools:context=\".donor.RequirementDetailsActivityDonor\">\r\n\r\n    <include\r\n        android:id=\"@+id/requirements_details_page_toolbar\"\r\n        layout=\"@layout/app_bar_layout\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n\r\n    <TextView\r\n        android:id=\"@+id/setting_charity_description\"\r\n        android:layout_width=\"474dp\"\r\n        android:layout_height=\"58dp\"\r\n        android:layout_marginStart=\"8dp\"\r\n        android:layout_marginEnd=\"8dp\"\r\n        android:layout_marginBottom=\"616dp\"\r\n        android:background=\"#EEEFDA\"\r\n        android:fontFamily=\"sans-serif\"\r\n        android:gravity=\"center\"\r\n        android:text=\"@string/requirements\"\r\n        android:textAlignment=\"center\"\r\n        android:textAllCaps=\"true\"\r\n        android:textColor=\"#000000\"\r\n        android:textSize=\"24sp\"\r\n        android:textStyle=\"bold\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.531\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/requirements_details_page_toolbar\"\r\n        app:layout_constraintVertical_bias=\"0.0\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/requirements_details_donor\"\r\n        android:layout_width=\"319dp\"\r\n        android:layout_height=\"510dp\"\r\n        android:layout_marginStart=\"8dp\"\r\n        android:layout_marginEnd=\"8dp\"\r\n        android:background=\"#B9FF7B\"\r\n        android:gravity=\"center\"\r\n        android:hint=\"@string/no_requirements_available\"\r\n        android:text=\"These are the requirements we need in our charity,\\n\\n1. FOOD\\nRice - 20kg\\nDaal - 40kg\\nWheat - 20kg\\nOil - 1 Litre 20Bottle\\n\\n2. Clothes\\nShirt - For 20 People\\nPant - For 20 People\\n\\n3. Basic Things\\nShampoo, Hair Oil, Bulb, LED\\n\\nThank You So Much\"\r\n        android:textAlignment=\"viewStart\"\r\n        android:textAllCaps=\"false\"\r\n        android:textColor=\"#500B0B\"\r\n        android:textSize=\"22sp\"\r\n        android:textStyle=\"bold\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/setting_charity_description\"\r\n        app:layout_constraintVertical_bias=\"0.0\"\r\n        tools:ignore=\"MissingConstraints,RtlCompat\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/requirement_request_button_donor\"\r\n        android:layout_width=\"268dp\"\r\n        android:layout_height=\"71dp\"\r\n        android:layout_marginStart=\"8dp\"\r\n        android:layout_marginEnd=\"8dp\"\r\n        android:backgroundTint=\"#7B1FA2\"\r\n        android:paddingLeft=\"20dp\"\r\n        android:paddingRight=\"20dp\"\r\n        android:text=\"@string/request_to_charity\"\r\n        android:textAlignment=\"center\"\r\n        android:textColor=\"@color/common_google_signin_btn_text_dark_default\"\r\n        android:textSize=\"20sp\"\r\n        android:textStyle=\"bold\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.497\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/requirement_charity\"\r\n        app:layout_constraintVertical_bias=\"0.215\" />\r\n\r\n    <View\r\n        android:id=\"@+id/divider4\"\r\n        android:layout_width=\"467dp\"\r\n        android:layout_height=\"5dp\"\r\n        android:layout_marginTop=\"57dp\"\r\n        android:backgroundTint=\"#AF4040\"\r\n        android:backgroundTintMode=\"multiply\"\r\n        app:layout_constraintBottom_toTopOf=\"@+id/requirement_charity\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"@+id/setting_charity_description\"\r\n        app:layout_constraintVertical_bias=\"0.0\" />\r\n\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>\r\n\r\n\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_requirement_details_donor.xml	(revision 05029830f8e22a3965d26a8964fba05700835fc9)
++++ app/src/main/res/layout/activity_requirement_details_donor.xml	(date 1614078153427)
+@@ -48,7 +48,6 @@
+         android:background="#B9FF7B"
+         android:gravity="center"
+         android:hint="@string/no_requirements_available"
+-        android:text="These are the requirements we need in our charity,\n\n1. FOOD\nRice - 20kg\nDaal - 40kg\nWheat - 20kg\nOil - 1 Litre 20Bottle\n\n2. Clothes\nShirt - For 20 People\nPant - For 20 People\n\n3. Basic Things\nShampoo, Hair Oil, Bulb, LED\n\nThank You So Much"
+         android:textAlignment="viewStart"
+         android:textAllCaps="false"
+         android:textColor="#500B0B"
+Index: app/src/main/java/com/example/feedingindia_semi/donor/RequirementDetailsActivityDonor.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.feedingindia_semi.donor;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.appcompat.widget.Toolbar;\r\n\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.TextView;\r\nimport android.widget.Toast;\r\n\r\nimport com.example.feedingindia_semi.R;\r\nimport com.google.firebase.auth.FirebaseAuth;\r\nimport com.google.firebase.auth.FirebaseUser;\r\nimport com.google.firebase.database.DatabaseReference;\r\n\r\npublic class RequirementDetailsActivityDonor extends AppCompatActivity {\r\n\r\n    private Toolbar mToolbar;\r\n    private DatabaseReference mUsersDatabase;\r\n    private FirebaseUser mCurrentUser;\r\n    private TextView mRequirement;\r\n    private Button mRequestRequirement;\r\n\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_requirement_details_donor);\r\n\r\n        mToolbar = findViewById(R.id.requirements_details_page_toolbar);\r\n        setSupportActionBar(mToolbar);\r\n        getSupportActionBar().setTitle(\"Charity Requirements\");\r\n        getSupportActionBar().setDisplayHomeAsUpEnabled(true);\r\n\r\n\r\n//        final String user_id = getIntent().getStringExtra(\"user_id\");\r\n//        mUsersDatabase = FirebaseDatabase.getInstance().getReference().child(\"Users\").child(\"Charity\").child(user_id);\r\n        mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();\r\n\r\n        mRequirement = findViewById(R.id.requirements_details_donor);\r\n        mRequestRequirement = findViewById(R.id.requirement_request_button_donor);\r\n\r\n\r\n        mRequestRequirement.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                // redirect to LoginActivity\r\n//                Intent intent = new Intent(getApplicationContext(), PostActivityCharity.class);\r\n//                startActivity(intent);\r\n                Toast.makeText(RequirementDetailsActivityDonor.this,\"Your Request has been send to charity, Work in Progress\",Toast.LENGTH_LONG).show();\r\n\r\n            }\r\n        });\r\n\r\n\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/feedingindia_semi/donor/RequirementDetailsActivityDonor.java	(revision 05029830f8e22a3965d26a8964fba05700835fc9)
++++ app/src/main/java/com/example/feedingindia_semi/donor/RequirementDetailsActivityDonor.java	(date 1614082518540)
+@@ -1,18 +1,29 @@
+ package com.example.feedingindia_semi.donor;
+ 
++import androidx.annotation.NonNull;
+ import androidx.appcompat.app.AppCompatActivity;
+ import androidx.appcompat.widget.Toolbar;
+ 
++import android.content.Intent;
+ import android.os.Bundle;
++import android.util.Log;
+ import android.view.View;
+ import android.widget.Button;
+ import android.widget.TextView;
+ import android.widget.Toast;
+ 
+ import com.example.feedingindia_semi.R;
++import com.example.feedingindia_semi.donor.datamodels.CharityData;
+ import com.google.firebase.auth.FirebaseAuth;
+ import com.google.firebase.auth.FirebaseUser;
++import com.google.firebase.database.DataSnapshot;
++import com.google.firebase.database.DatabaseError;
+ import com.google.firebase.database.DatabaseReference;
++import com.google.firebase.database.FirebaseDatabase;
++import com.google.firebase.database.ValueEventListener;
++
++import java.util.Map;
++import java.util.Objects;
+ 
+ public class RequirementDetailsActivityDonor extends AppCompatActivity {
+ 
+@@ -21,14 +32,19 @@
+     private FirebaseUser mCurrentUser;
+     private TextView mRequirement;
+     private Button mRequestRequirement;
+-
++    private FirebaseAuth firebaseAuth;
++    private String key;
+ 
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_requirement_details_donor);
+ 
++        firebaseAuth = FirebaseAuth.getInstance();
+         mToolbar = findViewById(R.id.requirements_details_page_toolbar);
++        Intent intent = getIntent();
++        this.key = intent.getStringExtra("key");
++        Log.i("keyagain",this.key);
+         setSupportActionBar(mToolbar);
+         getSupportActionBar().setTitle("Charity Requirements");
+         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+@@ -38,6 +54,8 @@
+ //        mUsersDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child("Charity").child(user_id);
+         mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();
+ 
++
++
+         mRequirement = findViewById(R.id.requirements_details_donor);
+         mRequestRequirement = findViewById(R.id.requirement_request_button_donor);
+ 
+@@ -52,8 +70,34 @@
+ 
+             }
+         });
++        try {
++            getRequirement();
++        }catch (Exception e){
++            Toast.makeText(this,"404 not found",Toast.LENGTH_SHORT).show();
++        }
++    }
+ 
++    private void getRequirement() throws Exception{
++        if(this.key == null){
++            return;
++        }
++        mUsersDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child("Charity");
++        mUsersDatabase.child(this.key).addValueEventListener(new ValueEventListener() {
++            @Override
++            public void onDataChange(@NonNull DataSnapshot snapshot) {
++                CharityData charityData = snapshot.getValue(CharityData.class);
++                if(charityData != null){
++                    Log.i("Data",charityData.getRequirements());
++                    mRequirement.setText(charityData.getRequirements());
++                }else {
++                    Log.e("error","null data");
++                }
++            }
+ 
++            @Override
++            public void onCancelled(@NonNull DatabaseError error) {
+ 
++            }
++        });
+     }
+ }
+Index: app/src/main/java/com/example/feedingindia_semi/donor/CharityDescriptionActivityDonor.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.feedingindia_semi.donor;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.appcompat.widget.Toolbar;\r\nimport androidx.recyclerview.widget.RecyclerView;\r\n\r\nimport android.app.ProgressDialog;\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.ImageView;\r\nimport android.widget.TextView;\r\n\r\nimport com.example.feedingindia_semi.charity.PostActivityCharity;\r\nimport com.example.feedingindia_semi.R;\r\nimport com.google.firebase.auth.FirebaseAuth;\r\nimport com.google.firebase.auth.FirebaseUser;\r\nimport com.google.firebase.database.DataSnapshot;\r\nimport com.google.firebase.database.DatabaseError;\r\nimport com.google.firebase.database.DatabaseReference;\r\nimport com.google.firebase.database.FirebaseDatabase;\r\nimport com.google.firebase.database.ValueEventListener;\r\nimport com.squareup.picasso.Picasso;\r\n\r\nimport java.util.Objects;\r\n\r\npublic class CharityDescriptionActivityDonor extends AppCompatActivity {\r\n\r\n    private FirebaseAuth mAuth;\r\n    private DatabaseReference mUserRef;\r\n    private Toolbar mToolbar;\r\n    private RecyclerView mUsersList;\r\n    private ImageView mCharityImages;\r\n    private TextView mCharityAddress, mCharityPhone,mCharityName,mCharityDescription;\r\n    private Button mPostButton, mContactButton, mFoodButton, mMoneyButton;\r\n    private DatabaseReference mUsersDatabase;\r\n    private DatabaseReference mFriendReqDatabase;\r\n    private ProgressDialog mProgressDialog;\r\n    private FirebaseUser mCurrentUser;\r\n    private DatabaseReference mFriendDatabase;\r\n    private DatabaseReference mRootRef;\r\n    private String mCurrent_state;\r\n\r\n//    public ProfileActivity(DatabaseReference mFriendReqDatabase) {\r\n//        this.mFriendReqDatabase = mFriendReqDatabase;\r\n//    }\r\n\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_charity_description_donor);\r\n\r\n        mAuth = FirebaseAuth.getInstance();\r\n\r\n        mToolbar = findViewById(R.id.charity_description_appbar);\r\n        setSupportActionBar(mToolbar);\r\n        getSupportActionBar().setTitle(\"Charity Description\");\r\n        getSupportActionBar().setDisplayHomeAsUpEnabled(true);\r\n\r\n\r\n\r\n        final String user_id = getIntent().getStringExtra(\"user_id\");\r\n        mUsersDatabase = FirebaseDatabase.getInstance().getReference().child(\"Users\").child(\"Charity\").child(user_id);\r\n        mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();\r\n\r\n        mCharityImages = findViewById(R.id.charity_description_images);\r\n        mCharityName = findViewById(R.id.charity_description_name);\r\n        mCharityAddress = findViewById(R.id.charity_description_address);\r\n        mCharityDescription = findViewById(R.id.charity_description_description);\r\n        mCharityPhone = findViewById(R.id.charity_description_phone);\r\n\r\n        mPostButton = findViewById(R.id.charity_description_post_button);\r\n        mContactButton = findViewById(R.id.charity_description_contact_button);\r\n        mFoodButton = findViewById(R.id.charity_description_food_button);\r\n        mMoneyButton = findViewById(R.id.charity_description_money_button);\r\n\r\n        if (mAuth.getCurrentUser() != null) {\r\n            mUserRef = FirebaseDatabase.getInstance().getReference().child(\"Users\").child(\"Donor\").child(mAuth.getCurrentUser().getUid());\r\n        }\r\n\r\n        mPostButton.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                // redirect to LoginActivity\r\n                Intent intent = new Intent(getApplicationContext(), RequirementDetailsActivityDonor.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n        mContactButton.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                // redirect to LoginActivity\r\n                Intent intent = new Intent(getApplicationContext(), PostActivityCharity.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n        mFoodButton.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                // redirect to LoginActivity\r\n                Intent intent = new Intent(getApplicationContext(), PostActivityCharity.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n        mMoneyButton.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                // redirect to LoginActivity\r\n                Intent intent = new Intent(getApplicationContext(), PostActivityCharity.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n\r\n\r\n        mProgressDialog = new ProgressDialog(CharityDescriptionActivityDonor.this);\r\n        mProgressDialog.setTitle(\"Loading Charity data\");\r\n        mProgressDialog.setMessage(\"Please wait while we load the charity data.\");\r\n        mProgressDialog.setCanceledOnTouchOutside(false);\r\n        mProgressDialog.show();\r\n\r\n\r\n        mUsersDatabase.addValueEventListener(new ValueEventListener() {\r\n            @Override\r\n            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {\r\n                String charity_name = Objects.requireNonNull(dataSnapshot.child(\"charity_name\").getValue()).toString();\r\n                String charity_address = Objects.requireNonNull(dataSnapshot.child(\"charity_address\").getValue()).toString();\r\n                String phone = Objects.requireNonNull(dataSnapshot.child(\"phone\").getValue()).toString();\r\n                String image = Objects.requireNonNull(dataSnapshot.child(\"image\").getValue()).toString();\r\n                String description = Objects.requireNonNull(dataSnapshot.child(\"description\").getValue()).toString();\r\n\r\n                mCharityName.setText(charity_name);\r\n                mCharityAddress.setText(charity_address);\r\n                mCharityPhone.setText(phone);\r\n                mCharityDescription.setText(description);\r\n\r\n                Picasso.with(CharityDescriptionActivityDonor.this).load(image).placeholder(R.drawable.default_image).into(mCharityImages);\r\n                mProgressDialog.dismiss();\r\n\r\n\r\n//                mFriendReqDatabase.child(mCurrentUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {\r\n//                    @Override\r\n//                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {\r\n//\r\n//                        if(dataSnapshot.hasChild(user_id)){\r\n//\r\n//                            String req_type = Objects.requireNonNull(dataSnapshot.child(user_id).child(\"request_type\").getValue()).toString();\r\n//\r\n//                            if(req_type.equals(\"received\")){\r\n//\r\n//                                mCurrent_state = \"req_received\";\r\n//                                mProfileSendReqBtn.setText(\"Accept Request\");\r\n//                                mDeclineBtn.setVisibility(View.VISIBLE);\r\n//                                mDeclineBtn.setEnabled(true);\r\n//\r\n//                            }\r\n//                            else if(req_type.equals(\"sent\")){\r\n//\r\n//                                mCurrent_state = \"req_sent\";\r\n//                                mProfileSendReqBtn.setText(\"Cancel Request\");\r\n//\r\n//                                mDeclineBtn.setVisibility(View.INVISIBLE);\r\n//                                mDeclineBtn.setEnabled(false);\r\n//\r\n//                            }\r\n//\r\n//                        }\r\n//                        else{\r\n//\r\n//                            mFriendDatabase.child(mCurrentUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {\r\n//                                @Override\r\n//                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {\r\n//\r\n//                                    if(dataSnapshot.hasChild(user_id)){\r\n//\r\n//                                        mCurrent_state = \"friends\";\r\n//                                        mProfileSendReqBtn.setText(\"Remove Connection\");\r\n//\r\n//                                        mDeclineBtn.setVisibility(View.INVISIBLE);\r\n//                                        mDeclineBtn.setEnabled(false);\r\n//                                    }\r\n//                                }\r\n//\r\n//                                @Override\r\n//                                public void onCancelled(@NonNull DatabaseError databaseError) {\r\n//\r\n//                                }\r\n//                            });\r\n//\r\n//                            mProgressDialog.dismiss();\r\n//\r\n//                        }\r\n//\r\n//                    }\r\n//\r\n//                    @Override\r\n//                    public void onCancelled(@NonNull DatabaseError databaseError) {\r\n//                        mProgressDialog.dismiss();\r\n//                    }\r\n//                });\r\n\r\n            }\r\n\r\n            @Override\r\n            public void onCancelled(@NonNull DatabaseError databaseError) {\r\n\r\n            }\r\n        });\r\n\r\n        }\r\n\r\n}\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/feedingindia_semi/donor/CharityDescriptionActivityDonor.java	(revision 05029830f8e22a3965d26a8964fba05700835fc9)
++++ app/src/main/java/com/example/feedingindia_semi/donor/CharityDescriptionActivityDonor.java	(date 1614081460114)
+@@ -8,10 +8,12 @@
+ import android.app.ProgressDialog;
+ import android.content.Intent;
+ import android.os.Bundle;
++import android.util.Log;
+ import android.view.View;
+ import android.widget.Button;
+ import android.widget.ImageView;
+ import android.widget.TextView;
++import android.widget.Toast;
+ 
+ import com.example.feedingindia_semi.charity.PostActivityCharity;
+ import com.example.feedingindia_semi.R;
+@@ -42,7 +44,7 @@
+     private DatabaseReference mFriendDatabase;
+     private DatabaseReference mRootRef;
+     private String mCurrent_state;
+-
++    private String charityKey;
+ //    public ProfileActivity(DatabaseReference mFriendReqDatabase) {
+ //        this.mFriendReqDatabase = mFriendReqDatabase;
+ //    }
+@@ -85,7 +87,13 @@
+             @Override
+             public void onClick(View v) {
+                 // redirect to LoginActivity
++
++                if(getCharityKey() == null){
++                    Toast.makeText(CharityDescriptionActivityDonor.this, "Please Wait", Toast.LENGTH_SHORT).show();
++                    return;
++                }
+                 Intent intent = new Intent(getApplicationContext(), RequirementDetailsActivityDonor.class);
++                intent.putExtra("key",charityKey);
+                 startActivity(intent);
+             }
+         });
+@@ -125,20 +133,26 @@
+         mUsersDatabase.addValueEventListener(new ValueEventListener() {
+             @Override
+             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+-                String charity_name = Objects.requireNonNull(dataSnapshot.child("charity_name").getValue()).toString();
+-                String charity_address = Objects.requireNonNull(dataSnapshot.child("charity_address").getValue()).toString();
+-                String phone = Objects.requireNonNull(dataSnapshot.child("phone").getValue()).toString();
+-                String image = Objects.requireNonNull(dataSnapshot.child("image").getValue()).toString();
+-                String description = Objects.requireNonNull(dataSnapshot.child("description").getValue()).toString();
+-
+-                mCharityName.setText(charity_name);
+-                mCharityAddress.setText(charity_address);
+-                mCharityPhone.setText(phone);
+-                mCharityDescription.setText(description);
++                try {
++                    Log.i("key",dataSnapshot.getKey());
++                    String charity_name = Objects.requireNonNull(dataSnapshot.child("charity_name").getValue()).toString();
++                    String charity_address = Objects.requireNonNull(dataSnapshot.child("charity_address").getValue()).toString();
++                    String phone = Objects.requireNonNull(dataSnapshot.child("phone").getValue()).toString();
++                    String image = Objects.requireNonNull(dataSnapshot.child("image").getValue()).toString();
++                    String description = Objects.requireNonNull(dataSnapshot.child("description").getValue()).toString();
++                    setCharityKey(dataSnapshot.getKey());
++                    mCharityName.setText(charity_name);
++                    mCharityAddress.setText(charity_address);
++                    mCharityPhone.setText(phone);
++                    mCharityDescription.setText(description);
+ 
+-                Picasso.with(CharityDescriptionActivityDonor.this).load(image).placeholder(R.drawable.default_image).into(mCharityImages);
+-                mProgressDialog.dismiss();
++                    Picasso.with(CharityDescriptionActivityDonor.this).load(image).placeholder(R.drawable.default_image).into(mCharityImages);
++                    mProgressDialog.dismiss();
++                }catch (Exception e){
+ 
++                    Toast.makeText(CharityDescriptionActivityDonor.this, "Something went wrong", Toast.LENGTH_SHORT).show();
++                    startActivity(new Intent(CharityDescriptionActivityDonor.this,MainSelectionActivityDonor.class));
++                }
+ 
+ //                mFriendReqDatabase.child(mCurrentUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+ //                    @Override
+@@ -211,6 +225,13 @@
+ 
+         }
+ 
++    public void setCharityKey(String charityKey) {
++        this.charityKey = charityKey;
++    }
++
++    public String getCharityKey() {
++        return charityKey;
++    }
+ }
+ 
+ 
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_1_8\" default=\"false\" project-jdk-name=\"1.8\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/misc.xml	(revision 05029830f8e22a3965d26a8964fba05700835fc9)
++++ .idea/misc.xml	(date 1614051449238)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/build/classes" />
+   </component>
+   <component name="ProjectType">
+Index: app/src/main/res/layout/activity_base.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_base.xml	(date 1614080415236)
++++ app/src/main/res/layout/activity_base.xml	(date 1614080415236)
+@@ -0,0 +1,39 @@
++<?xml version="1.0" encoding="utf-8"?>
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".BaseActivity">
++
++    <Button
++        android:id="@+id/donor"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:text="DONOR"
++        android:layout_margin="8dp"
++        android:layout_centerHorizontal="true"
++        android:textColor="@android:color/white"
++        android:layout_above="@+id/or"
++        android:background="@android:color/holo_green_light"/>
++
++    <TextView
++        android:id="@+id/or"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:text="OR"
++        android:layout_centerInParent="true"
++        android:textSize="20sp"
++        android:textColor="@android:color/black"/>
++    <Button
++        android:id="@+id/charity"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:text="CHARITY"
++        android:layout_margin="8dp"
++        android:layout_centerHorizontal="true"
++        android:textColor="@android:color/white"
++        android:layout_below="@+id/or"
++        android:background="@android:color/holo_green_light"/>
++
++</RelativeLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/feedingindia_semi/charity/LoginActivityCharity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.feedingindia_semi.charity;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.app.ProgressDialog;\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.text.TextUtils;\r\nimport android.util.Patterns;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\nimport android.widget.TextView;\r\nimport android.widget.Toast;\r\n\r\nimport com.example.feedingindia_semi.R;\r\nimport com.example.feedingindia_semi.donor.LoginActivityDonor;\r\nimport com.google.android.gms.tasks.OnCompleteListener;\r\nimport com.google.android.gms.tasks.Task;\r\nimport com.google.android.material.textfield.TextInputLayout;\r\nimport com.google.firebase.auth.AuthResult;\r\nimport com.google.firebase.auth.FirebaseAuth;\r\n\r\n\r\npublic class LoginActivityCharity extends AppCompatActivity {\r\n\r\n    private EditText mEmail, mPassword;\r\n    Button login;\r\n    TextView registerCharity, loginDonor;\r\n    boolean isEmailValid, isPasswordValid;\r\n    TextInputLayout emailError, passError;\r\n    private ProgressDialog mLoginProgress;\r\n\r\n    private FirebaseAuth mAuth;\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_login_charity);\r\n\r\n        mEmail = findViewById(R.id.email);\r\n        mPassword = findViewById(R.id.password);\r\n        registerCharity = findViewById(R.id.login_to_register_charity);\r\n        emailError = findViewById(R.id.emailError);\r\n        passError = findViewById(R.id.passError);\r\n        mLoginProgress = new ProgressDialog(this);\r\n        mAuth = FirebaseAuth.getInstance();\r\n        login = findViewById(R.id.login_charity_button);\r\n        loginDonor = findViewById(R.id.to_login_donor);\r\n\r\n        registerCharity.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                // redirect to RegisterActivity\r\n                Intent intent = new Intent(getApplicationContext(), RegisterActivityCharity.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n\r\n        loginDonor.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                // redirect to RegisterActivity\r\n                Intent intent = new Intent(getApplicationContext(), LoginActivityDonor.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n\r\n\r\n        login.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                String email = mEmail.getText().toString();\r\n                String password = mPassword.getText().toString();\r\n                SetValidation();\r\n                if (!TextUtils.isEmpty(email) || !TextUtils.isEmpty(password)) {\r\n\r\n                    mLoginProgress.setTitle(\"Login In\");\r\n                    mLoginProgress.setMessage(\"Please wait while we check your credentials !\");\r\n                    mLoginProgress.setCanceledOnTouchOutside(false);\r\n                    mLoginProgress.show();\r\n\r\n                    loginUser(email, password);\r\n                }\r\n            }\r\n        });\r\n    }\r\n\r\n    // Email Password Validation Check //\r\n    public void SetValidation() {\r\n        // Check for a valid email address.\r\n        if (mEmail.getText().toString().isEmpty()) {\r\n            emailError.setError(getResources().getString(R.string.email_error));\r\n            isEmailValid = false;\r\n        } else if (!Patterns.EMAIL_ADDRESS.matcher(mEmail.getText().toString()).matches()) {\r\n            emailError.setError(getResources().getString(R.string.error_invalid_email));\r\n            isEmailValid = false;\r\n        } else {\r\n            isEmailValid = true;\r\n            emailError.setErrorEnabled(false);\r\n        }\r\n\r\n        // Check for a valid password.\r\n        if (mPassword.getText().toString().isEmpty()) {\r\n            passError.setError(getResources().getString(R.string.password_error));\r\n            isPasswordValid = false;\r\n        } else if (mPassword.getText().length() < 6) {\r\n            passError.setError(getResources().getString(R.string.error_invalid_password));\r\n            isPasswordValid = false;\r\n        } else {\r\n            isPasswordValid = true;\r\n            passError.setErrorEnabled(false);\r\n        }\r\n        if (isEmailValid && isPasswordValid) {\r\n            isEmailValid = true;\r\n            isPasswordValid = true;\r\n        }\r\n\r\n    }\r\n\r\n    // Login Button Function //\r\n    private void loginUser(String email, String password) {\r\n\r\n        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {\r\n            @Override\r\n            public void onComplete(@NonNull Task<AuthResult> task) {\r\n                if (task.isSuccessful()) {\r\n\r\n                    mLoginProgress.dismiss();\r\n                    Intent mainIntent = new Intent(LoginActivityCharity.this, MainActivityCharity.class);\r\n                    Toast.makeText(LoginActivityCharity.this, \"Login Successful, Welcome to Charity Section\", Toast.LENGTH_LONG).show();\r\n                    mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);  // this line is to stick to main page after login\r\n                    startActivity(mainIntent);\r\n                    finish();\r\n                } else {\r\n                    mLoginProgress.hide();\r\n                    Toast.makeText(LoginActivityCharity.this, \"Cannot Sign in. Please check the details and try again\", Toast.LENGTH_LONG).show();\r\n                }\r\n            }\r\n        });\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/feedingindia_semi/charity/LoginActivityCharity.java	(revision 05029830f8e22a3965d26a8964fba05700835fc9)
++++ app/src/main/java/com/example/feedingindia_semi/charity/LoginActivityCharity.java	(date 1614080744661)
+@@ -5,6 +5,7 @@
+ 
+ import android.app.ProgressDialog;
+ import android.content.Intent;
++import android.content.SharedPreferences;
+ import android.os.Bundle;
+ import android.text.TextUtils;
+ import android.util.Patterns;
+@@ -31,7 +32,8 @@
+     boolean isEmailValid, isPasswordValid;
+     TextInputLayout emailError, passError;
+     private ProgressDialog mLoginProgress;
+-
++    private SharedPreferences preferences;
++    private SharedPreferences.Editor editor;
+     private FirebaseAuth mAuth;
+ 
+     @Override
+@@ -48,7 +50,8 @@
+         mAuth = FirebaseAuth.getInstance();
+         login = findViewById(R.id.login_charity_button);
+         loginDonor = findViewById(R.id.to_login_donor);
+-
++        preferences = getSharedPreferences("login",MODE_PRIVATE);
++        editor = preferences.edit();
+         registerCharity.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+@@ -131,6 +134,10 @@
+                     Intent mainIntent = new Intent(LoginActivityCharity.this, MainActivityCharity.class);
+                     Toast.makeText(LoginActivityCharity.this, "Login Successful, Welcome to Charity Section", Toast.LENGTH_LONG).show();
+                     mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);  // this line is to stick to main page after login
++                    editor.putBoolean("charity",true);
++                    editor.apply();
++                    editor.putBoolean("donor",false);
++                    editor.apply();
+                     startActivity(mainIntent);
+                     finish();
+                 } else {
+Index: app/src/main/java/com/example/feedingindia_semi/BaseActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/feedingindia_semi/BaseActivity.java	(date 1614080744692)
++++ app/src/main/java/com/example/feedingindia_semi/BaseActivity.java	(date 1614080744692)
+@@ -0,0 +1,63 @@
++package com.example.feedingindia_semi;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.content.Intent;
++import android.content.SharedPreferences;
++import android.os.Bundle;
++import android.view.View;
++import android.widget.Button;
++
++import com.example.feedingindia_semi.charity.LoginActivityCharity;
++import com.example.feedingindia_semi.charity.MainActivityCharity;
++import com.example.feedingindia_semi.donor.LoginActivityDonor;
++import com.example.feedingindia_semi.donor.MainActivityDonor;
++import com.example.feedingindia_semi.donor.MainSelectionActivityDonor;
++
++public class BaseActivity extends AppCompatActivity {
++
++    private SharedPreferences sharedPreferences;
++    private Button charity,donor;
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_base);
++
++        charity = findViewById(R.id.charity);
++        donor = findViewById(R.id.donor);
++        sharedPreferences = getSharedPreferences("login",MODE_PRIVATE);
++        onClickListeners();
++        try {
++            checkSession();
++        } catch (Exception e) {
++            e.printStackTrace();
++        }
++    }
++
++    private void onClickListeners(){
++        charity.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++                startActivity(new Intent(BaseActivity.this, LoginActivityCharity.class));
++            }
++        });
++        donor.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++                startActivity(new Intent(BaseActivity.this, LoginActivityDonor.class));
++            }
++        });
++    }
++
++
++    private void checkSession() throws Exception{
++        boolean charity = sharedPreferences.getBoolean("charity",false);
++        boolean donor = sharedPreferences.getBoolean("donor",false);
++        if(charity){
++            startActivity(new Intent(BaseActivity.this, MainActivityCharity.class));
++        }else if(donor){
++            startActivity(new Intent(BaseActivity.this, MainSelectionActivityDonor.class));
++        }
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/feedingindia_semi/donor/datamodels/CharityData.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/feedingindia_semi/donor/datamodels/CharityData.java	(date 1614082404483)
++++ app/src/main/java/com/example/feedingindia_semi/donor/datamodels/CharityData.java	(date 1614082404483)
+@@ -0,0 +1,16 @@
++package com.example.feedingindia_semi.donor.datamodels;
++
++public class CharityData {
++
++    private String requirements;
++
++    public CharityData(){}
++
++    public String getRequirements() {
++        return requirements;
++    }
++
++    public void setRequirements(String requirements) {
++        this.requirements = requirements;
++    }
++}
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    package=\"com.example.feedingindia_semi\">\r\n\r\n    <uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />\r\n    <uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/AppTheme\">\r\n        <activity android:name=\".donor.SettingEditActivityDonor\"\r\n            android:parentActivityName=\".donor.SettingActivityDonor\"/>\r\n        <activity android:name=\".donor.CharityListActivityDonor\"\r\n            android:parentActivityName=\".donor.MainSelectionActivityDonor\"/>\r\n        <activity android:name=\".donor.MainSelectionActivityDonor\" />\r\n        <activity android:name=\".donor.SettingActivityDonor\"\r\n            android:parentActivityName=\".donor.MainSelectionActivityDonor\"/>\r\n        <activity\r\n            android:name=\".donor.RequirementDetailsActivityDonor\"\r\n            android:parentActivityName=\".donor.MainSelectionActivityDonor\" />\r\n        <activity\r\n            android:name=\".donor.CharityDescriptionActivityDonor\"\r\n            android:parentActivityName=\".donor.MainActivityDonor\" />\r\n        <activity android:name=\".donor.MainActivityDonor\"\r\n            android:parentActivityName=\".donor.MainSelectionActivityDonor\"/>\r\n        <activity android:name=\".donor.RegisterActivityDonor\" />\r\n        <activity android:name=\".donor.LoginActivityDonor\" />\r\n        <activity\r\n            android:name=\".ChatActivity\"\r\n            android:parentActivityName=\".charity.MainActivityCharity\" />\r\n        <activity\r\n            android:name=\".charity.PostActivityCharity\"\r\n            android:parentActivityName=\".charity.MainActivityCharity\" />\r\n        <activity\r\n            android:name=\".charity.SelectionPostRequirementActivityCharity\"\r\n            android:parentActivityName=\".charity.MainActivityCharity\" />\r\n        <activity\r\n            android:name=\".charity.RequirementActivityCharity\"\r\n            android:parentActivityName=\".charity.RequirementActivityCharity\" />\r\n        <activity\r\n            android:name=\".charity.RequirementEditActivityCharity\"\r\n            android:parentActivityName=\".charity.RequirementActivityCharity\" />\r\n        <activity\r\n            android:name=\".charity.DonorListActivityCharity\"\r\n            android:parentActivityName=\".charity.MainActivityCharity\" />\r\n        <activity\r\n            android:name=\".charity.SettingActivityCharity\"\r\n            android:parentActivityName=\".charity.SelectionPostRequirementActivityCharity\"\r\n            tools:targetApi=\"jelly_bean\" />\r\n        <activity\r\n            android:name=\"com.theartofdev.edmodo.cropper.CropImageActivity\"\r\n            android:theme=\"@style/Base.Theme.AppCompat\" />\r\n        <activity\r\n            android:name=\".charity.SettingEditActivityCharity\"\r\n            android:parentActivityName=\".charity.SettingActivityCharity\"\r\n            tools:targetApi=\"jelly_bean\" />\r\n        <activity android:name=\".charity.RegisterActivityCharity\" />\r\n        <activity android:name=\".charity.LoginActivityCharity\"/>\r\n        <activity android:name=\".charity.MainActivityCharity\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n\r\n        <meta-data\r\n            android:name=\"preloaded_fonts\"\r\n            android:resource=\"@array/preloaded_fonts\" />\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/AndroidManifest.xml	(revision 05029830f8e22a3965d26a8964fba05700835fc9)
++++ app/src/main/AndroidManifest.xml	(date 1614080415216)
+@@ -13,21 +13,32 @@
+         android:roundIcon="@mipmap/ic_launcher_round"
+         android:supportsRtl="true"
+         android:theme="@style/AppTheme">
+-        <activity android:name=".donor.SettingEditActivityDonor"
+-            android:parentActivityName=".donor.SettingActivityDonor"/>
+-        <activity android:name=".donor.CharityListActivityDonor"
+-            android:parentActivityName=".donor.MainSelectionActivityDonor"/>
++        <activity android:name=".BaseActivity">
++            <intent-filter>
++                <action android:name="android.intent.action.MAIN" />
++
++                <category android:name="android.intent.category.LAUNCHER" />
++            </intent-filter>
++        </activity>
++        <activity
++            android:name=".donor.SettingEditActivityDonor"
++            android:parentActivityName=".donor.SettingActivityDonor" />
++        <activity
++            android:name=".donor.CharityListActivityDonor"
++            android:parentActivityName=".donor.MainSelectionActivityDonor" />
+         <activity android:name=".donor.MainSelectionActivityDonor" />
+-        <activity android:name=".donor.SettingActivityDonor"
+-            android:parentActivityName=".donor.MainSelectionActivityDonor"/>
++        <activity
++            android:name=".donor.SettingActivityDonor"
++            android:parentActivityName=".donor.MainSelectionActivityDonor" />
+         <activity
+             android:name=".donor.RequirementDetailsActivityDonor"
+             android:parentActivityName=".donor.MainSelectionActivityDonor" />
+         <activity
+             android:name=".donor.CharityDescriptionActivityDonor"
+             android:parentActivityName=".donor.MainActivityDonor" />
+-        <activity android:name=".donor.MainActivityDonor"
+-            android:parentActivityName=".donor.MainSelectionActivityDonor"/>
++        <activity
++            android:name=".donor.MainActivityDonor"
++            android:parentActivityName=".donor.MainSelectionActivityDonor" />
+         <activity android:name=".donor.RegisterActivityDonor" />
+         <activity android:name=".donor.LoginActivityDonor" />
+         <activity
+@@ -60,13 +71,9 @@
+             android:parentActivityName=".charity.SettingActivityCharity"
+             tools:targetApi="jelly_bean" />
+         <activity android:name=".charity.RegisterActivityCharity" />
+-        <activity android:name=".charity.LoginActivityCharity"/>
++        <activity android:name=".charity.LoginActivityCharity" />
+         <activity android:name=".charity.MainActivityCharity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+ 
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+         </activity>
+ 
+         <meta-data
+Index: app/src/main/java/com/example/feedingindia_semi/donor/LoginActivityDonor.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.feedingindia_semi.donor;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport androidx.annotation.NonNull;\r\n\r\nimport android.app.ProgressDialog;\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.text.TextUtils;\r\nimport android.util.Patterns;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\nimport android.widget.TextView;\r\nimport android.widget.Toast;\r\n\r\nimport com.example.feedingindia_semi.charity.LoginActivityCharity;\r\nimport com.example.feedingindia_semi.R;\r\nimport com.google.android.gms.tasks.OnCompleteListener;\r\nimport com.google.android.gms.tasks.Task;\r\nimport com.google.android.material.textfield.TextInputLayout;\r\nimport com.google.firebase.auth.AuthResult;\r\nimport com.google.firebase.auth.FirebaseAuth;\r\n\r\n\r\npublic class LoginActivityDonor extends AppCompatActivity {\r\n\r\n    private EditText mEmail, mPassword;\r\n    Button login;\r\n    TextView registerDonor, loginCharity;\r\n    boolean isEmailValid, isPasswordValid;\r\n    TextInputLayout emailError, passError;\r\n    private ProgressDialog mLoginProgress;\r\n\r\n    private FirebaseAuth mAuth;\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_login_donor);\r\n\r\n        mEmail = findViewById(R.id.email);\r\n        mPassword = findViewById(R.id.password);\r\n        registerDonor = findViewById(R.id.login_to_register_donor);\r\n        emailError = findViewById(R.id.emailError);\r\n        passError = findViewById(R.id.passError);\r\n        mLoginProgress = new ProgressDialog(this);\r\n        mAuth = FirebaseAuth.getInstance();\r\n        login = findViewById(R.id.login_donor_button);\r\n        loginCharity = findViewById(R.id.to_login_charity);\r\n\r\n\r\n        registerDonor.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                // redirect to RegisterActivity\r\n                Intent intent = new Intent(getApplicationContext(), RegisterActivityDonor.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n\r\n\r\n        loginCharity.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                // redirect to RegisterActivity\r\n                Intent intent = new Intent(getApplicationContext(), LoginActivityCharity.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n\r\n\r\n        login.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                String email = mEmail.getText().toString();\r\n                String password = mPassword.getText().toString();\r\n                SetValidation();\r\n                if (!TextUtils.isEmpty(email) || !TextUtils.isEmpty(password)) {\r\n\r\n                    mLoginProgress.setTitle(\"Login In\");\r\n                    mLoginProgress.setMessage(\"Please wait while we check your credentials !\");\r\n                    mLoginProgress.setCanceledOnTouchOutside(false);\r\n                    mLoginProgress.show();\r\n\r\n                    loginUser(email, password);\r\n                }\r\n            }\r\n        });\r\n    }\r\n\r\n\r\n    // Email Password Validation Check //\r\n    public void SetValidation() {\r\n        // Check for a valid email address.\r\n        if (mEmail.getText().toString().isEmpty()) {\r\n            emailError.setError(getResources().getString(R.string.email_error));\r\n            isEmailValid = false;\r\n        } else if (!Patterns.EMAIL_ADDRESS.matcher(mEmail.getText().toString()).matches()) {\r\n            emailError.setError(getResources().getString(R.string.error_invalid_email));\r\n            isEmailValid = false;\r\n        } else {\r\n            isEmailValid = true;\r\n            emailError.setErrorEnabled(false);\r\n        }\r\n\r\n        // Check for a valid password.\r\n        if (mPassword.getText().toString().isEmpty()) {\r\n            passError.setError(getResources().getString(R.string.password_error));\r\n            isPasswordValid = false;\r\n        } else if (mPassword.getText().length() < 6) {\r\n            passError.setError(getResources().getString(R.string.error_invalid_password));\r\n            isPasswordValid = false;\r\n        } else {\r\n            isPasswordValid = true;\r\n            passError.setErrorEnabled(false);\r\n        }\r\n        if (isEmailValid && isPasswordValid) {\r\n            isEmailValid = true;\r\n            isPasswordValid = true;\r\n        }\r\n\r\n    }\r\n\r\n\r\n    // Login Button Function //\r\n    private void loginUser(String email, String password) {\r\n\r\n        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {\r\n            @Override\r\n            public void onComplete(@NonNull Task<AuthResult> task) {\r\n                if (task.isSuccessful()) {\r\n\r\n                    mLoginProgress.dismiss();\r\n                    Intent mainIntent = new Intent(LoginActivityDonor.this, MainSelectionActivityDonor.class);\r\n                    Toast.makeText(LoginActivityDonor.this, \"Login Successful, Welcome to Donor Section\", Toast.LENGTH_LONG).show();\r\n                    mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);  // this line is to stick to main page after login\r\n                    startActivity(mainIntent);\r\n                    finish();\r\n                } else {\r\n                    mLoginProgress.hide();\r\n                    Toast.makeText(LoginActivityDonor.this, \"Cannot Sign in. Please check the details and try again\", Toast.LENGTH_LONG).show();\r\n                }\r\n            }\r\n        });\r\n    }\r\n\r\n\r\n}\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/feedingindia_semi/donor/LoginActivityDonor.java	(revision 05029830f8e22a3965d26a8964fba05700835fc9)
++++ app/src/main/java/com/example/feedingindia_semi/donor/LoginActivityDonor.java	(date 1614080744676)
+@@ -6,6 +6,7 @@
+ 
+ import android.app.ProgressDialog;
+ import android.content.Intent;
++import android.content.SharedPreferences;
+ import android.os.Bundle;
+ import android.text.TextUtils;
+ import android.util.Patterns;
+@@ -32,7 +33,8 @@
+     boolean isEmailValid, isPasswordValid;
+     TextInputLayout emailError, passError;
+     private ProgressDialog mLoginProgress;
+-
++    private SharedPreferences preferences;
++    private SharedPreferences.Editor editor;
+     private FirebaseAuth mAuth;
+ 
+     @Override
+@@ -49,7 +51,8 @@
+         mAuth = FirebaseAuth.getInstance();
+         login = findViewById(R.id.login_donor_button);
+         loginCharity = findViewById(R.id.to_login_charity);
+-
++        preferences = getSharedPreferences("login",MODE_PRIVATE);
++        editor = preferences.edit();
+ 
+         registerDonor.setOnClickListener(new View.OnClickListener() {
+             @Override
+@@ -131,11 +134,14 @@
+             @Override
+             public void onComplete(@NonNull Task<AuthResult> task) {
+                 if (task.isSuccessful()) {
+-
+                     mLoginProgress.dismiss();
+                     Intent mainIntent = new Intent(LoginActivityDonor.this, MainSelectionActivityDonor.class);
+                     Toast.makeText(LoginActivityDonor.this, "Login Successful, Welcome to Donor Section", Toast.LENGTH_LONG).show();
+                     mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);  // this line is to stick to main page after login
++                    editor.putBoolean("donor",true);
++                    editor.apply();
++                    editor.putBoolean("charity",false);
++                    editor.apply();
+                     startActivity(mainIntent);
+                     finish();
+                 } else {
