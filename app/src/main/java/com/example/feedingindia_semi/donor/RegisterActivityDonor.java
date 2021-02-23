@@ -139,6 +139,7 @@ public class RegisterActivityDonor extends AppCompatActivity {
         if (donorName.getText().toString().isEmpty()) {
             nameError.setError(getResources().getString(R.string.name_error));
             isNameValid = false;
+            return;
         } else  {
             isNameValid = true;
             nameError.setErrorEnabled(false);
@@ -148,9 +149,11 @@ public class RegisterActivityDonor extends AppCompatActivity {
         if (mEmail.getText().toString().isEmpty()) {
             emailError.setError(getResources().getString(R.string.email_error));
             isEmailValid = false;
+            return;
         } else if (!Patterns.EMAIL_ADDRESS.matcher(mEmail.getText().toString()).matches()) {
             emailError.setError(getResources().getString(R.string.error_invalid_email));
             isEmailValid = false;
+            return;
         } else  {
             isEmailValid = true;
             emailError.setErrorEnabled(false);
@@ -160,6 +163,7 @@ public class RegisterActivityDonor extends AppCompatActivity {
         if (mPhone.getText().toString().isEmpty()) {
             phoneError.setError(getResources().getString(R.string.phone_error));
             isPhoneValid = false;
+            return;
         } else  {
             isPhoneValid = true;
             phoneError.setErrorEnabled(false);
@@ -169,6 +173,7 @@ public class RegisterActivityDonor extends AppCompatActivity {
         if (mProfession.getText().toString().isEmpty()) {
             professionError.setError(getResources().getString(R.string.profession_error));
             isProfessionValid = false;
+            return;
         } else  {
             isProfessionValid = true;
             professionError.setErrorEnabled(false);
@@ -178,9 +183,11 @@ public class RegisterActivityDonor extends AppCompatActivity {
         if (mPassword.getText().toString().isEmpty()) {
             passError.setError(getResources().getString(R.string.password_error));
             isPasswordValid = false;
+            return;
         } else if (mPassword.getText().length() < 6) {
             passError.setError(getResources().getString(R.string.error_invalid_password));
             isPasswordValid = false;
+            return;
         } else  {
             isPasswordValid = true;
             passError.setErrorEnabled(false);
@@ -188,6 +195,7 @@ public class RegisterActivityDonor extends AppCompatActivity {
 
         if (isNameValid && isEmailValid && isPhoneValid && isPasswordValid && isProfessionValid) {
             Toast.makeText(getApplicationContext(), "Please Wait", Toast.LENGTH_SHORT).show();
+            return;
         }
 
     }
