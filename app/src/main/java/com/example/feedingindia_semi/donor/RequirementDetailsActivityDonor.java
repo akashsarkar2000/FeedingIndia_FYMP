@@ -31,7 +31,7 @@ public class RequirementDetailsActivityDonor extends AppCompatActivity {
     private DatabaseReference mUsersDatabase;
     private FirebaseUser mCurrentUser;
     private TextView mRequirement;
-    private Button mRequestRequirement;
+    private Button mRequestRequirement,post;
     private FirebaseAuth firebaseAuth;
     private String key;
 
@@ -42,8 +42,9 @@ public class RequirementDetailsActivityDonor extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         mToolbar = findViewById(R.id.requirements_details_page_toolbar);
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         this.key = intent.getStringExtra("key");
+        post = findViewById(R.id.post_chairty_display);
         Log.i("keyagain",this.key);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Charity Requirements");
@@ -59,7 +60,18 @@ public class RequirementDetailsActivityDonor extends AppCompatActivity {
         mRequirement = findViewById(R.id.requirements_details_donor);
         mRequestRequirement = findViewById(R.id.requirement_request_button_donor);
 
-
+        post.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(key == null){
+                    Toast.makeText(RequirementDetailsActivityDonor.this, "Please Wait", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                Intent intent1 = new Intent(RequirementDetailsActivityDonor.this,PostDetailsActivityDonor.class);
+                intent1.putExtra("key",key);
+                startActivity(intent1);
+            }
+        });
         mRequestRequirement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
