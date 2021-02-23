@@ -94,7 +94,7 @@ public class SettingActivityCharity extends AppCompatActivity {
                 mDescription.setText(description);
 
                 if(!image.equals("default")) {
-                    Picasso.with(SettingActivityCharity.this).load(image).networkPolicy(NetworkPolicy.OFFLINE).placeholder(R.drawable.default_image)
+                    Picasso.get().load(image).networkPolicy(NetworkPolicy.OFFLINE).placeholder(R.drawable.default_image)
                             .into(mDisplayImage, new Callback() {
                                 @Override
                                 public void onSuccess() {
@@ -102,12 +102,12 @@ public class SettingActivityCharity extends AppCompatActivity {
                                 }
 
                                 @Override
-                                public void onError() {
-
-                                    Picasso.with(SettingActivityCharity.this).load(image).placeholder(R.drawable.default_image).into(mDisplayImage);
-
+                                public void onError(Exception e) {
+                                    Picasso.get().load(image).placeholder(R.drawable.default_image).into(mDisplayImage);
                                 }
-                            });                }
+
+                            });
+                }
             };
 
             @Override

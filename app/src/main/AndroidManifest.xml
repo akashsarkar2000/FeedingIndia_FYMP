@@ -4,7 +4,9 @@
     package="com.example.feedingindia_semi">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
 
     <application
         android:allowBackup="true"
@@ -13,21 +15,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".donor.SettingEditActivityDonor"
-            android:parentActivityName=".donor.SettingActivityDonor"/>
-        <activity android:name=".donor.CharityListActivityDonor"
-            android:parentActivityName=".donor.MainSelectionActivityDonor"/>
+        <activity android:name=".donor.PostDetailsActivityDonor" android:parentActivityName=".donor.RequirementDetailsActivityDonor"/>
+        <activity
+            android:name=".charity.PostEditActivityCharity"
+            android:parentActivityName=".charity.PostActivityCharity" />
+        <activity
+            android:name=".donor.SettingEditActivityDonor"
+            android:parentActivityName=".donor.SettingActivityDonor" />
+        <activity
+            android:name=".donor.CharityListActivityDonor"
+            android:parentActivityName=".donor.MainSelectionActivityDonor" />
         <activity android:name=".donor.MainSelectionActivityDonor" />
-        <activity android:name=".donor.SettingActivityDonor"
-            android:parentActivityName=".donor.MainSelectionActivityDonor"/>
+        <activity
+            android:name=".donor.SettingActivityDonor"
+            android:parentActivityName=".donor.MainSelectionActivityDonor" />
         <activity
             android:name=".donor.RequirementDetailsActivityDonor"
             android:parentActivityName=".donor.MainSelectionActivityDonor" />
         <activity
             android:name=".donor.CharityDescriptionActivityDonor"
             android:parentActivityName=".donor.MainActivityDonor" />
-        <activity android:name=".donor.MainActivityDonor"
-            android:parentActivityName=".donor.MainSelectionActivityDonor"/>
+        <activity
+            android:name=".donor.MainActivityDonor"
+            android:parentActivityName=".donor.MainSelectionActivityDonor" />
         <activity android:name=".donor.RegisterActivityDonor" />
         <activity android:name=".donor.LoginActivityDonor" />
         <activity
@@ -35,7 +45,7 @@
             android:parentActivityName=".charity.MainActivityCharity" />
         <activity
             android:name=".charity.PostActivityCharity"
-            android:parentActivityName=".charity.MainActivityCharity" />
+            android:parentActivityName=".charity.SelectionPostRequirementActivityCharity" />
         <activity
             android:name=".charity.SelectionPostRequirementActivityCharity"
             android:parentActivityName=".charity.MainActivityCharity" />
@@ -60,7 +70,7 @@
             android:parentActivityName=".charity.SettingActivityCharity"
             tools:targetApi="jelly_bean" />
         <activity android:name=".charity.RegisterActivityCharity" />
-        <activity android:name=".charity.LoginActivityCharity"/>
+        <activity android:name=".charity.LoginActivityCharity" />
         <activity android:name=".charity.MainActivityCharity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -3,6 +3,7 @@ package com.example.feedingindia_semi.donor;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.feedingindia_semi.R;
+import com.example.feedingindia_semi.charity.PostActivityCharity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -20,7 +22,7 @@ public class RequirementDetailsActivityDonor extends AppCompatActivity {
     private DatabaseReference mUsersDatabase;
     private FirebaseUser mCurrentUser;
     private TextView mRequirement;
-    private Button mRequestRequirement;
+    private Button mRequestRequirement, charityPost;
 
 
     @Override
@@ -32,6 +34,17 @@ public class RequirementDetailsActivityDonor extends AppCompatActivity {
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Charity Requirements");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        charityPost = findViewById(R.id.post_chairty_display);
+
+        charityPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // redirect to RegisterActivity
+                Intent intent = new Intent(getApplicationContext(), PostDetailsActivityDonor.class);
+                startActivity(intent);
+            }
+        });
 
 
 //        final String user_id = getIntent().getStringExtra("user_id");

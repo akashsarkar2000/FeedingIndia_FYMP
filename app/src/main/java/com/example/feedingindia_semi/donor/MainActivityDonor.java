@@ -142,7 +142,7 @@ public class MainActivityDonor extends AppCompatActivity {
             public void setUserImage(String thumb_image, Context context){
 
                 CircleImageView userImageView = mView.findViewById(R.id.charity_single_image);
-                Picasso.with(context).load(thumb_image).placeholder(R.drawable.default_image).into(userImageView);
+                Picasso.get().load(thumb_image).placeholder(R.drawable.default_image).into(userImageView);
             }
 
         }

@@ -47,7 +47,6 @@ public class LoginActivityCharity extends AppCompatActivity {
         mLoginProgress = new ProgressDialog(this);
         mAuth = FirebaseAuth.getInstance();
         login = findViewById(R.id.login_charity_button);
-        loginDonor = findViewById(R.id.to_login_donor);
 
         registerCharity.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +56,7 @@ public class LoginActivityCharity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        loginDonor = findViewById(R.id.to_login_donor);
 
         loginDonor.setOnClickListener(new View.OnClickListener() {
             @Override

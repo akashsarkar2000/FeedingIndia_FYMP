@@ -136,7 +136,7 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
                 mCharityPhone.setText(phone);
                 mCharityDescription.setText(description);
 
-                Picasso.with(CharityDescriptionActivityDonor.this).load(image).placeholder(R.drawable.default_image).into(mCharityImages);
+                Picasso.get().load(image).placeholder(R.drawable.default_image).into(mCharityImages);
                 mProgressDialog.dismiss();
 
 
