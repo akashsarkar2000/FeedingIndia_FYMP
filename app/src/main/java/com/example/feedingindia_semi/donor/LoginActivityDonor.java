@@ -8,7 +8,9 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -18,11 +20,17 @@ import android.widget.Toast;
 
 import com.example.feedingindia_semi.charity.LoginActivityCharity;
 import com.example.feedingindia_semi.R;
+import com.example.feedingindia_semi.donor.datamodels.CharityData;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class LoginActivityDonor extends AppCompatActivity {
@@ -36,6 +44,8 @@ public class LoginActivityDonor extends AppCompatActivity {
     private SharedPreferences preferences;
     private SharedPreferences.Editor editor;
     private FirebaseAuth mAuth;
+    public boolean isEmailExist;
+    private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +53,7 @@ public class LoginActivityDonor extends AppCompatActivity {
         setContentView(R.layout.activity_login_donor);
 
         mEmail = findViewById(R.id.email);
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child("Donor");
         mPassword = findViewById(R.id.password);
         registerDonor = findViewById(R.id.login_to_register_donor);
         emailError = findViewById(R.id.emailError);
@@ -81,7 +92,10 @@ public class LoginActivityDonor extends AppCompatActivity {
                 String password = mPassword.getText().toString();
                 SetValidation();
                 if (!TextUtils.isEmpty(email) || !TextUtils.isEmpty(password)) {
-
+                    if(!isEmailExist()){
+                        Toast.makeText(LoginActivityDonor.this, "You are not registered as Charity", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
                     mLoginProgress.setTitle("Login In");
                     mLoginProgress.setMessage("Please wait while we check your credentials !");
                     mLoginProgress.setCanceledOnTouchOutside(false);
@@ -91,6 +105,7 @@ public class LoginActivityDonor extends AppCompatActivity {
                 }
             }
         });
+        listeners();
     }
 
 
@@ -152,6 +167,51 @@ public class LoginActivityDonor extends AppCompatActivity {
         });
     }
 
+    private void checkEmail(String email){
+        databaseReference.orderByChild("email").equalTo(email).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                CharityData charityData = snapshot.getValue(CharityData.class);
+                if(charityData == null){
+                    setEmailExist(false);
+                }else{
+                    setEmailExist(true);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void listeners(){
+        mEmail.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                checkEmail(s.toString());
+            }
+        });
+    }
+
+    public void setEmailExist(boolean emailExist) {
+        isEmailExist = emailExist;
+    }
+
+    public boolean isEmailExist() {
+        return isEmailExist;
+    }
 
 }
 

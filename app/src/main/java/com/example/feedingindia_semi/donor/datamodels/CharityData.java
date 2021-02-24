@@ -4,6 +4,7 @@ public class CharityData {
     private String requirements;
     private String post_description;
     private String post_image;
+    String email;
 
     public CharityData(){}
 
@@ -30,5 +31,13 @@ public class CharityData {
 
     public void setPost_image(String post_image) {
         this.post_image = post_image;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
