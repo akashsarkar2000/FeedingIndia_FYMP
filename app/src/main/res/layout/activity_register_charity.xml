@@ -142,6 +142,13 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
+                android:id="@+id/proof"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:layout_height="wrap_content"
+                android:text="@string/upload_validity_proof"/>
+
+            <Button
                 android:id="@+id/register_charity_button"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"

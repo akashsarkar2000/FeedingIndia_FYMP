@@ -37,6 +37,7 @@ import com.theartofdev.edmodo.cropper.CropImageView;
 
 public class SettingActivityCharity extends AppCompatActivity {
 
+
     private Toolbar mToolbar;
     private DatabaseReference mUserDatabase;
     private FirebaseUser mCurrentUser;

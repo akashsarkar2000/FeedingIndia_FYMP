@@ -1,12 +1,15 @@
 package com.example.feedingindia_semi.charity;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.feedingindia_semi.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
@@ -23,18 +27,28 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
+
 import java.util.HashMap;
+import java.util.Random;
 
 public class RegisterActivityCharity extends AppCompatActivity {
 
     EditText charityName, mEmail, mPhone, mPassword, charityRegistration;
-    Button register;
+    Button register,proof;
+    private StorageReference mImageStorage;
     TextView login;
+    String proof_url;
     boolean isNameValid, isEmailValid, isPhoneValid, isPasswordValid, isRegistrationValid;
     TextInputLayout nameError, emailError, phoneError, passError, registrationError;
     private FirebaseAuth mAuth;
     private ProgressDialog mRegProgress;
     private DatabaseReference mDatabase;
+    private ProgressDialog mProgressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +61,7 @@ public class RegisterActivityCharity extends AppCompatActivity {
         mPhone = findViewById(R.id.phone);
         charityRegistration =  findViewById(R.id.registration);
         mPassword = findViewById(R.id.password);
-
+        mImageStorage = FirebaseStorage.getInstance().getReference();
         register = findViewById(R.id.register_charity_button);
         login = findViewById(R.id.register_to_login_charity);
 
@@ -55,6 +69,7 @@ public class RegisterActivityCharity extends AppCompatActivity {
         emailError = findViewById(R.id.emailError);
         phoneError = findViewById(R.id.phoneError);
         passError = findViewById(R.id.passError);
+        proof = findViewById(R.id.proof);
         registrationError =  findViewById(R.id.registrationError);
 
         // FIREBASE AUTH
@@ -90,9 +105,22 @@ public class RegisterActivityCharity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        proof.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CropImage.activity()
+                        .setGuidelines(CropImageView.Guidelines.ON)
+                        .start(RegisterActivityCharity.this);
+            }
+        });
     }
 
     private void register_user(final String charity_name, final String email, final String phone, final String charityReg, final String password) {
+        if(getProof_url() == null || getProof_url().isEmpty()){
+            Toast.makeText(this, "Please add validity proof image", Toast.LENGTH_SHORT).show();
+            return;
+        }
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -115,6 +143,7 @@ public class RegisterActivityCharity extends AppCompatActivity {
                     userMap.put("post_image","default");
                     userMap.put("image","default");
                     userMap.put("thumb_image","default");
+                    userMap.put("proof_url",getProof_url());
                     mDatabase.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
@@ -131,10 +160,12 @@ public class RegisterActivityCharity extends AppCompatActivity {
                 }
                 else{
                     mRegProgress.hide();
+                    Log.i("lol",task.getException().getMessage());
                     Toast.makeText(RegisterActivityCharity.this,"Cannot Sign in. Please check the form and try again",Toast.LENGTH_LONG).show();
                 }
             }
         });
+
     }
 
 
@@ -196,6 +227,88 @@ public class RegisterActivityCharity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == 1 && resultCode == RESULT_OK){
+
+            assert data != null;
+            Uri imageUri = data.getData();
+            CropImage.activity(imageUri)
+                    .setAspectRatio(1,1)
+                    .start(RegisterActivityCharity.this);
+        }
+
+        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+            if (resultCode == RESULT_OK) {
+
+                mProgressDialog = new ProgressDialog(RegisterActivityCharity.this);
+                mProgressDialog.setTitle("Uploading Image...");
+                mProgressDialog.setMessage("Please wait while we upload and process the image.");
+                mProgressDialog.setCanceledOnTouchOutside(false);
+                mProgressDialog.show();
+
+                assert result != null;
+                Uri resultUri = result.getUri();
+
+
+
+                final StorageReference filepath = mImageStorage.child("charity_display_images").child(getSaltString() + ".jpg");
+                filepath.putFile(resultUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+
+                        if(task.isSuccessful()){
+
+                            mProgressDialog.dismiss();
+                            Toast.makeText(RegisterActivityCharity.this, "Uploaded Successfully", Toast.LENGTH_LONG).show();
+
+                            filepath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                @Override
+                                public void onSuccess(Uri uri) {
+                                    String download_url = uri.toString();
+                                    setProof_url(download_url);
+                                    proof.setText("IMAGE SAVED");
+                                }
+                            });
+
+                        } else {
+                            Log.i("exce",task.getException().getMessage());
+                            Toast.makeText(RegisterActivityCharity.this, "Error in Uploading", Toast.LENGTH_LONG).show();
+                            mProgressDialog.dismiss();
+
+                        }
+
+                    }
+                });
+
+            }else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+                Exception error = result.getError();
+            }
+        }
+    }
+
+    protected String getSaltString() {
+        String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        StringBuilder salt = new StringBuilder();
+        Random rnd = new Random();
+        while (salt.length() < 7) { // length of the random string.
+            int index = (int) (rnd.nextFloat() * SALTCHARS.length());
+            salt.append(SALTCHARS.charAt(index));
+        }
+        return salt.toString();
+
+    }
+
+    public void setProof_url(String proof_url) {
+        this.proof_url = proof_url;
+    }
+
+    public String getProof_url() {
+        return proof_url;
+    }
 }
 
 

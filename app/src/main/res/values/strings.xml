@@ -59,4 +59,5 @@
     <string name="your_profession">Your Profession</string>
     <string name="donor_name">Donor Name</string>
     <string name="connected_charities">Connected Charities</string>
+    <string name="upload_validity_proof">UPLOAD VALIDITY PROOF</string>
 </resources>
