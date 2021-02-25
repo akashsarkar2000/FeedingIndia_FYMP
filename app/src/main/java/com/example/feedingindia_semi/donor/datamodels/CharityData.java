@@ -4,6 +4,7 @@ public class CharityData {
     private String requirements;
     private String post_description;
     private String post_image;
+    private String charity_name;
     String email;
 
     public CharityData(){}
@@ -15,6 +16,14 @@ public class CharityData {
 
     public void setRequirements(String requirements) {
         this.requirements = requirements;
+    }
+
+    public String getCharity_name() {
+        return charity_name;
+    }
+
+    public void setCharity_name(String charity_name) {
+        this.charity_name = charity_name;
     }
 
     public String getPost_description() {

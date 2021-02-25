@@ -255,7 +255,7 @@ public class RegisterActivityCharity extends AppCompatActivity {
 
 
 
-                final StorageReference filepath = mImageStorage.child("charity_display_images").child(getSaltString() + ".jpg");
+                final StorageReference filepath = mImageStorage.child("charity_proof_image").child(getSaltString() + ".jpg");
                 filepath.putFile(resultUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {

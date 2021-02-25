@@ -22,16 +22,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.Map;
-import java.util.Objects;
-
 public class RequirementDetailsActivityDonor extends AppCompatActivity {
 
     private Toolbar mToolbar;
     private DatabaseReference mUsersDatabase;
     private FirebaseUser mCurrentUser;
     private TextView mRequirement;
-    private Button mRequestRequirement,post;
+    private Button mDonateNow,post;
     private FirebaseAuth firebaseAuth;
     private String key;
 
@@ -58,7 +55,7 @@ public class RequirementDetailsActivityDonor extends AppCompatActivity {
 
 
         mRequirement = findViewById(R.id.requirements_details_donor);
-        mRequestRequirement = findViewById(R.id.requirement_request_button_donor);
+        mDonateNow = findViewById(R.id.donate_now_button);
 
         post.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,14 +69,15 @@ public class RequirementDetailsActivityDonor extends AppCompatActivity {
                 startActivity(intent1);
             }
         });
-        mRequestRequirement.setOnClickListener(new View.OnClickListener() {
+        mDonateNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // redirect to LoginActivity
 //                Intent intent = new Intent(getApplicationContext(), PostActivityCharity.class);
 //                startActivity(intent);
-                Toast.makeText(RequirementDetailsActivityDonor.this,"Your Request has been send to charity, Work in Progress",Toast.LENGTH_LONG).show();
-
+                Toast.makeText(RequirementDetailsActivityDonor.this,"Fill this form, The data will send to this charity",Toast.LENGTH_LONG).show();
+                DonationDetailsFragment  myDialogFragment = new DonationDetailsFragment();
+                myDialogFragment.show(getSupportFragmentManager(), "My Fragment");
             }
         });
         try {

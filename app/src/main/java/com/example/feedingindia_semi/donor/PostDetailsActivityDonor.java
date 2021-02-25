@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +21,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.NetworkPolicy;
+import com.squareup.picasso.Picasso;
 
 
 public class PostDetailsActivityDonor extends AppCompatActivity {
@@ -30,6 +33,8 @@ public class PostDetailsActivityDonor extends AppCompatActivity {
     private TextView mRequirement;
     private Button mLike, mDislike;
     private String key;
+    private TextView postCharityName, postCharityDescription;
+    ImageView postImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +46,11 @@ public class PostDetailsActivityDonor extends AppCompatActivity {
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Charity Posts");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+        postCharityName = findViewById(R.id.post_charity_name);
+        postCharityDescription = findViewById(R.id.post_charity_description);
+        postImage = findViewById(R.id.post_charity_image);
 
 
         mLike = findViewById(R.id.donor_post_like);
@@ -82,11 +92,12 @@ public class PostDetailsActivityDonor extends AppCompatActivity {
                 CharityData charityData = snapshot.getValue(CharityData.class);
                 if(charityData != null){
                     //data fethc hogya yaha
-                    Log.i("Data",charityData.getRequirements());
-                    // set text me ye dalnae
+                    Log.i("Data",charityData.getCharity_name());
+                    postCharityName.setText(charityData.getCharity_name());
                     Log.i("Data",charityData.getPost_description());
-                    //picasso me ye dalna
+                    postCharityDescription.setText(charityData.getPost_description());
                     Log.i("Data",charityData.getPost_image());
+                    Picasso.get().load(charityData.getPost_image()).networkPolicy(NetworkPolicy.OFFLINE).placeholder(R.drawable.default_image).into(postImage);
 
 
                 }else {

@@ -60,4 +60,6 @@
     <string name="donor_name">Donor Name</string>
     <string name="connected_charities">Connected Charities</string>
     <string name="upload_validity_proof">UPLOAD VALIDITY PROOF</string>
+    <string name="food_name_required">Food Name (Required)</string>
+    <string name="donation_details">Donation Details</string>
 </resources>
