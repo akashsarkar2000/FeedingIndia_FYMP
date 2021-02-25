@@ -19,7 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ServerValue;
 
-public class MainSelectionActivityDonor extends AppCompatActivity {
+public class    MainSelectionActivityDonor extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private DatabaseReference mUserRef;

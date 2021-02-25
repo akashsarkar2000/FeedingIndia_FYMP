@@ -161,7 +161,7 @@
             android:fontFamily="sans-serif-smallcaps"
             android:gravity="center"
             android:hint="For What Purpose ? (Optional)"
-            android:inputType="textLongMessage|textImeMultiLine"
+            android:inputType="textImeMultiLine"
             android:paddingStart="10dp"
             android:paddingLeft="10dp"
             android:singleLine="true"
@@ -186,7 +186,7 @@
             android:fontFamily="sans-serif-smallcaps"
             android:gravity="center"
             android:hint="Mention Items Here (Required)"
-            android:inputType="textLongMessage|textImeMultiLine"
+            android:inputType="textImeMultiLine"
             android:paddingStart="10dp"
             android:paddingLeft="10dp"
             android:singleLine="true"
@@ -308,22 +308,22 @@
             app:layout_constraintVertical_bias="0.699" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/cancelbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#0288D1"
             android:text="Cancel"
             android:textColor="#FFFFFF"
             android:textColorLink="#370A0A"
-            app:layout_constraintBottom_toBottomOf="@+id/button3"
+            app:layout_constraintBottom_toBottomOf="@+id/submitbutton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.109"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/button3"
+            app:layout_constraintTop_toTopOf="@+id/submitbutton"
             app:layout_constraintVertical_bias="0.0" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/submitbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#689F38"
@@ -332,7 +332,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.809"
-            app:layout_constraintStart_toEndOf="@+id/button2"
+            app:layout_constraintStart_toEndOf="@+id/cancelbutton"
             app:layout_constraintTop_toBottomOf="@+id/share_edit_email2"
             app:layout_constraintVertical_bias="0.337" />
 
