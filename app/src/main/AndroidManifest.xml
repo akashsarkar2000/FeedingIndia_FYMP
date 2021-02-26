@@ -51,7 +51,9 @@
             android:name=".charity.PostActivityCharity"
             android:parentActivityName=".charity.MainActivityCharity" />
         <activity
-            android:name=".charity.SelectionPostRequirementActivityCharity"
+            android:name=".charity.PostEditActivityCharity"
+            android:parentActivityName=".charity.PostActivityCharity" />
+        <activity            android:name=".charity.SelectionPostRequirementActivityCharity"
             android:parentActivityName=".charity.MainActivityCharity" />
         <activity
             android:name=".charity.RequirementActivityCharity"

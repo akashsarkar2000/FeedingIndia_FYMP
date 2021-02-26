@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="#2E048E"
-    tools:context=".charity.SettingActivityCharity">
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".charity.SettingActivityCharity"
+
+        >
 
     <include
         android:id="@+id/account_setting_appBar"
@@ -82,23 +90,23 @@
         app:layout_constraintTop_toBottomOf="@+id/setting_charity_address" />
 
 
+        <ImageView
+            android:id="@+id/charity_images"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.083"
+            app:srcCompat="@drawable/default_image"
+            tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/charity_images"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.129"
-        app:srcCompat="@drawable/default_image"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-16dp" />
-
-    <View
+        <View
         android:id="@+id/divider"
         android:layout_width="464dp"
         android:layout_height="1dp"
@@ -111,48 +119,49 @@
         tools:ignore="MissingConstraints" />
 
 
-    <TextView
-        android:id="@+id/setting_charity_description"
-        android:layout_width="362dp"
-        android:layout_height="122dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:gravity="center"
-        android:hint="@string/no_charity_description"
-        android:inputType="textMultiLine"
-        android:text="@string/charity_description"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="#E4E6AA"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/setting_charity_phone"
-        app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/setting_charity_description"
+            android:layout_width="356dp"
+            android:layout_height="410dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center"
+            android:hint="@string/no_charity_description"
+            android:inputType="textMultiLine"
+            android:text="@string/charity_description"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#E4E6AA"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.484"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_charity_phone"
+            app:layout_constraintVertical_bias="0.0" />
 
 
-    <Button
-        android:id="@+id/settings_image_btn"
-        android:layout_width="156dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:backgroundTint="#E64A19"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:text="@string/edit_image"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.071"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/setting_charity_description"
-        app:layout_constraintVertical_bias="0.666" />
+        <Button
+            android:id="@+id/settings_image_btn"
+            android:layout_width="156dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="#E64A19"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/edit_image"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.079"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_charity_description"
+            app:layout_constraintVertical_bias="1.0" />
 
-    <Button
+        <Button
         android:id="@+id/setting_edit_info_button"
         android:layout_width="156dp"
         android:layout_height="54dp"
@@ -172,3 +181,4 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
