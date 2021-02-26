@@ -242,6 +242,26 @@
             app:layout_constraintVertical_bias="0.022" />
 
         <TextView
+            android:id="@+id/na"
+            android:layout_width="341dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text='(if not then just righr "NA" on the feild)'
+            android:textColor="#FF0000"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.075" />
+
+        <TextView
             android:id="@+id/textView3"
             android:layout_width="341dp"
             android:layout_height="wrap_content"

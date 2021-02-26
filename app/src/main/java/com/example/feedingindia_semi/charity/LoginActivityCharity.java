@@ -89,10 +89,10 @@ public class LoginActivityCharity extends AppCompatActivity {
                 String password = mPassword.getText().toString();
                 SetValidation();
                 if (!TextUtils.isEmpty(email) || !TextUtils.isEmpty(password)) {
-                    if(!isEmailExist()){
-                        Toast.makeText(LoginActivityCharity.this, "You are not registered as Charity", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
+//                    if(!isEmailExist()){
+//                        Toast.makeText(LoginActivityCharity.this, "You are not registered as Charity", Toast.LENGTH_SHORT).show();
+//                        return;
+//                    }
                     mLoginProgress.setTitle("Login In");
                     mLoginProgress.setMessage("Please wait while we check your credentials !");
                     mLoginProgress.setCanceledOnTouchOutside(false);
@@ -102,7 +102,7 @@ public class LoginActivityCharity extends AppCompatActivity {
                 }
             }
         });
-        listeners();
+//        listeners();
     }
 
     // Email Password Validation Check //

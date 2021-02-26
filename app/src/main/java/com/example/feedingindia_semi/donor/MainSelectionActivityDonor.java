@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.example.feedingindia_semi.charity.DonorDonationDetails;
 import com.example.feedingindia_semi.charity.PostActivityCharity;
 import com.example.feedingindia_semi.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -48,7 +49,7 @@ public class    MainSelectionActivityDonor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // redirect to RegisterActivity
-                Intent intent = new Intent(getApplicationContext(), PostActivityCharity.class);
+                Intent intent = new Intent(getApplicationContext(), DonorDonationDetails.class);
                 startActivity(intent);
             }
         });

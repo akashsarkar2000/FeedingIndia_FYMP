@@ -45,7 +45,6 @@ public class DonorListActivityCharity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mUsersDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child("Donor");
-
         mUsersList = findViewById(R.id.id_all_donors_list);
         mUsersList.setHasFixedSize(true);
         mUsersList.setLayoutManager(new LinearLayoutManager(this));

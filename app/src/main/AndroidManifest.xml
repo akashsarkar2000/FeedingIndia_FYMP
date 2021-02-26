@@ -13,6 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".charity.DonorDonationDetails"
+            android:parentActivityName=".charity.MainActivityCharity" />
         <activity android:name=".BaseActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -72,9 +75,8 @@
             tools:targetApi="jelly_bean" />
         <activity android:name=".charity.RegisterActivityCharity" />
         <activity android:name=".charity.LoginActivityCharity" />
-        <activity android:name=".charity.MainActivityCharity">
-        </activity>
-        <activity android:name=".donor.PostDetailsActivityDonor"/>
+        <activity android:name=".charity.MainActivityCharity" />
+        <activity android:name=".donor.PostDetailsActivityDonor" />
 
         <meta-data
             android:name="preloaded_fonts"
