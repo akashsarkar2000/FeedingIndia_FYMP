@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".charity.DonorDonationDetails"
-            android:parentActivityName=".charity.MainActivityCharity" />
+            android:parentActivityName=".charity.DonorListActivityCharity" />
         <activity android:name=".BaseActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
