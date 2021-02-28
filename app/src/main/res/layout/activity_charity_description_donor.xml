@@ -95,7 +95,7 @@
 
     <TextView
         android:id="@+id/charity_description_address"
-        android:layout_width="354dp"
+        android:layout_width="360dp"
         android:layout_height="37dp"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
@@ -109,6 +109,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/charity_description_description"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/charity_description_phone"
         app:layout_constraintVertical_bias="0.0" />
@@ -127,7 +128,7 @@
         android:textAlignment="inherit"
         android:textAllCaps="false"
         android:textColor="#E4E6AA"
-        android:textSize="16sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -135,7 +136,7 @@
         app:layout_constraintVertical_bias="0.158" />
 
     <Button
-        android:id="@+id/charity_description_food_button"
+        android:id="@+id/charity_description_donate_button"
         android:layout_width="160dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
@@ -167,7 +168,7 @@
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/charity_description_food_button"
+        app:layout_constraintBottom_toTopOf="@+id/charity_description_donate_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
@@ -175,7 +176,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/charity_description_money_button"
+        android:id="@+id/charity_description_message_button"
         android:layout_width="160dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
@@ -189,11 +190,11 @@
         android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/charity_description_food_button"
+        app:layout_constraintBottom_toBottomOf="@+id/charity_description_donate_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.974"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/charity_description_food_button"
+        app:layout_constraintTop_toTopOf="@+id/charity_description_donate_button"
         app:layout_constraintVertical_bias="0.0" />
 
 
@@ -226,6 +227,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.409" />
+
+    <Button
+        android:id="@+id/donor_comment_charity_review_button"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginTop="9dp"
+        android:background="#290B55"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="See charity reveiws here  >>>>"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textColorLink="#FFFFFF"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/charity_description_description"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
