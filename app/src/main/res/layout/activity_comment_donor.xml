@@ -30,8 +30,7 @@
         android:layout_alignParentBottom="true"
         android:background="@color/common_google_signin_btn_text_dark_default"
         android:orientation="horizontal"
-        android:weightSum="10"
-        >
+        android:weightSum="10">
 
         <EditText
             android:id="@+id/chat_send_text"
