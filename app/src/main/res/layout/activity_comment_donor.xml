@@ -41,7 +41,8 @@
             android:paddingLeft="10dp"
             android:paddingTop="16dp"
             android:paddingRight="10dp"
-            android:paddingBottom="12dp" />
+            android:paddingBottom="12dp"
+            android:background="#FFF0CC"/>
 
         <ImageButton
             android:id="@+id/chat_send_btn"
@@ -49,7 +50,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:alpha="0.5"
-            android:background="@color/common_google_signin_btn_text_dark_default"
+            android:background="#FFF0CC"
             android:clickable="true"
             android:src="@drawable/send" />
     </LinearLayout>

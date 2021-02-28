@@ -105,16 +105,25 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // redirect to LoginActivity
-                Intent intent = new Intent(getApplicationContext(), MainActivityCharity.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivityDonor.class);
                 startActivity(intent);
             }
         });
+//        mDonateButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                // redirect to LoginActivity
+//                Intent intent = new Intent(getApplicationContext(), Donor.class);
+//                startActivity(intent);
+//            }
+//        });
         mDonateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // redirect to LoginActivity
-                Intent intent = new Intent(getApplicationContext(), DonorDonationDetails.class);
-                startActivity(intent);
+                Toast.makeText(CharityDescriptionActivityDonor.this,"Fill this form, The data will send to this charity",Toast.LENGTH_LONG).show();
+                DonationDetailsFragment  myDialogFragment = new DonationDetailsFragment();
+                myDialogFragment.show(getSupportFragmentManager(), "My Fragment");
             }
         });
         mMessageButton.setOnClickListener(new View.OnClickListener() {
@@ -122,7 +131,7 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
 
             public void onClick(View v) {
                 // redirect to LoginActivity
-                Intent intent = new Intent(getApplicationContext(), SettingActivityCharity.class);
+                Intent intent = new Intent(getApplicationContext(), SettingActivityDonor.class);
                 startActivity(intent);
             }
         });

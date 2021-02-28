@@ -228,7 +228,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.409" />
 
-    <Button
+        <Button
         android:id="@+id/donor_comment_charity_review_button"
         android:layout_width="wrap_content"
         android:layout_height="25dp"
@@ -236,11 +236,12 @@
         android:background="#290B55"
         android:fontFamily="sans-serif-smallcaps"
         android:text="See charity reveiws here  >>>>"
-        android:textColor="#FFFFFF"
+        android:textColor="#FF0000"
         android:textColorHighlight="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:textColorLink="#FFFFFF"
         android:textSize="12sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
