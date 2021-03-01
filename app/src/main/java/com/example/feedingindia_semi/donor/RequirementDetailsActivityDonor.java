@@ -99,6 +99,7 @@ public class RequirementDetailsActivityDonor extends AppCompatActivity {
                 if(charityData != null){
                     Log.i("Data",charityData.getRequirements());
                     mRequirement.setText(charityData.getRequirements());
+
                 }else {
                     Log.e("error","null data");
                 }

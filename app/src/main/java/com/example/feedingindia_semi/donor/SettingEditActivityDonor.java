@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.feedingindia_semi.R;
@@ -23,7 +24,8 @@ public class SettingEditActivityDonor extends AppCompatActivity {
 
 
     private Toolbar mToolbar;
-    private EditText mName, mProfession, mPhone, mStatus;
+    TextView mEmail;
+    private EditText mName, mProfession, mPhone, mStatus, mAddress;
     private Button mSaveButton;
 
 
@@ -56,20 +58,26 @@ public class SettingEditActivityDonor extends AppCompatActivity {
         mProgress = new ProgressDialog(this);
 
         String donor_name = getIntent().getStringExtra("donor_name");
+        String email = getIntent().getStringExtra("email");
         String profession = getIntent().getStringExtra("profession");
         String phone = getIntent().getStringExtra("phone");
         String status = getIntent().getStringExtra("status");
+        String address = getIntent().getStringExtra("address");
 
+        mEmail = findViewById(R.id.donor_edit_page_email);
         mName = findViewById(R.id.edit_donor_name);
         mProfession = findViewById(R.id.edit_donor_profession);
         mPhone = findViewById(R.id.edit_donor_phone_number);
         mStatus = findViewById(R.id.edit_donor_status);
+        mAddress = findViewById(R.id.edit_donor_address);
         mSaveButton = findViewById(R.id.donor_info_edit_save_btn);
 
+        mEmail.setText(email);
         mName.setText(donor_name);
         mProfession.setText(profession);
         mPhone.setText(phone);
         mStatus.setText(status);
+        mAddress.setText(address);
 
 
 
@@ -83,12 +91,31 @@ public class SettingEditActivityDonor extends AppCompatActivity {
                 mProgress.setMessage("Please wait while we save the changes ");
                 mProgress.show();
 
+                String email = mEmail.getText().toString();
                 String name = mName.getText().toString();
                 String profession = mProfession.getText().toString();
                 String phone = mPhone.getText().toString();
                 String status = mStatus.getText().toString();
+                String address = mAddress.getText().toString();
 
                 mStatusDatabase.child("donor_name").setValue(name).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+
+
+                        if (task.isSuccessful()){
+
+                            mProgress.dismiss();
+                            Toast.makeText(getApplicationContext(),"Your details has been changed, Check Your Profile",Toast.LENGTH_LONG).show();
+                        }
+                        else{
+                            Toast.makeText(getApplicationContext(),"There was some error in saving changes in name",Toast.LENGTH_LONG).show();
+                        }
+
+                    }
+                });
+
+                mStatusDatabase.child("email").setValue(email).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
 
@@ -120,6 +147,23 @@ public class SettingEditActivityDonor extends AppCompatActivity {
 
                     }
                 });
+
+                mStatusDatabase.child("address").setValue(address).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+
+
+                        if (task.isSuccessful()){
+
+                            mProgress.dismiss();
+                        }
+                        else{
+                            Toast.makeText(getApplicationContext(),"There was some error in saving changes in profession",Toast.LENGTH_LONG).show();
+                        }
+
+                    }
+                });
+
 
                 mStatusDatabase.child("phone").setValue(phone).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override

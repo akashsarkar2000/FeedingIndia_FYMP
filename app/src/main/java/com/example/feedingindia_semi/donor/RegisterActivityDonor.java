@@ -108,6 +108,7 @@ public class RegisterActivityDonor extends AppCompatActivity {
                     userMap.put("email",email);
                     userMap.put("phone",phone);
                     userMap.put("password", password);
+                    userMap.put("address","Enter, Where are you from?");
                     userMap.put("status","Hi there, I'm using Feeding India Application");
                     userMap.put("image","default");
                     userMap.put("thumb_image","default");

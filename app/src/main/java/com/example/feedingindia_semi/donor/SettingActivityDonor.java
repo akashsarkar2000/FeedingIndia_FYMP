@@ -42,7 +42,7 @@ public class SettingActivityDonor extends AppCompatActivity {
     private DatabaseReference mUserDatabase;
     private FirebaseUser mCurrentUser;
     private ImageView mDisplayImage;
-    private TextView mDonorName, mDonorProfession, mPhone, mStatus;
+    private TextView mDonorName, mDonorProfession, mPhone, mStatus, mAddress, mEmail;
     private Button mImageButton, mEditButton;
 
     private StorageReference mImageStorage;
@@ -60,8 +60,10 @@ public class SettingActivityDonor extends AppCompatActivity {
         mDisplayImage = findViewById(R.id.donor_profile_image);
         mDonorName = findViewById(R.id.donor_display_name);
         mDonorProfession = findViewById(R.id.donor_profession_name);
+        mEmail = findViewById(R.id.donor_display_email);
         mPhone = findViewById(R.id.donor_phone_number);
         mStatus = findViewById(R.id.donor_profile_status);
+        mAddress = findViewById(R.id.donor_profile_address);
         mEditButton = findViewById(R.id.donor_edit_info_setting);
         mImageButton = findViewById(R.id.donor_edit_image_setting);
 
@@ -86,21 +88,23 @@ public class SettingActivityDonor extends AppCompatActivity {
                 String profession = dataSnapshot.child("profession").getValue().toString();
                 String phone = dataSnapshot.child("phone").getValue().toString();
                 String status = dataSnapshot.child("status").getValue().toString();
+                String email = dataSnapshot.child("email").getValue().toString();
+                String address = dataSnapshot.child("address").getValue().toString();
                 final String image = dataSnapshot.child("image").getValue().toString();
                 String thumb_image = dataSnapshot.child("thumb_image").getValue().toString();
 
                 mDonorName.setText(donor_name);
                 mDonorProfession.setText(profession);
                 mPhone.setText(phone);
+                mEmail.setText(email);
                 mStatus.setText(status);
+                mAddress.setText(address);
 
                 if (!image.equals("default")) {
                     Picasso.get().load(image).networkPolicy(NetworkPolicy.OFFLINE).placeholder(R.drawable.default_image)
                             .into(mDisplayImage);
                 }
             }
-
-            ;
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -113,15 +117,19 @@ public class SettingActivityDonor extends AppCompatActivity {
             public void onClick(View v) {
 
                 String donor_name = mDonorName.getText().toString();
+                String email = mEmail.getText().toString();
                 String donor_profession = mDonorProfession.getText().toString();
                 String phone = mPhone.getText().toString();
                 String status = mStatus.getText().toString();
+                String address = mAddress.getText().toString();
 
                 Intent status_intent = new Intent(SettingActivityDonor.this, SettingEditActivityDonor.class);
                 status_intent.putExtra("donor_name", donor_name);
+                status_intent.putExtra("email", email);
                 status_intent.putExtra("profession", donor_profession);
                 status_intent.putExtra("phone", phone);
                 status_intent.putExtra("status", status);
+                status_intent.putExtra("address", address);
                 startActivity(status_intent);
             }
         });

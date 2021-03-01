@@ -109,14 +109,7 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-//        mDonateButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // redirect to LoginActivity
-//                Intent intent = new Intent(getApplicationContext(), Donor.class);
-//                startActivity(intent);
-//            }
-//        });
+
         mDonateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -180,67 +173,6 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
                     Toast.makeText(CharityDescriptionActivityDonor.this, "Something went wrong", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(CharityDescriptionActivityDonor.this,MainSelectionActivityDonor.class));
                 }
-
-//                mFriendReqDatabase.child(mCurrentUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//
-//                        if(dataSnapshot.hasChild(user_id)){
-//
-//                            String req_type = Objects.requireNonNull(dataSnapshot.child(user_id).child("request_type").getValue()).toString();
-//
-//                            if(req_type.equals("received")){
-//
-//                                mCurrent_state = "req_received";
-//                                mProfileSendReqBtn.setText("Accept Request");
-//                                mDeclineBtn.setVisibility(View.VISIBLE);
-//                                mDeclineBtn.setEnabled(true);
-//
-//                            }
-//                            else if(req_type.equals("sent")){
-//
-//                                mCurrent_state = "req_sent";
-//                                mProfileSendReqBtn.setText("Cancel Request");
-//
-//                                mDeclineBtn.setVisibility(View.INVISIBLE);
-//                                mDeclineBtn.setEnabled(false);
-//
-//                            }
-//
-//                        }
-//                        else{
-//
-//                            mFriendDatabase.child(mCurrentUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
-//                                @Override
-//                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//
-//                                    if(dataSnapshot.hasChild(user_id)){
-//
-//                                        mCurrent_state = "friends";
-//                                        mProfileSendReqBtn.setText("Remove Connection");
-//
-//                                        mDeclineBtn.setVisibility(View.INVISIBLE);
-//                                        mDeclineBtn.setEnabled(false);
-//                                    }
-//                                }
-//
-//                                @Override
-//                                public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//                                }
-//                            });
-//
-//                            mProgressDialog.dismiss();
-//
-//                        }
-//
-//                    }
-//
-//                    @Override
-//                    public void onCancelled(@NonNull DatabaseError databaseError) {
-//                        mProgressDialog.dismiss();
-//                    }
-//                });
 
             }
 
