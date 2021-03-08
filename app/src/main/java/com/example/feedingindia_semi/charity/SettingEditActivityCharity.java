@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.feedingindia_semi.R;
@@ -23,6 +24,7 @@ public class SettingEditActivityCharity extends AppCompatActivity {
 
     private Toolbar mToolbar;
     private EditText mName, mAddress, mPhone, mDescription;
+    private TextView mEmail, mCharityReg;
     private Button mSaveButton;
 
 
@@ -54,17 +56,23 @@ public class SettingEditActivityCharity extends AppCompatActivity {
         mProgress = new ProgressDialog(this);
 
         String charity_name = getIntent().getStringExtra("charity_name");
+        String charityReg = getIntent().getStringExtra("charityReg");
         String charity_address = getIntent().getStringExtra("charity_address");
         String phone = getIntent().getStringExtra("phone");
         String description = getIntent().getStringExtra("description");
+        String email = getIntent().getStringExtra("email");
 
         mName = findViewById(R.id.edit_charity_name);
+        mCharityReg = findViewById(R.id.edit_regNum);
+        mEmail = findViewById(R.id.edit_charity_email);
         mAddress = findViewById(R.id.edit_charity_address);
         mPhone = findViewById(R.id.edit_charity_phone);
         mDescription = findViewById(R.id.edit_charity_description);
         mSaveButton = findViewById(R.id.requirements_edit_save_btn);
 
         mName.setText(charity_name);
+        mCharityReg.setText(charityReg);
+        mEmail.setText(email);
         mAddress.setText(charity_address);
         mPhone.setText(phone);
         mDescription.setText(description);

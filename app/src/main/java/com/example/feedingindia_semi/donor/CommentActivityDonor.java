@@ -46,21 +46,26 @@ public class CommentActivityDonor extends AppCompatActivity {
     private String charityKey;
     private FirebaseAuth firebaseAuth;
     private DatabaseReference databaseReference;
-    private  View view;
+    private View view;
     private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comment_donor);
-        view = this.getCurrentFocus();
-        recyclerView = findViewById(R.id.id_all_charity_list);
-        commentDataList = new ArrayList<CommentData>();
+
+
         send = findViewById(R.id.chat_send_btn);
         editText = findViewById(R.id.chat_send_text);
+        recyclerView = findViewById(R.id.id_all_charity_comment_list_donor_side);
+
+        view = this.getCurrentFocus();
+        commentDataList = new ArrayList<CommentData>();
         charityKey = getIntent().getStringExtra("key");
         firebaseAuth = FirebaseAuth.getInstance();
         Log.i("mykey",firebaseAuth.getCurrentUser().getEmail());
+
+
         mToolbar = findViewById(R.id.donor_comment_all_users_appBar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Charity Reviews");

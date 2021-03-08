@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".donor.CommentActivityDonor">
+    tools:context=".charity.AllCommentsByDonorForCharity">
 
     <include
-        android:id="@+id/donor_comment_all_users_appBar"
+        android:id="@+id/charity_comment_all_users_appBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         layout="@layout/app_bar_layout"
@@ -15,10 +15,10 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/id_all_charity_comment_list_donor_side"
+        android:id="@+id/id_all_charity_comment_list_charity_side"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/donor_comment_all_users_appBar"
+        android:layout_below="@id/charity_comment_all_users_appBar"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="-2dp"
         android:layout_marginBottom="62dp" />

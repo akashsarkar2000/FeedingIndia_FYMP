@@ -41,9 +41,9 @@ public class SettingActivityCharity extends AppCompatActivity {
     private Toolbar mToolbar;
     private DatabaseReference mUserDatabase;
     private FirebaseUser mCurrentUser;
-    private ImageView mDisplayImage;
-    private TextView mCharityName, mCharityAddress, mPhone, mDescription;
-    private Button mImageButton, mEditButton;
+    private ImageView mDisplayImage, mRegistrationImage;
+    private TextView mCharityName, mCharityAddress, mPhone, mDescription, mEmail, mCharityReg;
+    private Button mImageButton, mEditButton, mCommentsButton;
 
     private StorageReference mImageStorage;
     private ProgressDialog mProgressDialog;
@@ -57,12 +57,16 @@ public class SettingActivityCharity extends AppCompatActivity {
         setContentView(R.layout.activity_setting_charity);
 
         mDisplayImage = findViewById(R.id.charity_images);
+        mRegistrationImage = findViewById(R.id.charity_proof);
         mCharityName = findViewById(R.id.setting_charity_name);
+        mCharityReg = findViewById(R.id.charity_reg);
+        mEmail = findViewById(R.id.setting_charity_email);
         mCharityAddress = findViewById(R.id.setting_charity_address);
         mPhone = findViewById(R.id.setting_charity_phone);
         mDescription = findViewById(R.id.setting_charity_description);
         mEditButton = findViewById(R.id.setting_edit_info_button);
         mImageButton = (Button) findViewById(R.id.settings_image_btn);
+        mCommentsButton = (Button) findViewById(R.id.settings_charity_reviews);
 
         mToolbar = findViewById(R.id.account_setting_appBar);
         setSupportActionBar(mToolbar);
@@ -83,13 +87,18 @@ public class SettingActivityCharity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String charity_name = dataSnapshot.child("charity_name").getValue().toString();
+                String charityReg = dataSnapshot.child("charityReg").getValue().toString();
+                String email = dataSnapshot.child("email").getValue().toString();
                 String charity_address = dataSnapshot.child("charity_address").getValue().toString();
                 String phone = dataSnapshot.child("phone").getValue().toString();
                 String description = dataSnapshot.child("description").getValue().toString();
                 final String image = dataSnapshot.child("image").getValue().toString();
+                final String proof_url = dataSnapshot.child("proof_url").getValue().toString();
                 String thumb_image = dataSnapshot.child("thumb_image").getValue().toString();
 
                 mCharityName.setText(charity_name);
+                mCharityReg.setText(charityReg);
+                mEmail.setText(email);
                 mCharityAddress.setText(charity_address);
                 mPhone.setText(phone);
                 mDescription.setText(description);
@@ -108,6 +117,19 @@ public class SettingActivityCharity extends AppCompatActivity {
                                 }
 
                             });
+                    Picasso.get().load(image).networkPolicy(NetworkPolicy.OFFLINE).placeholder(R.drawable.default_image)
+                            .into(mRegistrationImage, new Callback() {
+                                @Override
+                                public void onSuccess() {
+
+                                }
+
+                                @Override
+                                public void onError(Exception e) {
+                                    Picasso.get().load(proof_url).placeholder(R.drawable.default_image).into(mRegistrationImage);
+                                }
+
+                            });
                 }
             };
 
@@ -117,17 +139,33 @@ public class SettingActivityCharity extends AppCompatActivity {
             }
         });
 
+
+
+
+        mCommentsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent status_intent = new Intent(SettingActivityCharity.this, AllCommentsByDonorForCharity.class);
+                startActivity(status_intent);
+            }
+        });
+
+
         mEditButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 String charity_name = mCharityName.getText().toString();
+                String email = mEmail.getText().toString();
                 String charity_address = mCharityAddress.getText().toString();
                 String phone = mPhone.getText().toString();
                 String description = mDescription.getText().toString();
+                String charityReg = mCharityReg.getText().toString();
 
                 Intent status_intent = new Intent(SettingActivityCharity.this, SettingEditActivityCharity.class);
                 status_intent.putExtra("charity_name", charity_name);
+                status_intent.putExtra("charityReg", charityReg);
+                status_intent.putExtra("email", email);
                 status_intent.putExtra("charity_address", charity_address);
                 status_intent.putExtra("phone", phone);
                 status_intent.putExtra("description", description);
