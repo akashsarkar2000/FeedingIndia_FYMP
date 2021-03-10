@@ -1,63 +1,83 @@
 package com.example.feedingindia_semi.donor.adapters;
 
 import android.content.Context;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.feedingindia_semi.R;
-import com.example.feedingindia_semi.donor.datamodels.CommentData;
+import com.example.feedingindia_semi.charity.datamodels.ChatData;
+import com.google.firebase.auth.FirebaseAuth;
 
-import java.net.ContentHandler;
 import java.util.List;
 
-public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder>{
+public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatHolder>{
 
-    private List<CommentData> commentDataList;
-    Context context;
-
-    public ChatAdapter(List<CommentData> commentDataList,Context context) {
-        this.commentDataList = commentDataList;
+    private Context context;
+    private List<ChatData> chatDataList;
+    private FirebaseAuth firebaseAuth;
+    private RecyclerView recyclerView;
+    public ChatAdapter(Context context, List<ChatData> chatDataList,RecyclerView recyclerView) {
         this.context = context;
+        this.chatDataList = chatDataList;
+        this.recyclerView = recyclerView;
+        firebaseAuth = FirebaseAuth.getInstance();
     }
 
     @NonNull
     @Override
-    public ChatViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
-        return new ChatViewHolder(LayoutInflater.from(context).inflate(R.layout.comment_card,parent,false));
+    public ChatHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.chat_card,parent,false);
+        return new ChatHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ChatViewHolder holder, int position) {
-        CommentData commentData = commentDataList.get(position);
-        try {
-            holder.date.setText(commentData.getDatetime());
-            holder.email.setText(commentData.getEmail());
-            holder.message.setText(commentData.getMessage());
-        }catch (Exception e){
-            e.printStackTrace();
+    public void onBindViewHolder(@NonNull ChatHolder holder, int position) {
+        ChatData chatData = chatDataList.get(position);
+        setText(chatData.getMessage(),holder.message);
+        setText(chatData.getDatetime(),holder.datetime);
+        if(chatData.getUid().equals(firebaseAuth.getCurrentUser().getUid())){
+            Log.i("true","same");
+            holder.message.setGravity(Gravity.END);
+            holder.datetime.setGravity(Gravity.END);
+        }else{
+            holder.message.setGravity(Gravity.START);
+            holder.datetime.setGravity(Gravity.START);
         }
-
     }
 
     @Override
     public int getItemCount() {
-        return commentDataList != null ? commentDataList.size() : 0;
+        return chatDataList.size();
     }
 
-    public class ChatViewHolder extends RecyclerView.ViewHolder{
+    class ChatHolder extends RecyclerView.ViewHolder{
 
-        public TextView email,message,date;
-        public ChatViewHolder(@NonNull View itemView) {
+        private TextView message,datetime;
+        private CardView cardView;
+
+        public ChatHolder(@NonNull View itemView) {
             super(itemView);
-            email = itemView.findViewById(R.id.email);
+            cardView = itemView.findViewById(R.id.card);
             message = itemView.findViewById(R.id.message);
-            date = itemView.findViewById(R.id.date);
+            datetime = itemView.findViewById(R.id.datetime);
+        }
+    }
+
+    private void setText(String s,TextView t){
+        try {
+            t.setText(s);
+        }catch (Exception e){
+            Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
         }
     }
 }

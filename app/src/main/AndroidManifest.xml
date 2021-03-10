@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".charity.AllCommentsByDonorForCharity"></activity>
+        <activity android:name=".charity.ChatActivity"></activity>
+        <activity android:name=".charity.AllCommentsByDonorForCharity" />
         <activity
             android:name=".donor.CommentActivityDonor"
             android:parentActivityName=".donor.CharityDescriptionActivityDonor" />
@@ -86,7 +87,7 @@
         <activity android:name=".charity.LoginActivityCharity" />
         <activity android:name=".charity.MainActivityCharity" />
         <activity android:name=".donor.PostDetailsActivityDonor" />
-
+        <activity android:name=".donor.ChatActivity"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

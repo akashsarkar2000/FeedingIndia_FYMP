@@ -3,10 +3,9 @@ package com.example.feedingindia_semi.donor;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.feedingindia_semi.R;
-import com.example.feedingindia_semi.donor.adapters.ChatAdapter;
+import com.example.feedingindia_semi.donor.adapters.CommentAdapter;
 import com.example.feedingindia_semi.donor.datamodels.CommentData;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -15,14 +14,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -146,8 +143,8 @@ public class CommentActivityDonor extends AppCompatActivity {
                 for (DataSnapshot data : snapshot.getChildren()){
                     CommentData commentData = data.getValue(CommentData.class);
                     commentDataList.add(commentData);
-                    ChatAdapter chatAdapter = new ChatAdapter(commentDataList,CommentActivityDonor.this);
-                    recyclerView.setAdapter(chatAdapter);
+                    CommentAdapter commentAdapter = new CommentAdapter(commentDataList,CommentActivityDonor.this);
+                    recyclerView.setAdapter(commentAdapter);
                 }
             }
 

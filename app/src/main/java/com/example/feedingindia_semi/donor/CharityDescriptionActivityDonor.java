@@ -124,7 +124,8 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
 
             public void onClick(View v) {
                 // redirect to LoginActivity
-                Intent intent = new Intent(getApplicationContext(), SettingActivityDonor.class);
+                Intent intent = new Intent(getApplicationContext(), ChatActivity.class);
+                intent.putExtra("key",charityKey);
                 startActivity(intent);
             }
         });
