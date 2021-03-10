@@ -63,7 +63,10 @@ public class ChatActivity extends AppCompatActivity {
         editText = findViewById(R.id.chat_send_text);
         recyclerView = findViewById(R.id.chats);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(ChatActivity.this));
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(ChatActivity.this);
+        recyclerView.setLayoutManager(linearLayoutManager);
+
         firebaseAuth = FirebaseAuth.getInstance();
         charityKey = getIntent().getStringExtra("key");
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child("Charity").child(charityKey).child("Chats").child(firebaseAuth.getCurrentUser().getUid());
@@ -155,6 +158,7 @@ public class ChatActivity extends AppCompatActivity {
                 });
                 ChatAdapter commentAdapter = new ChatAdapter(ChatActivity.this,chatDataList,recyclerView);
                 recyclerView.setAdapter(commentAdapter);
+                recyclerView.scrollToPosition(chatDataList.size()-1);
             }
 
             @Override
