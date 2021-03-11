@@ -45,7 +45,7 @@ public class MainActivityCharity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // redirect to RegisterActivity
-                Intent intent = new Intent(getApplicationContext(), PostActivityCharity.class);
+                Intent intent = new Intent(getApplicationContext(), ChatListActivity.class);
                 startActivity(intent);
             }
         });
