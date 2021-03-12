@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#816112"
+    android:background="#F8F8F8"
     tools:context=".donor.PostDetailsActivityDonor">
 
     <include
@@ -22,7 +22,6 @@
         android:layout_height="555dp"
         android:background="#D2D65F"
         android:padding="30dp"
-        app:cardBackgroundColor="#FFDF90"
         app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,7 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="17dp"
             android:layout_marginTop="440dp"
-            android:background="#EACD9D"
+            android:background="#FFFFFF"
             android:gravity="center"
             android:hint="This event is happend in March 2020, we visited one orphanage and give them food, clothes and many more thing."
             android:textAlignment="center"
@@ -96,7 +95,7 @@
         android:layout_marginTop="212dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
-        android:backgroundTint="#0288D1"
+        android:background="@drawable/buttons"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:text="Like"
@@ -116,7 +115,7 @@
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:backgroundTint="#5E605E"
+        android:background="@drawable/buttons"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:text="Dislike"
