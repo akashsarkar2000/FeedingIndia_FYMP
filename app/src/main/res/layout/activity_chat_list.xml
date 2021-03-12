@@ -5,18 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".charity.ChatListActivity">
+
     <TextView
+        android:id="@+id/head"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Chats"
-        android:id="@+id/head"
-        android:textSize="20sp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="29dp"
+        android:layout_marginEnd="27dp"
+        android:fontFamily="@font/krona_one"
+        android:text="Feeding India"
         android:textColor="@color/black"
-        android:layout_centerHorizontal="true"/>
+        android:textSize="40sp" />
+
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_below="@id/head"
-        android:layout_height="wrap_content"
         android:id="@+id/recycler"
-        android:layout_margin="5dp"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/head"
+        android:layout_marginTop="34dp"
+        android:layout_marginBottom="5dp" />
 </RelativeLayout>
