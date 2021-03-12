@@ -18,12 +18,12 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="75dp"
         android:layout_marginEnd="0dp"
-        android:fontFamily="sans-serif"
+        android:fontFamily="@font/krona_one"
         android:text="Login as a"
         android:textAlignment="center"
         android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="24sp"
+        android:textColor="#787878"
+        android:textSize="45sp"
         android:textStyle="bold" />
 
     <Button
