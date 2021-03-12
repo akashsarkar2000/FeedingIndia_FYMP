@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#816112"
+    android:background="#FFFFFF"
     tools:context=".charity.PostActivityCharity">
 
     <include
@@ -22,7 +22,7 @@
         android:layout_height="555dp"
         android:background="#D2D65F"
         android:padding="30dp"
-        app:cardBackgroundColor="#FFDF90"
+        app:cardBackgroundColor="#F6F6F6"
         app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,7 +38,7 @@
             android:foregroundGravity="center"
             android:gravity="center"
             android:hint="Charity Name"
-            android:textColor="#3E0E0E"
+            android:textColor="#000000"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -49,7 +49,7 @@
             android:layout_marginLeft="135dp"
             android:layout_marginTop="410dp"
             android:text="DESCRIPTION"
-            android:textColor="#490D0D"
+            android:textColor="@color/black"
             android:textColorHint="#450808"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="17dp"
             android:layout_marginTop="440dp"
-            android:background="#EACD9D"
+            android:background="#F6F6F6"
             android:gravity="center"
             android:hint="No description available"
             android:textAlignment="center"
@@ -77,8 +77,8 @@
 
             <ImageView
                 android:id="@+id/post_charity_image"
-                android:layout_width="340dp"
-                android:layout_height="340dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:foregroundGravity="center"
                 tools:srcCompat="@drawable/default_image" />
@@ -96,7 +96,7 @@
         android:layout_marginTop="212dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
-        android:backgroundTint="#E64A19"
+        android:background="@drawable/buttons"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:text="@string/edit_image"
@@ -116,7 +116,7 @@
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:backgroundTint="#388E3C"
+        android:background="@drawable/buttons"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:text="@string/edit_information"
