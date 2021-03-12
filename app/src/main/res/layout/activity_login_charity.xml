@@ -5,7 +5,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#371863"
     android:gravity="center"
     android:padding="16dp"
     tools:context=".charity.LoginActivityCharity">
@@ -22,7 +21,7 @@
         android:text="@string/feeding_india"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         android:textSize="55sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -44,7 +43,7 @@
         android:text="@string/welcome_to"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -55,11 +54,12 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="379dp"
+        android:layout_width="380p"
         android:layout_height="462dp"
         android:padding="10dp"
         app:cardCornerRadius="5dp"
         app:cardElevation="5dp"
+        app:cardBackgroundColor="#9F79D5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,28 +68,12 @@
 
 
         <LinearLayout
-            android:layout_width="312dp"
+            android:layout_width="380dp"
             android:layout_height="438dp"
             android:layout_gravity="center"
             android:layout_margin="5dp"
+            android:background="#9F79D5"
             android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="sans-serif"
-                android:text="@string/login_as_a_charity"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textColor="#571313"
-                android:textSize="24sp"
-                android:textStyle="bold" />
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/selection_posts_requirements_pic"
@@ -109,9 +93,12 @@
 
                 <EditText
                     android:id="@+id/email"
-                    android:layout_width="match_parent"
+                    android:layout_width="345dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_margin="5dp"
+                    android:padding="20dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/input_style"
                     android:autofillHints=""
                     android:hint="@string/prompt_email"
                     android:inputType="textEmailAddress"
@@ -131,9 +118,12 @@
 
                 <EditText
                     android:id="@+id/password"
-                    android:layout_width="match_parent"
+                    android:layout_width="345dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_margin="5dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/input_style"
+                    android:padding="20dp"
                     android:hint="@string/prompt_password"
                     android:inputType="textPassword"
                     android:maxLines="1"
@@ -146,10 +136,11 @@
 
             <Button
                 android:id="@+id/login_charity_button"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
+                android:layout_gravity="center"
                 android:layout_height="50dp"
-                android:layout_margin="20dp"
-                android:background="#3C1B6A"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/buttons"
                 android:text="@string/login"
                 android:textColor="@android:color/white"
                 android:textSize="16sp" />
@@ -158,11 +149,11 @@
                 android:id="@+id/login_to_register_charity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:gravity="center"
+                android:layout_marginTop="3dp"
+                android:layout_gravity="center"
                 android:text="@string/create_new"
-                android:textColor="#5A11C1"
-                android:textSize="12sp" />
+                android:textColor="@color/white"
+                android:textSize="17sp" />
 
 
         </LinearLayout>
@@ -171,10 +162,10 @@
     <Button
         android:id="@+id/to_login_donor"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:layout_margin="20dp"
         android:layout_marginBottom="32dp"
-        android:background="#18471A"
+        android:background="@drawable/buttons"
         android:text="@string/are_you_a_donor"
         android:textAlignment="center"
         android:textAllCaps="true"
