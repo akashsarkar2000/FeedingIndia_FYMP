@@ -42,7 +42,7 @@
             android:paddingTop="16dp"
             android:paddingRight="10dp"
             android:paddingBottom="12dp"
-            android:background="#FFF0CC"/>
+            android:background="#D1D1D1"/>
 
         <ImageButton
             android:id="@+id/chat_send_btn"
@@ -50,7 +50,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:alpha="0.5"
-            android:background="#FFF0CC"
+            android:background="#BFBFBF"
             android:clickable="true"
             android:src="@drawable/send" />
     </LinearLayout>
