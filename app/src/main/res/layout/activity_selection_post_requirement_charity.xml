@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".charity.SelectionPostRequirementActivityCharity"
-    android:background="#F1EADA">
+    android:background="#FFFFFF">
 
     <include
         android:id="@+id/post_requirements_page_toolbar"
@@ -71,12 +71,12 @@
         android:layout_width="325dp"
         android:layout_height="42dp"
         android:layout_marginBottom="8dp"
-        android:background="#EAB57E"
+        android:background="@drawable/buttons"
         android:paddingTop="4sp"
         android:text="@string/charity_requirements"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="#6A240D"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -90,12 +90,12 @@
         android:layout_width="325dp"
         android:layout_height="42dp"
         android:layout_marginBottom="8dp"
-        android:background="#EAB57E"
+        android:background="@drawable/buttons"
         android:paddingTop="4sp"
         android:text="@string/charity_posts"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="#6A240D"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"

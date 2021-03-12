@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00796B"
+    android:background="#FFFFFF"
     tools:context=".donor.RequirementDetailsActivityDonor">
 
     <include
@@ -22,7 +22,7 @@
         android:layout_height="480dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:background="#B9FF7B"
+        android:background="#FFFFFF"
         android:gravity="center"
         android:hint="@string/no_requirements_available"
         android:textAlignment="viewStart"
@@ -44,7 +44,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="28dp"
-        android:backgroundTint="#2E590E"
+        android:background="@drawable/buttons"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:text="Donate Now"
@@ -66,7 +66,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="92dp"
-        android:backgroundTint="#510B38"
+        android:background="@drawable/buttons"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:text="See Charity Post"

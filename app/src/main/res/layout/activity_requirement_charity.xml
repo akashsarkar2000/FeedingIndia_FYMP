@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EEEFDA"
+    android:background="#FFFFFF"
     tools:context=".charity.RequirementActivityCharity">
 
     <include
@@ -23,7 +23,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="616dp"
-        android:background="#EEEFDA"
+        android:background="#FFFFFF"
         android:fontFamily="sans-serif"
         android:gravity="center"
         android:text="@string/requirements"
@@ -45,7 +45,7 @@
         android:layout_height="510dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:background="#FDF5F5"
+        android:background="#FFFFFF"
         android:gravity="center"
         android:hint="@string/no_requirements_available"
         android:paddingLeft="10sp"
@@ -67,7 +67,7 @@
         android:layout_height="71dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:backgroundTint="#512DA8"
+        android:background="@drawable/buttons"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:text="@string/add_requirements"
