@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="17dp"
             android:layout_marginTop="440dp"
-            android:background="#FFFFFF"
+            android:background="#E6E6E6"
             android:gravity="center"
             android:hint="This event is happend in March 2020, we visited one orphanage and give them food, clothes and many more thing."
             android:textAlignment="center"
