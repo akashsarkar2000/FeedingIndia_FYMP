@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#B5FBB8"
+    android:background="#F3EEE1"
     tools:context=".donor.MainSelectionActivityDonor">
     <include
         android:id="@+id/donor_main_page_toolbar"
