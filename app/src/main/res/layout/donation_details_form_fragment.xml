@@ -252,7 +252,7 @@
             android:layout_alignParentRight="true"
             android:fontFamily="serif"
             android:gravity="center"
-            android:text='(if not then just righr "NA" on the feild)'
+            android:text='(if not then write "NA")'
             android:textColor="#FF0000"
             android:textSize="10sp"
             android:textStyle="bold"

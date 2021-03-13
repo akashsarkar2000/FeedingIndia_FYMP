@@ -48,7 +48,6 @@ public class SettingActivityCharity extends AppCompatActivity {
     private StorageReference mImageStorage;
     private ProgressDialog mProgressDialog;
 
-
     private static final int GALLERY_PICK = 1;
 
     @Override

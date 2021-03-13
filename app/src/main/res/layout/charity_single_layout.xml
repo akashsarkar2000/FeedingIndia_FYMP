@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="110dp"
-    android:layout_marginTop="10dp"
+    android:layout_marginTop="5dp"
     android:background="#FFE3E4">
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -25,8 +25,8 @@
         android:layout_height="29dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="8dp"
-        android:text="@string/charity_name"
         android:fontFamily="@font/krona_one"
+        android:text="@string/charity_name"
         android:textColor="#FF474E"
         android:textSize="20sp"
         android:textStyle="bold"

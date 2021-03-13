@@ -42,11 +42,11 @@ public class PostDetailsActivityDonor extends AppCompatActivity {
         setContentView(R.layout.activity_post_details_donor);
         Intent intent =getIntent();
         key = intent.getStringExtra("key");
+
         mToolbar = findViewById(R.id.donor_post_page_toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Charity Posts");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
 
         postCharityName = findViewById(R.id.post_charity_name);
         postCharityDescription = findViewById(R.id.post_charity_description);
@@ -54,7 +54,6 @@ public class PostDetailsActivityDonor extends AppCompatActivity {
 
 
         mLike = findViewById(R.id.donor_post_like);
-
         mLike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,8 +63,8 @@ public class PostDetailsActivityDonor extends AppCompatActivity {
             }
         });
 
-        mDislike = findViewById(R.id.donor_post_dislike);
 
+        mDislike = findViewById(R.id.donor_post_dislike);
         mDislike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -111,4 +110,5 @@ public class PostDetailsActivityDonor extends AppCompatActivity {
             }
         });
     }
+
 }

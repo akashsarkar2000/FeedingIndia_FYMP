@@ -52,8 +52,6 @@ public class RequirementDetailsActivityDonor extends AppCompatActivity {
 //        mUsersDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child("Charity").child(user_id);
         mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();
 
-
-
         mRequirement = findViewById(R.id.requirements_details_donor);
         mDonateNow = findViewById(R.id.donate_now_button);
 

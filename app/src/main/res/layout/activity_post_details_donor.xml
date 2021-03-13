@@ -37,7 +37,7 @@
             android:layout_marginTop="15dp"
             android:fontFamily="@font/krona_one"
             android:gravity="center"
-            android:text="Nagpur Charity"
+            android:hint="@string/charity_name"
             android:textColor="#FF474E"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -57,11 +57,11 @@
             android:id="@+id/post_charity_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-           android:padding="10dp"
             android:layout_marginTop="460dp"
-
             android:gravity="center"
-            android:hint="This event is happend in March 2020, we visited one orphanage and give them food, clothes and many more thing."
+
+            android:hint="Post description is not available"
+            android:padding="10dp"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="15sp"
@@ -81,7 +81,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:foregroundGravity="center"
-                tools:srcCompat="@drawable/aaa" />
+                tools:srcCompat="@drawable/default_image" />
 
         </androidx.cardview.widget.CardView>
 

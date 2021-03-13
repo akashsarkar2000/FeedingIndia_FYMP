@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.example.feedingindia_semi.charity.LoginActivityCharity;
 import com.example.feedingindia_semi.R;
+import com.example.feedingindia_semi.charity.MainActivityCharity;
 import com.example.feedingindia_semi.donor.datamodels.CharityData;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -150,7 +151,7 @@ public class LoginActivityDonor extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     mLoginProgress.dismiss();
-                    Intent mainIntent = new Intent(LoginActivityDonor.this, MainSelectionActivityDonor.class);
+                        Intent mainIntent = new Intent(LoginActivityDonor.this, MainActivityDonor.class);
                     Toast.makeText(LoginActivityDonor.this, "Login Successful, Welcome to Donor Section", Toast.LENGTH_LONG).show();
                     mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);  // this line is to stick to main page after login
                     editor.putBoolean("donor",true);

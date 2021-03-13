@@ -86,7 +86,6 @@
                 android:id="@+id/emailError"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_marginTop="5dp">
 
                 <EditText

@@ -172,7 +172,7 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
                 }catch (Exception e){
 
                     Toast.makeText(CharityDescriptionActivityDonor.this, "Something went wrong", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(CharityDescriptionActivityDonor.this,MainSelectionActivityDonor.class));
+                    startActivity(new Intent(CharityDescriptionActivityDonor.this,MainActivityDonor.class));
                 }
 
             }
