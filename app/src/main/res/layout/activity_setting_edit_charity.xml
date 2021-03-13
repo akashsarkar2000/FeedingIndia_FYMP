@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
     tools:context=".charity.SettingEditActivityCharity">
 
     <Button
@@ -15,7 +14,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/buttons"
+        android:background="@drawable/buttons2"
         android:text="@string/save_changes"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
@@ -127,8 +126,8 @@
         android:hint="Registration Number:"
         android:inputType="textPersonName"
         android:padding="10dp"
-        android:textColor="#000000"
-        android:textColorHint="#000000"
+        android:fontFamily="@font/krona_one"
+        android:textColor="#FF474E"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

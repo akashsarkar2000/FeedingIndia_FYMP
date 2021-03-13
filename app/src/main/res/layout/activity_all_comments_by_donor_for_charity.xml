@@ -8,9 +8,9 @@
 
     <include
         android:id="@+id/charity_comment_all_users_appBar"
+        layout="@layout/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        layout="@layout/app_bar_layout"
         android:layout_alignParentTop="true" />
 
 
@@ -38,19 +38,19 @@
             android:layout_height="62dp"
             android:layout_weight="8"
             android:hint="Type Your Comment Here"
+            android:textColorHint="#FF474E"
             android:paddingLeft="10dp"
             android:paddingTop="16dp"
             android:paddingRight="10dp"
             android:paddingBottom="12dp"
-            android:background="#D1D1D1"/>
+            android:background="#FFC8CA"/>
 
         <ImageButton
             android:id="@+id/chat_send_btn"
             android:layout_width="70dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:alpha="0.5"
-            android:background="#BFBFBF"
+            android:background="#FF6F74"
             android:clickable="true"
             android:src="@drawable/send" />
     </LinearLayout>

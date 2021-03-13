@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="110dp"
     android:layout_marginTop="10dp"
-    android:background="#E8F4FF">
+    android:background="#FFE3E4">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/charity_single_image"
@@ -26,7 +26,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="8dp"
         android:text="@string/charity_name"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:fontFamily="@font/krona_one"
+        android:textColor="#FF474E"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

@@ -18,11 +18,12 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="395dp"
+        android:layout_width="380dp"
         android:layout_height="555dp"
         android:background="#D2D65F"
         android:padding="30dp"
         app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,32 +35,31 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15dp"
-            android:foregroundGravity="center"
+            android:fontFamily="@font/krona_one"
             android:gravity="center"
-            android:hint="Nagpur Charity"
-            android:textColor="#3E0E0E"
+            android:text="Nagpur Charity"
+            android:textColor="#FF474E"
             android:textSize="30sp"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="135dp"
-            android:layout_marginLeft="135dp"
-            android:layout_marginTop="410dp"
+            android:layout_marginStart="101dp"
+            android:layout_marginTop="420dp"
+            android:fontFamily="@font/krona_one"
             android:text="DESCRIPTION"
-            android:textColor="#490D0D"
-            android:textColorHint="#450808"
+            android:textColor="#FF474E"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/post_charity_description"
-            android:layout_width="370dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="17dp"
-            android:layout_marginTop="440dp"
-            android:background="#E6E6E6"
+           android:padding="10dp"
+            android:layout_marginTop="460dp"
+
             android:gravity="center"
             android:hint="This event is happend in March 2020, we visited one orphanage and give them food, clothes and many more thing."
             android:textAlignment="center"
@@ -70,14 +70,15 @@
         <androidx.cardview.widget.CardView
             android:layout_width="340dp"
             android:layout_height="340dp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="20dp"
+            android:elevation="10dp"
             android:layout_marginTop="65dp"
             app:cardCornerRadius="15dp">
 
             <ImageView
                 android:id="@+id/post_charity_image"
-                android:layout_width="340dp"
-                android:layout_height="340dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:foregroundGravity="center"
                 tools:srcCompat="@drawable/aaa" />
@@ -95,7 +96,7 @@
         android:layout_marginTop="212dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/buttons"
+        android:background="@drawable/buttons2"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:text="Like"
@@ -115,7 +116,7 @@
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/buttons"
+        android:background="@drawable/buttons2"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:text="Dislike"

@@ -22,7 +22,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/buttons"
+        android:background="@drawable/buttons2"
         android:text="@string/save_changes"
         android:textColor="#FFFFFF"
         android:textSize="15sp"

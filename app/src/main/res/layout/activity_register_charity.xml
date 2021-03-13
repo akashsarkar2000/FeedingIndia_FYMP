@@ -37,7 +37,7 @@
                 android:text="Signup For Charity"
                 android:textAlignment="center"
                 android:textAllCaps="true"
-                android:textColor="#19270C"
+                android:textColor="#FF474E"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -52,7 +52,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/input_style"
                     android:hint="@string/charity_name"
                     android:inputType="textNoSuggestions"
                     android:maxLines="1"
@@ -74,7 +73,6 @@
                     android:layout_height="60dp"
                     android:layout_marginTop="10dp"
                     android:hint="@string/prompt_email"
-                    android:background="@drawable/input_style"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
                     android:paddingStart="5dp"
@@ -94,7 +92,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/input_style"
                     android:hint="@string/phone_number"
                     android:inputType="number"
                     android:maxLength="12"
@@ -115,7 +112,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/input_style"
+
                     android:hint="@string/registration_number"
                     android:inputType="text"
                     android:maxLines="1"
@@ -139,7 +136,7 @@
                     android:layout_height="60dp"
                     android:layout_marginTop="10dp"
                     android:hint="@string/prompt_password"
-                    android:background="@drawable/input_style"
+
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:paddingStart="5dp"
@@ -152,7 +149,7 @@
                 android:id="@+id/proof"
                 android:layout_width="match_parent"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/buttons"
+                android:background="@drawable/buttons2"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
                 android:text="@string/upload_validity_proof"/>
@@ -162,7 +159,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="20dp"
-                android:background="@drawable/buttons"
+                android:background="@drawable/buttons2"
                 android:text="@string/register"
                 android:textColor="@android:color/white"
                 android:textSize="16sp" />
@@ -175,7 +172,7 @@
                 android:layout_marginBottom="5dp"
                 android:gravity="center"
                 android:text="@string/want_to_login"
-                android:textColor="@color/black"
+                android:textColor="@color/gray"
                 android:textSize="12sp" />
 
         </LinearLayout>

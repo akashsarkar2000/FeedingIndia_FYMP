@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
-    android:background="#FFFFFF">
+    android:background="#FFE3E4"
+    android:layout_height="200dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/donor_comment_image"
@@ -65,8 +65,9 @@
         android:layout_height="24dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="3dp"
-        android:hint="Donor Name"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:text="Donor Name"
+        android:fontFamily="@font/krona_one"
+        android:textColor="#FF474E"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
