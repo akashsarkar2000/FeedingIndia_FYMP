@@ -18,10 +18,8 @@
 
     <TextView
         android:id="@+id/setting_charity_description"
-        android:layout_width="474dp"
+        android:layout_width="400dp"
         android:layout_height="58dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="616dp"
         android:background="#FFFFFF"
         android:fontFamily="@font/krona_one"
@@ -29,8 +27,8 @@
         android:text="@string/requirements"
         android:textAlignment="center"
         android:textAllCaps="true"
-        android:textColor="#FF474E"
-        android:textSize="22sp"
+        android:textColor="#52489C"
+        android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

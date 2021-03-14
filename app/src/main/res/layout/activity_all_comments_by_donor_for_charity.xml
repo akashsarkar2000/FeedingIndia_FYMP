@@ -38,19 +38,19 @@
             android:layout_height="62dp"
             android:layout_weight="8"
             android:hint="Type Your Comment Here"
-            android:textColorHint="#FF474E"
+            android:textColorHint="@color/black"
             android:paddingLeft="10dp"
             android:paddingTop="16dp"
             android:paddingRight="10dp"
             android:paddingBottom="12dp"
-            android:background="#FFC8CA"/>
+            android:background="#8882B6"/>
 
         <ImageButton
             android:id="@+id/chat_send_btn"
             android:layout_width="70dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#FF6F74"
+            android:background="#52489C"
             android:clickable="true"
             android:src="@drawable/send" />
     </LinearLayout>

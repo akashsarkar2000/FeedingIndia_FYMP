@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="110dp"
-    android:layout_marginTop="5dp"
-    android:background="#FFE3E4">
+    android:layout_marginTop="10dp"
+    android:background="#ECEAFF">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/charity_single_image"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"
@@ -24,15 +24,15 @@
         android:layout_width="240dp"
         android:layout_height="29dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="30dp"
         android:fontFamily="@font/krona_one"
         android:text="@string/charity_name"
-        android:textColor="#FF474E"
-        android:textSize="20sp"
+        android:textColor="#52489C"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/charity_single_image"
         app:layout_constraintTop_toTopOf="@+id/charity_single_image" />
 
     <TextView
@@ -40,30 +40,30 @@
         android:layout_width="240dp"
         android:layout_height="21dp"
         android:layout_below="@+id/charity_single_name"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="8dp"
         android:hint="@string/click_here_to_know_more"
         android:text="@string/click_here_to_know_more"
         android:textColor="@color/gray"
         android:textColorHint="#00796B"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/charity_single_name"
-        app:layout_constraintVertical_bias="0.574" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/charity_single_image"
+        app:layout_constraintTop_toBottomOf="@+id/charity_single_address" />
 
     <TextView
         android:id="@+id/charity_single_address"
         android:layout_width="240dp"
         android:layout_height="21dp"
         android:layout_below="@+id/charity_single_name"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="8dp"
         android:text="@string/charity_address"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/charity_single_image"
         app:layout_constraintTop_toBottomOf="@+id/charity_single_name"
-        app:layout_constraintVertical_bias="0.063"
         tools:ignore="UnknownIdInLayout" />
 
     <!--    <ImageView-->

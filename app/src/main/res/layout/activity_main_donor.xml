@@ -29,7 +29,7 @@
         android:gravity="center"
         android:padding="5dp"
         android:text="List Of All Charities"
-        android:textColor="#FF474E"
+        android:textColor="#52489C"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

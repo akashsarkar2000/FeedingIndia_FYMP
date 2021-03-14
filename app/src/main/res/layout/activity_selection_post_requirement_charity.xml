@@ -58,7 +58,7 @@
         android:text="select"
         android:textAlignment="center"
         android:textAllCaps="true"
-        android:textColor="#FF474E"
+        android:textColor="#52489C"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

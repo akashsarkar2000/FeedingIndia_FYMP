@@ -3,19 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#FFE3E4"
-    android:layout_height="200dp">
+    android:background="#ECEAFF"
+    android:layout_height="220dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/donor_comment_image"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.046"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.123"
         tools:ignore="MissingConstraints"
         tools:src="@drawable/default_image" />
 
@@ -24,55 +22,56 @@
         android:layout_width="240dp"
         android:layout_height="21dp"
         android:layout_below="@+id/user_single_name"
+        android:layout_marginStart="24dp"
         android:hint="Professsion"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.59"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_single_name"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/donor_comment_image"
+        app:layout_constraintTop_toBottomOf="@+id/user_single_name" />
 
     <TextView
         android:id="@+id/donor_comment_date"
         android:layout_width="240dp"
         android:layout_height="21dp"
         android:layout_below="@+id/user_single_name"
+        android:layout_marginStart="24dp"
         android:hint="Date"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/donor_comment_image"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.59"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_single_name"
-        app:layout_constraintVertical_bias="0.151" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/donor_comment_image"
+        app:layout_constraintTop_toBottomOf="@+id/donor_comment_profession_name"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/donor_comment"
         android:layout_width="380dp"
         android:layout_height="105dp"
         android:layout_below="@+id/user_single_name"
+        android:layout_marginTop="16dp"
         android:gravity="center"
+        android:padding="6dp"
         android:hint="Donor Comment"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_single_name"
-        app:layout_constraintVertical_bias="0.836" />
+        app:layout_constraintTop_toBottomOf="@+id/donor_comment_date" />
 
     <TextView
         android:id="@+id/user_single_name"
         android:layout_width="247dp"
         android:layout_height="24dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="3dp"
-        android:text="Donor Name"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/krona_one"
-        android:textColor="#FF474E"
+        android:text="Donor Name"
+        android:textColor="#52489C"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.615"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/donor_comment_image"
         app:layout_constraintTop_toTopOf="@+id/donor_comment_image" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

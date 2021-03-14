@@ -36,7 +36,7 @@
             android:gravity="center"
             android:fontFamily="@font/krona_one"
             android:text="Charity Name"
-            android:textColor="#FF474E"
+            android:textColor="#52489C"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -47,7 +47,7 @@
             android:layout_marginTop="420dp"
             android:fontFamily="@font/krona_one"
             android:text="DESCRIPTION"
-            android:textColor="#FF474E"
+            android:textColor="#52489C"
             android:textColorHint="#450808"
             android:textSize="20sp"
             android:textStyle="bold" />
