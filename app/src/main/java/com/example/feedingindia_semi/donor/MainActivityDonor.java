@@ -158,8 +158,6 @@ public class MainActivityDonor extends AppCompatActivity {
         }
 
 
-
-
     // FUNCTION FOR LOGOUT AND LOGIN
     private void sendToStart() {
         Intent startIntent = new Intent (MainActivityDonor.this, LoginActivityDonor.class);
@@ -197,9 +195,11 @@ public class MainActivityDonor extends AppCompatActivity {
 
         if (item.getItemId() == R.id.id_main_queries){
 
-            Intent emailIntent = new Intent(Intent.ACTION_SEND);
-            emailIntent.setType("text/plain");
-            startActivity(emailIntent);
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("*/*");
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"feedingindia2021@gmail.com"});
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback regarding Feeding India Application");
+            startActivity(intent);
 
         }
 

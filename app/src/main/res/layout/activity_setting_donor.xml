@@ -35,7 +35,7 @@
             app:layout_constraintHorizontal_bias="0.426"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.12" />
+            app:layout_constraintVertical_bias="0.134" />
 
         <TextView
             android:id="@+id/donor_display_name"
@@ -70,16 +70,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/donor_description_address2"
-            app:layout_constraintVertical_bias="0.193" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/donor_description_address2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="8dp"
-            android:textAlignment="center"
-            android:text="Address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:fontFamily="@font/krona_one"
+            android:text="Address"
+            android:textAlignment="center"
             android:textColor="#52489C"
             android:textColorHint="#FFFFFF"
             android:textSize="15sp"
@@ -112,7 +112,7 @@
             android:layout_marginStart="80dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/krona_one"
-            android:text="Email"
+            android:text="Email:"
             android:textColor="#52489C"
             android:textColorHint="#FFFFFF"
             android:textSize="15sp"
@@ -143,7 +143,7 @@
             android:layout_marginStart="39dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/krona_one"
-            android:text="Phone No"
+            android:text="Phone No.:"
             android:textColor="#52489C"
             android:textColorLink="#FFFFFF"
             android:textSize="15sp"
@@ -175,7 +175,7 @@
             android:layout_marginStart="29dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/krona_one"
-            android:text="Profession"
+            android:text="Profession:"
             android:textColor="#52489C"
             android:textColorLink="#FFFFFF"
             android:textSize="15sp"
@@ -186,8 +186,8 @@
 
         <TextView
             android:id="@+id/donor_profile_status"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
@@ -200,20 +200,19 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/donor_description_status2"
-            app:layout_constraintVertical_bias="0.121" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/donor_description_status2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:fontFamily="@font/krona_one"
             android:text="Status"
-            android:textColor="#52489C"
             android:textAlignment="center"
+            android:textColor="#52489C"
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.485"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/donor_profession_name" />
 
@@ -277,7 +276,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider10"
             app:layout_constraintVertical_bias="0.0" />

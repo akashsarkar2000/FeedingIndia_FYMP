@@ -140,7 +140,6 @@ public class SettingActivityCharity extends AppCompatActivity {
 
 
 
-
         mCommentsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

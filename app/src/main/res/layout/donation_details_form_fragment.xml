@@ -224,8 +224,8 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="341dp"
-            android:layout_height="wrap_content"
+            android:layout_width="407dp"
+            android:layout_height="40dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentEnd="true"
@@ -233,9 +233,9 @@
             android:fontFamily="@font/krona_one"
             android:gravity="center"
             android:text="@string/donation_details"
-            android:textSize="30sp"
-            android:textStyle="bold"
             android:textColor="#52489C"
+            android:textSize="29sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -252,8 +252,8 @@
             android:layout_alignParentRight="true"
             android:fontFamily="serif"
             android:gravity="center"
-            android:text='(if not then just righr "NA" on the feild)'
-            android:textColor="#52489C"
+            android:text='(if not then write "NA")'
+            android:textColor="#FF0000"
             android:textSize="10sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"

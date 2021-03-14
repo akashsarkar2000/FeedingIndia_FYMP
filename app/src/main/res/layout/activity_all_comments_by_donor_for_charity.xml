@@ -7,7 +7,7 @@
     tools:context=".charity.AllCommentsByDonorForCharity">
 
     <include
-        android:id="@+id/charity_comment_all_users_appBar"
+        android:id="@+id/charity_side_comment_all_users_appBar"
         layout="@layout/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,10 +18,8 @@
         android:id="@+id/id_all_charity_comment_list_charity_side"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/charity_comment_all_users_appBar"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="-2dp"
-        android:layout_marginBottom="62dp" />
+        android:layout_below="@id/charity_side_comment_all_users_appBar"
+        android:layout_alignParentBottom="true" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -30,30 +28,7 @@
         android:layout_alignParentBottom="true"
         android:background="@color/common_google_signin_btn_text_dark_default"
         android:orientation="horizontal"
-        android:weightSum="10">
-
-        <EditText
-            android:id="@+id/chat_send_text"
-            android:layout_width="308dp"
-            android:layout_height="62dp"
-            android:layout_weight="8"
-            android:hint="Type Your Comment Here"
-            android:textColorHint="@color/black"
-            android:paddingLeft="10dp"
-            android:paddingTop="16dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="12dp"
-            android:background="#8882B6"/>
-
-        <ImageButton
-            android:id="@+id/chat_send_btn"
-            android:layout_width="70dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#52489C"
-            android:clickable="true"
-            android:src="@drawable/send" />
-    </LinearLayout>
+        android:weightSum="10"/>
 
 
 </RelativeLayout>

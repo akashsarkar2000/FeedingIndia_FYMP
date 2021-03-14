@@ -38,7 +38,7 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
     private Toolbar mToolbar;
     private RecyclerView mUsersList;
     private ImageView mCharityImages;
-    private TextView mCharityAddress, mCharityPhone,mCharityName,mCharityDescription;
+    private TextView mCharityAddress, mCharityPhone,mCharityName,mCharityDescription, mCharityEmail;
     private Button mPostButton, mContactButton, mDonateButton, mMessageButton, mCommentPageButton;
     private DatabaseReference mUsersDatabase;
     private DatabaseReference mFriendReqDatabase;
@@ -74,8 +74,9 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
         mCharityImages = findViewById(R.id.charity_description_images);
         mCharityName = findViewById(R.id.charity_description_name);
         mCharityAddress = findViewById(R.id.charity_description_address);
-        mCharityDescription = findViewById(R.id.charity_description_description);
-        mCharityPhone = findViewById(R.id.charity_description_phone);
+        mCharityDescription = findViewById(R.id.charity_description_description2);
+        mCharityPhone = findViewById(R.id.charity_description_phone4);
+        mCharityEmail = findViewById(R.id.charity_description_email);
 
         mCommentPageButton = findViewById(R.id.donor_comment_charity_review_button);
         mPostButton = findViewById(R.id.charity_description_post_button);
@@ -161,11 +162,13 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
                     String phone = Objects.requireNonNull(dataSnapshot.child("phone").getValue()).toString();
                     String image = Objects.requireNonNull(dataSnapshot.child("image").getValue()).toString();
                     String description = Objects.requireNonNull(dataSnapshot.child("description").getValue()).toString();
+                    String email = Objects.requireNonNull(dataSnapshot.child("email").getValue()).toString();
                     setCharityKey(dataSnapshot.getKey());
                     mCharityName.setText(charity_name);
                     mCharityAddress.setText(charity_address);
                     mCharityPhone.setText(phone);
                     mCharityDescription.setText(description);
+                    mCharityEmail.setText(email);
 
                     Picasso.get().load(image).placeholder(R.drawable.default_image).into(mCharityImages);
                     mProgressDialog.dismiss();

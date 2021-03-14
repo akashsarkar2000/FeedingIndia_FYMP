@@ -1,21 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="70dp"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="5dp"
-    app:cardElevation="8dp"
-    android:id="@+id/card"
-    android:layout_margin="5dp"
-    app:cardBackgroundColor="@color/white"
-    app:cardCornerRadius="10dp">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:id="@+id/name"
-        android:layout_margin="5dp"
-        android:textColor="@color/black"
-        android:text=""/>
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/charity_chat_donor_card"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:background="#F8EAEA">
 
-</androidx.cardview.widget.CardView>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/charity_chat_donor_images"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:src="@drawable/default_image" />
+
+    <TextView
+        android:id="@+id/charity_chat_donor_name"
+        android:layout_width="247dp"
+        android:layout_height="28dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="12dp"
+        android:hint="Display Name"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/charity_chat_donor_images" />
+
+    <TextView
+        android:id="@+id/charity_chat_donor_profession"
+        android:layout_width="240dp"
+        android:layout_height="21dp"
+        android:layout_below="@+id/charity_chat_donor_name"
+        android:hint="Profession"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/charity_chat_donor_name"
+        app:layout_constraintTop_toBottomOf="@+id/charity_chat_donor_name"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

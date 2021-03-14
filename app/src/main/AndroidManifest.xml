@@ -15,9 +15,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".charity.ChatListActivity" />
-        <activity android:name=".charity.ChatActivity"/>
-        <activity android:name=".charity.AllCommentsByDonorForCharity"/>
+        <activity android:name=".charity.ChatListActivity" android:parentActivityName=".charity.MainActivityCharity"/>
+        <activity android:name=".charity.ChatActivity"  android:parentActivityName=".charity.MainActivityCharity"/>
+        <activity android:name=".charity.AllCommentsByDonorForCharity"
+            android:parentActivityName=".charity.MainActivityCharity" />
+
         <activity
             android:name=".donor.CommentActivityDonor"
             android:parentActivityName=".donor.CharityDescriptionActivityDonor" />

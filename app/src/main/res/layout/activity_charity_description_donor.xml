@@ -21,28 +21,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <ImageView
         android:id="@+id/charity_description_images"
-        android:layout_width="400dp"
-        android:layout_height="250dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
         android:foregroundGravity="center"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/charity_description_appbar"
         app:srcCompat="@drawable/default_image"
         tools:ignore="MissingConstraints" />
 
-
     <TextView
         android:id="@+id/charity_description_name"
-        android:layout_width="406dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/krona_one"
         android:gravity="center"
@@ -51,36 +51,52 @@
         android:textColor="#52489C"
         android:textSize="30sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.544"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/charity_description_images" />
+        app:layout_constraintTop_toBottomOf="@+id/charity_description_images"
+        app:layout_constraintVertical_bias="0.013" />
 
     <TextView
         android:id="@+id/charity_description_phone2"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/krona_one"
         android:gravity="center"
-        android:text="@string/ph_no"
-        android:textColor="@color/black"
+        android:text="Email:"
+        android:textColor="#52489C"
         android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/charity_description_phone"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toStartOf="@+id/charity_description_email"
+        app:layout_constraintHorizontal_bias="0.337"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
     <TextView
-        android:id="@+id/charity_description_phone"
-        android:layout_width="149dp"
+        android:id="@+id/charity_description_phone3"
+        android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginEnd="72dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/krona_one"
         android:gravity="center"
-        android:hint="@string/no_charity_phone_number"
-        android:text="@string/phone_number"
+        android:text="@string/ph_no"
+        android:textColor="#52489C"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/charity_description_email"
+        app:layout_constraintHorizontal_bias="0.341"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/charity_description_email" />
+
+    <TextView
+        android:id="@+id/charity_description_email"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="48dp"
+        android:gravity="center"
+        android:hint="Not Available"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -90,11 +106,26 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
+        android:id="@+id/charity_description_phone4"
+        android:layout_width="149dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="80dp"
+        android:gravity="center"
+        android:hint="Not Available"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/charity_description_phone3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/charity_description_phone3"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <TextView
         android:id="@+id/charity_description_address"
-        android:layout_width="300dp"
-        android:layout_height="37dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="25dp"
         android:fontFamily="@font/krona_one"
         android:gravity="center"
@@ -104,17 +135,54 @@
         android:textSize="13sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/charity_description_phone" />
+        app:layout_constraintTop_toBottomOf="@+id/charity_description_address2" />
+
+    <TextView
+        android:id="@+id/charity_description_address2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:fontFamily="@font/krona_one"
+        android:gravity="center"
+        android:inputType="textMultiLine"
+        android:text="@string/address"
+        android:textColor="#52489C"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/charity_description_phone4" />
 
     <TextView
         android:id="@+id/charity_description_description"
-        android:layout_width="300dp"
-        android:layout_height="330dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"
+        android:fontFamily="@font/krona_one"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:hint="@string/no_charity_description"
+        android:text="@string/charity_description"
+        android:textAlignment="inherit"
+        android:textAllCaps="false"
+        android:textColor="#52489C"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/charity_description_address" />
+
+    <TextView
+        android:id="@+id/charity_description_description2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/krona_one"
         android:foregroundGravity="center"
         android:gravity="center"
         android:hint="@string/no_charity_description"
@@ -123,10 +191,11 @@
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="14sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/charity_description_address" />
+        app:layout_constraintTop_toBottomOf="@+id/charity_description_description" />
 
     <Button
         android:id="@+id/charity_description_donate_button"
@@ -194,21 +263,47 @@
 
     <View
         android:id="@+id/divider2"
-        android:layout_width="409dp"
+        android:layout_width="wrap_content"
         android:layout_height="1dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="2dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/charity_description_name" />
+
+    <View
+        android:id="@+id/divider9"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="2dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/charity_description_description2" />
+
+    <View
+        android:id="@+id/divider11"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="7dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@+id/charity_description_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/charity_description_address" />
 
     <Button
         android:id="@+id/donor_comment_charity_review_button"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:layout_marginTop="4dp"
         android:background="@drawable/buttons2"
         android:fontFamily="sans-serif-smallcaps"
         android:text="See charity reveiws here"
@@ -219,9 +314,9 @@
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/charity_description_description" />
+        app:layout_constraintTop_toBottomOf="@+id/divider9" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

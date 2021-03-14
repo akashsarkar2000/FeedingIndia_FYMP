@@ -10,31 +10,38 @@
     app:cardBackgroundColor="@color/white"
     android:layout_height="wrap_content">
 
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:orientation="vertical">
-       <TextView
-           android:id="@+id/message"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:paddingTop="10dp"
-           android:layout_gravity="right"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F7E3FF"
+        android:orientation="vertical">
 
-           android:layout_marginRight="20dp"
-           android:text="this is a charity"
-           android:textColor="@color/black"
-           android:textSize="20sp"/>
-       <TextView
-           android:id="@+id/datetime"
-           android:layout_gravity="right"
-           android:layout_marginTop="5dp"
-           android:layout_marginRight="20dp"
-           android:layout_marginBottom="10dp"
-           android:text="date"
-           android:textSize="16sp"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content" />
-   </LinearLayout>
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginLeft="20dp"
+
+            android:layout_marginRight="20dp"
+            android:paddingTop="10dp"
+            android:text="this is a charity"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/datetime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="#F7E3FF"
+            android:text="date"
+            android:textColor="#00796B"
+            android:textSize="10sp" />
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>
