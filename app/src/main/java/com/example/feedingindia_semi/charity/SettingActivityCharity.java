@@ -47,13 +47,17 @@ public class SettingActivityCharity extends AppCompatActivity {
 
     private StorageReference mImageStorage;
     private ProgressDialog mProgressDialog;
-
+    String key;
     private static final int GALLERY_PICK = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting_charity);
+
+
+        Intent intent = getIntent();
+        key = intent.getStringExtra("user_id");
 
         mDisplayImage = findViewById(R.id.charity_images);
         mRegistrationImage = findViewById(R.id.charity_proof);
@@ -144,6 +148,7 @@ public class SettingActivityCharity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent status_intent = new Intent(SettingActivityCharity.this, AllCommentsByDonorForCharity.class);
+                status_intent.putExtra("user_id",key);
                 startActivity(status_intent);
             }
         });

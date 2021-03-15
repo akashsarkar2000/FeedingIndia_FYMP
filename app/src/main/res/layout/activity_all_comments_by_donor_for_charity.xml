@@ -6,20 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".charity.AllCommentsByDonorForCharity">
 
+
     <include
         android:id="@+id/charity_side_comment_all_users_appBar"
         layout="@layout/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true" />
-
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/id_all_charity_comment_list_charity_side"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/charity_side_comment_all_users_appBar"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp" />
 
     <LinearLayout
         android:id="@+id/linearLayout"

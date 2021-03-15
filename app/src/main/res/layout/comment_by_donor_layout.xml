@@ -44,20 +44,6 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/donor_comment"
-        android:layout_width="380dp"
-        android:layout_height="105dp"
-        android:layout_below="@+id/user_single_name"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:padding="6dp"
-        android:hint="Donor Comment"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/donor_comment_date" />
-
-    <TextView
         android:id="@+id/user_single_name"
         android:layout_width="247dp"
         android:layout_height="24dp"
