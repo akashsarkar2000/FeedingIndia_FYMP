@@ -92,6 +92,8 @@
 
     <TextView
         android:id="@+id/charity_description_email"
+        android:autoLink="email"
+        android:textColorLink="#62AC66"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_marginEnd="48dp"
@@ -251,7 +253,7 @@
         android:layout_marginEnd="8dp"
         android:background="@drawable/buttons2"
         android:padding="20dp"
-        android:text="@string/contact_charity"
+        android:text="Contact Now"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -301,20 +303,20 @@
 
     <Button
         android:id="@+id/donor_comment_charity_review_button"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
         android:layout_margin="20dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/buttons2"
-        android:fontFamily="sans-serif-smallcaps"
-        android:text="See charity reveiws here"
+        android:fontFamily="sans-serif-medium"
+        android:text="See charity reviews here"
         android:textColor="@color/white"
         android:textColorHighlight="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:textColorLink="#FFFFFF"
-        android:textSize="12sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider9" />
 

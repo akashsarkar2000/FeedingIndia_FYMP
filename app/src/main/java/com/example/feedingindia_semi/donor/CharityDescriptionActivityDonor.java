@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -106,8 +107,13 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // redirect to LoginActivity
-                Intent intent = new Intent(getApplicationContext(), MainActivityDonor.class);
-                startActivity(intent);
+//                Intent intent = new Intent(getApplicationContext(), MainActivityDonor.class);
+//                startActivity(intent);
+
+                String phone = mCharityPhone.getText().toString();
+                Intent phoneIntent = new Intent(Intent.ACTION_DIAL, Uri.fromParts(
+                        "tel", phone, null));
+                startActivity(phoneIntent);
             }
         });
 
@@ -187,6 +193,9 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
         });
 
     }
+
+
+
 
     public void setCharityKey(String charityKey) {
         this.charityKey = charityKey;
