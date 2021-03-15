@@ -135,6 +135,7 @@ public class RegisterActivityDonor extends AppCompatActivity {
     }
 
 
+
     public void SetValidation() {
         // Check for a valid name.
         if (donorName.getText().toString().isEmpty()) {
