@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+
     android:padding="16dp"
     android:scrollbarThumbVertical="@null"
     tools:context=".charity.RegisterActivityCharity">
@@ -21,21 +21,23 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="557dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="5dp"
+            android:padding="30dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView7"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="sans-serif"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/krona_one"
                 android:text="Signup For Charity"
                 android:textAlignment="center"
                 android:textAllCaps="true"
-                android:textColor="#19270C"
+                android:textColor="#52489C"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -48,7 +50,7 @@
                 <EditText
                     android:id="@+id/name"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:layout_marginTop="10dp"
                     android:hint="@string/charity_name"
                     android:inputType="textNoSuggestions"
@@ -68,7 +70,7 @@
                 <EditText
                     android:id="@+id/email"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:layout_marginTop="10dp"
                     android:hint="@string/prompt_email"
                     android:inputType="textEmailAddress"
@@ -88,7 +90,7 @@
                 <EditText
                     android:id="@+id/phone"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:layout_marginTop="10dp"
                     android:hint="@string/phone_number"
                     android:inputType="number"
@@ -108,8 +110,9 @@
                 <EditText
                     android:id="@+id/registration"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:layout_marginTop="10dp"
+
                     android:hint="@string/registration_number"
                     android:inputType="text"
                     android:maxLines="1"
@@ -130,9 +133,10 @@
                 <EditText
                     android:id="@+id/password"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:layout_marginTop="10dp"
                     android:hint="@string/prompt_password"
+
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:paddingStart="5dp"
@@ -144,8 +148,10 @@
             <Button
                 android:id="@+id/proof"
                 android:layout_width="match_parent"
-                android:layout_margin="5dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/buttons2"
                 android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
                 android:text="@string/upload_validity_proof"/>
 
             <Button
@@ -153,7 +159,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="20dp"
-                android:background="#1C297E"
+                android:background="@drawable/buttons2"
                 android:text="@string/register"
                 android:textColor="@android:color/white"
                 android:textSize="16sp" />
@@ -166,7 +172,7 @@
                 android:layout_marginBottom="5dp"
                 android:gravity="center"
                 android:text="@string/want_to_login"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/gray"
                 android:textSize="12sp" />
 
         </LinearLayout>

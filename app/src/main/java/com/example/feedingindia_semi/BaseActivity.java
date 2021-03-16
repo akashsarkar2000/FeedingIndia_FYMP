@@ -12,7 +12,6 @@ import com.example.feedingindia_semi.charity.LoginActivityCharity;
 import com.example.feedingindia_semi.charity.MainActivityCharity;
 import com.example.feedingindia_semi.donor.LoginActivityDonor;
 import com.example.feedingindia_semi.donor.MainActivityDonor;
-import com.example.feedingindia_semi.donor.MainSelectionActivityDonor;
 
 public class BaseActivity extends AppCompatActivity {
 
@@ -57,7 +56,7 @@ public class BaseActivity extends AppCompatActivity {
         if(charity){
             startActivity(new Intent(BaseActivity.this, MainActivityCharity.class));
         }else if(donor){
-            startActivity(new Intent(BaseActivity.this, MainSelectionActivityDonor.class));
+            startActivity(new Intent(BaseActivity.this, MainActivityDonor.class));
         }
     }
 }

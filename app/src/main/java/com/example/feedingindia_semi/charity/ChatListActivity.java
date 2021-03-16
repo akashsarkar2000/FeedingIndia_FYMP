@@ -2,6 +2,7 @@ package com.example.feedingindia_semi.charity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,6 +27,7 @@ public class ChatListActivity extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
     private List<ChatListModel> chatListModelList;
+    private Toolbar mToolbar;
 
 
 
@@ -33,6 +35,11 @@ public class ChatListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_list);
+
+        mToolbar = findViewById(R.id.charity_chat_section_appbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("Chat Section");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         init();
     }
@@ -55,6 +62,8 @@ public class ChatListActivity extends AppCompatActivity {
                 for(DataSnapshot dp : snapshot.getChildren()){
                     ChatListModel chatListModel = dp.getValue(ChatListModel.class);
                     chatListModel.setName(dp.getKey());
+                    chatListModel.setProfession(dp.getKey());
+                    chatListModel.setThumb_image(dp.getKey());
                     chatListModelList.add(chatListModel);
                 }
                 recyclerView.setAdapter(new ChatListAdapter(ChatListActivity.this,chatListModelList));

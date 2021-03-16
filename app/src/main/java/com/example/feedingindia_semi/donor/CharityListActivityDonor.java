@@ -91,7 +91,7 @@ public class CharityListActivityDonor extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
-                        Intent profileIntent = new Intent(CharityListActivityDonor.this, MainSelectionActivityDonor.class);
+                        Intent profileIntent = new Intent(CharityListActivityDonor.this, MainActivityDonor.class);
                         profileIntent.putExtra("user_id",user_id);
                         startActivity(profileIntent);
                     }

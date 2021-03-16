@@ -22,7 +22,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:backgroundTint="#689F38"
+        android:background="@drawable/buttons2"
         android:text="@string/save_changes"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
@@ -30,16 +30,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.427" />
+        app:layout_constraintVertical_bias="0.798" />
 
     <EditText
         android:id="@+id/edit_charity_description"
-        android:layout_width="381dp"
-        android:layout_height="137dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
         android:autofillHints=""
+        android:background="@drawable/input_style"
         android:ems="10"
+        android:gravity="center"
         android:hint="@string/add_requirements"
         android:inputType="textMultiLine"
         android:padding="10dp"
@@ -48,7 +50,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/post_requirements_page_toolbar"
-        app:layout_constraintVertical_bias="0.156"
+        app:layout_constraintVertical_bias="0.173"
         tools:ignore="TextFields" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

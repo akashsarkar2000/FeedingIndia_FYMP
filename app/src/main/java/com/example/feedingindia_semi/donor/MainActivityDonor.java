@@ -11,6 +11,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -20,8 +22,10 @@ import com.example.feedingindia_semi.UsersCharity;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ServerValue;
 import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -44,8 +48,7 @@ public class MainActivityDonor extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mToolbar = findViewById(R.id.main_page_toolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("All Charity");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Feeding India : Donor");
 
         mUsersDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child("Charity");
 
@@ -70,6 +73,15 @@ public class MainActivityDonor extends AppCompatActivity {
 
             super.onStart();
             // Check if user is signed in (non-null) and update UI accordingly.
+            FirebaseUser currentUser = mAuth.getCurrentUser();
+
+            if (currentUser == null){
+                sendToStart();
+            }
+            else {
+                mUserRef.child("online").setValue("true");
+            }
+            // Check if user is signed in (non-null) and update UI accordingly.
 
             FirebaseRecyclerOptions<UsersCharity> options=
                     new FirebaseRecyclerOptions.Builder<UsersCharity>()
@@ -89,7 +101,6 @@ public class MainActivityDonor extends AppCompatActivity {
 
                 @Override
                 protected void onBindViewHolder(@NonNull UsersViewHolder usersViewHolder, int position, @NonNull UsersCharity users_charity) {
-
 
                     usersViewHolder.setName(users_charity.getName());
                     usersViewHolder.setUserStatus(users_charity.getStatus());
@@ -114,7 +125,6 @@ public class MainActivityDonor extends AppCompatActivity {
             };
             mUsersList.setAdapter(firebaseRecyclerAdapter);
         }
-
 
         public static class UsersViewHolder extends RecyclerView.ViewHolder{
 
@@ -148,6 +158,60 @@ public class MainActivityDonor extends AppCompatActivity {
         }
 
 
-}
+    // FUNCTION FOR LOGOUT AND LOGIN
+    private void sendToStart() {
+        Intent startIntent = new Intent (MainActivityDonor.this, LoginActivityDonor.class);
+        startActivity(startIntent);
+        finish();
+    }
 
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null){
+            mUserRef.child("online").setValue(ServerValue.TIMESTAMP);
+        }
+    }
+
+    // DISPLAY OF MAIN MENU //
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+
+    // SIGN OUT //
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        super.onOptionsItemSelected(item);
+        if(item.getItemId() == R.id.id_main_logout){
+            FirebaseAuth.getInstance().signOut();
+            sendToStart();  // If Logout Successful then redirect to First page
+        }
+
+        if (item.getItemId() == R.id.id_main_queries){
+
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("*/*");
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"feedingindia2021@gmail.com"});
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback regarding Feeding India Application");
+            startActivity(intent);
+
+        }
+
+        if (item.getItemId() == R.id.id_main_settings){
+
+            Intent allUserIntent = new Intent (MainActivityDonor.this, SettingActivityDonor.class);
+            startActivity(allUserIntent);
+
+        }
+        return true;
+
+    }
+
+}
 

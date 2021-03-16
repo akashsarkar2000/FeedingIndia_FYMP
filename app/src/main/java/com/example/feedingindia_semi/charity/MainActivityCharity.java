@@ -118,7 +118,7 @@ public class MainActivityCharity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
-        getMenuInflater().inflate(R.menu.main_menu, menu);
+        getMenuInflater().inflate(R.menu.main_menu1, menu);
         return true;
     }
 
@@ -131,6 +131,18 @@ public class MainActivityCharity extends AppCompatActivity {
             FirebaseAuth.getInstance().signOut();
             sendToStart();  // If Logout Successful then redirect to First page
         }
+
+        if (item.getItemId() == R.id.id_main_contact_us_charity){
+
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("*/*");
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"feedingindia2021@gmail.com"});
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback regarding Feeding India Application");
+            startActivity(intent);
+
+        }
+
+
         return true;
     }
 

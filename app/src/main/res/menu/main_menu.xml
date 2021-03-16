@@ -3,6 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/id_main_settings"
+        android:title="Settings" />
+    <item
+        android:id="@+id/id_main_queries"
+        android:title="Contact Us" />
+    <item
         android:id="@+id/id_main_logout"
         android:title="@string/logout" />
 </menu>

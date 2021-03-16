@@ -5,10 +5,12 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.feedingindia_semi.R;
@@ -22,8 +24,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ChatListHolder>{
 
@@ -40,19 +45,23 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ChatLi
     @NonNull
     @Override
     public ChatListHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ChatListHolder(LayoutInflater.from(context).inflate(R.layout.chat_list_card,parent,false));
+        return new ChatListHolder(LayoutInflater.from(context).inflate(R.layout.chat_list_card, parent, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull ChatListHolder holder, final int position) {
             ChatListModel chatListModel = chatListModelList.get(position);
 
-            getUserInfo(chatListModel.getName(),holder.name);
+        getUserInfoName(chatListModel.getName(),holder.name);
+        getUserInfoProfession(chatListModel.getProfession(),holder.profession);
+        getUserInfoImages(chatListModel.getThumb_image(),holder.image);
             holder.cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(context, ChatActivity.class);
                     intent.putExtra("key",chatListModelList.get(position).getName());
+                    intent.putExtra("key",chatListModelList.get(position).getProfession());
+                    intent.putExtra("key",chatListModelList.get(position).getThumb_image());
                     context.startActivity(intent);
                 }
             });
@@ -63,24 +72,56 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ChatLi
         return chatListModelList.size();
     }
 
-    class ChatListHolder extends RecyclerView.ViewHolder{
-        TextView name;
-        CardView cardView;
+    static class ChatListHolder extends RecyclerView.ViewHolder{
+        TextView name, profession;
+        ConstraintLayout cardView;
+        CircleImageView image;
         public ChatListHolder(@NonNull View itemView) {
             super(itemView);
-            name = itemView.findViewById(R.id.name);
-            cardView = itemView.findViewById(R.id.card);
+            name = itemView.findViewById(R.id.charity_chat_donor_name);
+            profession = itemView.findViewById(R.id.charity_chat_donor_profession);
+            image = itemView.findViewById(R.id.charity_chat_donor_images);
+            cardView = itemView.findViewById(R.id.charity_chat_donor_card);
         }
     }
 
     //dekh bhai ye function use karra mi donor ka data lane ke liye, ab maine bas name laya, tu chahe toh photo waghere bhi la skta usko cool dikhane ke liye
     // tu bas firebase ke child ki chronology samaz baki apne aap tu figure out kar lega
-    private void getUserInfo(String key, final TextView textView){
+    private void getUserInfoName(String key, final TextView textView){
         databaseReference.child(key).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 DonorModel donorModel = snapshot.getValue(DonorModel.class);
                 textView.setText(donorModel.getDonor_name());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+    private void getUserInfoProfession(String key, final TextView textView){
+        databaseReference.child(key).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                DonorModel donorModel = snapshot.getValue(DonorModel.class);
+                textView.setText(donorModel.getProfession());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void getUserInfoImages(String key, final CircleImageView imageView){
+        databaseReference.child(key).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                DonorModel donorModel = snapshot.getValue(DonorModel.class);
+                Picasso.get().load(donorModel.getThumb_image()).placeholder(R.drawable.default_image).into(imageView);
             }
 
             @Override

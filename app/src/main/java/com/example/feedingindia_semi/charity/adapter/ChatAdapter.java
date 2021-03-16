@@ -1,6 +1,7 @@
 package com.example.feedingindia_semi.charity.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.feedingindia_semi.R;
 import com.example.feedingindia_semi.charity.datamodels.ChatData;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.collection.LLRBNode;
 
 import java.util.List;
 
@@ -49,6 +51,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatHolder>{
             holder.message.setGravity(Gravity.END);
             holder.datetime.setGravity(Gravity.END);
         }else{
+            Log.i("false","different");
             holder.message.setGravity(Gravity.START);
             holder.datetime.setGravity(Gravity.START);
         }

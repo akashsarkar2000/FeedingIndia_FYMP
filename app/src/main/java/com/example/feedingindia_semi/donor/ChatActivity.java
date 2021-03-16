@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -48,6 +49,7 @@ public class ChatActivity extends AppCompatActivity {
     private EditText editText;
     private ImageButton send;
     private RecyclerView recyclerView;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +57,12 @@ public class ChatActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chat2);
 
         init();
+
+        mToolbar = findViewById(R.id.donor_chat_all_users_appBar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("Personal Messages");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
     private void init(){

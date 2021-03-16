@@ -139,7 +139,7 @@ public class RegisterActivityCharity extends AppCompatActivity {
                     userMap.put("status","Hi there, I'm using Feeding India Application");
                     userMap.put("description","Hi, This is our charity description");
                     userMap.put("requirements","Currently no requirements are available from charity, check after uploading details");
-                    userMap.put("post_description","Write post/requirements description");
+                    userMap.put("post_description","No Description");
                     userMap.put("post_image","default");
                     userMap.put("image","default");
                     userMap.put("thumb_image","default");
