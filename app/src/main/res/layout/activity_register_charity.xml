@@ -148,11 +148,11 @@
             <Button
                 android:id="@+id/proof"
                 android:layout_width="match_parent"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/buttons2"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/white"
-                android:text="@string/upload_validity_proof"/>
+                android:layout_marginTop="20dp"
+                android:background="@android:color/holo_green_dark"
+                android:text="@string/upload_validity_proof"
+                android:textColor="@android:color/white" />
 
             <Button
                 android:id="@+id/register_charity_button"

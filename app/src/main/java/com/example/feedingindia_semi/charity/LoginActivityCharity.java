@@ -88,11 +88,10 @@ public class LoginActivityCharity extends AppCompatActivity {
                 String email = mEmail.getText().toString();
                 String password = mPassword.getText().toString();
                 SetValidation();
-                if (!TextUtils.isEmpty(email) || !TextUtils.isEmpty(password)) {
-//                    if(!isEmailExist()){
-//                        Toast.makeText(LoginActivityCharity.this, "You are not registered as Charity", Toast.LENGTH_SHORT).show();
-//                        return;
-//                    }
+                if (email == null || email.isEmpty() || password == null || password.isEmpty()) {
+                    Toast.makeText(LoginActivityCharity.this, "Email & Password are mandatory for login", Toast.LENGTH_SHORT).show();
+                }
+                else{
                     mLoginProgress.setTitle("Login In");
                     mLoginProgress.setMessage("Please wait while we check your credentials !");
                     mLoginProgress.setCanceledOnTouchOutside(false);

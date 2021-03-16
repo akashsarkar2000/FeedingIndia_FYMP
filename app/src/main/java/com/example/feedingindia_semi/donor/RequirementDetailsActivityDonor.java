@@ -3,6 +3,7 @@ package com.example.feedingindia_semi.donor;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -73,9 +74,11 @@ public class RequirementDetailsActivityDonor extends AppCompatActivity {
                 // redirect to LoginActivity
 //                Intent intent = new Intent(getApplicationContext(), PostActivityCharity.class);
 //                startActivity(intent);
+                Intent mainIntent = new Intent(RequirementDetailsActivityDonor.this, DonationDetailsToCharityDonor.class);
                 Toast.makeText(RequirementDetailsActivityDonor.this,"Fill this form, The data will send to this charity",Toast.LENGTH_LONG).show();
-                DonationDetailsFragment  myDialogFragment = new DonationDetailsFragment();
-                myDialogFragment.show(getSupportFragmentManager(), "My Fragment");
+                mainIntent.putExtra("key",key);
+                startActivity(mainIntent);
+
             }
         });
         try {

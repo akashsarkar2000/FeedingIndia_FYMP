@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".donor.DonationDetailsToCharityDonor">
+
+
+
+        <include
+            android:id="@+id/donor_side_donation_details_page"
+            layout="@layout/app_bar_layout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="1200dp"
+            android:gravity="center"
+            android:minHeight="750dp"
+            android:padding="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:context=".MainActivity"
+            tools:ignore="MissingConstraints">
+
+
+            <EditText
+                android:id="@+id/donation_donor_side_food_name"
+                android:layout_width="331dp"
+                android:layout_height="51dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:autofillHints=""
+                android:fontFamily="@font/krona_one"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:hint="Food Name"
+                android:inputType="text"
+                android:maxLength="10"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/donation_donor_side_food_quantity"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="RtlSymmetry" />
+
+            <EditText
+                android:id="@+id/donation_donor_side_food_exp_date"
+                android:layout_width="331dp"
+                android:layout_height="51dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:autofillHints=""
+                android:fontFamily="@font/krona_one"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:hint="Expiry Date : DD-MM-YYYY"
+                android:inputType="date"
+                android:maxLength="10"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/donation_donor_side_food_name"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="RtlSymmetry" />
+
+            <EditText
+                android:id="@+id/donation_donor_side_food_donation_date"
+                android:layout_width="331dp"
+                android:layout_height="51dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="2dp"
+                android:autofillHints=""
+                android:fontFamily="@font/krona_one"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:hint="Donation Date : DD-MM-YYYY"
+                android:inputType="date"
+                android:maxLength="10"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/donation_donor_side_food_name"
+                app:layout_constraintVertical_bias="0.102"
+                tools:ignore="RtlSymmetry" />
+
+            <EditText
+                android:id="@+id/donation_donor_side_requirment_items"
+                android:layout_width="331dp"
+                android:layout_height="173dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="48dp"
+                android:autofillHints=""
+                android:fontFamily="@font/krona_one"
+                android:gravity="center"
+                android:hint="Mention Items Here \n(Required)"
+                android:inputType="textMultiLine|textImeMultiLine"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.448"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/donation_donor_side_money_amount"
+                app:layout_constraintVertical_bias="0.604"
+                tools:ignore="RtlSymmetry" />
+
+            <EditText
+                android:id="@+id/donation_donor_side_requirement_donation_date"
+                android:layout_width="331dp"
+                android:layout_height="51dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:autofillHints=""
+                android:fontFamily="@font/krona_one"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:hint="Donation Date : DD-MM-YYYY"
+                android:inputType="date"
+                android:maxLength="10"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.45"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5"
+                app:layout_constraintVertical_bias="0.016"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:fontFamily="@font/krona_one"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:text="Requirement Donation"
+                android:textColor="#52489C"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:typeface="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.598" />
+
+            <EditText
+                android:id="@+id/donation_donor_side_money_purpose"
+                android:layout_width="332dp"
+                android:layout_height="189dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="48dp"
+                android:autofillHints=""
+                android:fontFamily="@font/krona_one"
+                android:gravity="center"
+                android:hint="For What Purpose ? \n(Optional)"
+                android:inputType="textMultiLine|textImeMultiLine"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/donation_donor_side_money_amount"
+                app:layout_constraintVertical_bias="0.008"
+                tools:ignore="RtlSymmetry,TextFields" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="341dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:fontFamily="@font/krona_one"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:text="Money Donation"
+                android:textColor="#52489C"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:typeface="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.31" />
+
+            <EditText
+                android:id="@+id/donation_donor_side_money_amount"
+                android:layout_width="331dp"
+                android:layout_height="51dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="320dp"
+                android:autofillHints=""
+                android:fontFamily="@font/krona_one"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:hint="Amount (Optional)"
+                android:inputType="number|text"
+                android:maxLength="10"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.487"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="RtlSymmetry" />
+
+            <EditText
+                android:id="@+id/donation_donor_side_food_quantity"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:autofillHints=""
+                android:fontFamily="@font/krona_one"
+                android:gravity="center"
+                android:hint="Quantity"
+                android:inputType="number|text"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textColor="@color/accent"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/donation_donor_side_food_exp_date"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/donation_donor_side_food_name"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="341dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:fontFamily="@font/krona_one"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:text="Food Donation"
+                android:textColor="#52489C"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:typeface="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.074" />
+
+            <View
+                android:id="@+id/divider13"
+                android:layout_width="500dp"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintBottom_toTopOf="@+id/textView5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.523"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/donation_donor_side_money_purpose"
+                app:layout_constraintVertical_bias="0.461" />
+
+            <View
+                android:id="@+id/divider15"
+                android:layout_width="450dp"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintBottom_toTopOf="@+id/donation_donor_side_submit_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.523"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/donation_donor_side_requirment_items"
+                app:layout_constraintVertical_bias="0.431" />
+
+            <View
+                android:id="@+id/divider14"
+                android:layout_width="500dp"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintBottom_toTopOf="@+id/textView4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.523"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/donation_donor_side_food_donation_date"
+                app:layout_constraintVertical_bias="0.482" />
+
+            <Button
+                android:id="@+id/donation_donor_side_submit_button"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:background="#512DA8"
+                android:text="SUBMIT"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/donation_donor_side_requirment_items"
+                app:layout_constraintVertical_bias="0.294" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:text='(If not then write "NA" on that field)'
+                android:textColor="#FF0000"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/textView3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+
+

@@ -92,11 +92,10 @@ public class LoginActivityDonor extends AppCompatActivity {
                 String email = mEmail.getText().toString();
                 String password = mPassword.getText().toString();
                 SetValidation();
-                if (!TextUtils.isEmpty(email) || !TextUtils.isEmpty(password)) {
-//                    if(!isEmailExist()){
-//                        Toast.makeText(LoginActivityDonor.this, "You are not registered as Donor", Toast.LENGTH_SHORT).show();
-//                        return;
-//                    }
+                if (email == null || email.isEmpty() || password == null || password.isEmpty()) {
+                    Toast.makeText(LoginActivityDonor.this, "Email & Password are mandatory for login", Toast.LENGTH_SHORT).show();
+                }
+                else{
                     mLoginProgress.setTitle("Login In");
                     mLoginProgress.setMessage("Please wait while we check your credentials !");
                     mLoginProgress.setCanceledOnTouchOutside(false);
@@ -106,7 +105,6 @@ public class LoginActivityDonor extends AppCompatActivity {
                 }
             }
         });
-//        listeners();
     }
 
 

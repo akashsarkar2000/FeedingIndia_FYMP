@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.feedingindia_semi.R;
+import com.example.feedingindia_semi.donor.RegisterActivityDonor;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -85,15 +86,27 @@ public class RegisterActivityCharity extends AppCompatActivity {
                 String charityReg = charityRegistration.getText().toString();
                 String password = mPassword.getText().toString();
                 SetValidation();
-                if (!TextUtils.isEmpty(charity_name) || !TextUtils.isEmpty(email) || !TextUtils.isEmpty(phone) || !TextUtils.isEmpty(charityReg) || !TextUtils.isEmpty(password)){
+                if (email == null || email.isEmpty() || phone == null || phone.isEmpty() || charityReg == null
+                        || charityReg.isEmpty() || password == null
+                        || password.isEmpty() ){
+                    Toast.makeText(RegisterActivityCharity.this, "Please fill all detail first", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    proof.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            CropImage.activity()
+                                    .setGuidelines(CropImageView.Guidelines.ON)
+                                    .start(RegisterActivityCharity.this);
+                        }
+                    });
                     // PROGRESS BAR //
-                    mRegProgress.setTitle("Registering User");
-                    mRegProgress.setMessage("Please wait while we create your account !");
-                    mRegProgress.setCanceledOnTouchOutside(false);
-                    mRegProgress.show();
+                    mProgressDialog.setTitle("Registering User");
+                    mProgressDialog.setMessage("Please wait while we create your account !");
+                    mProgressDialog.setCanceledOnTouchOutside(false);
+                    mProgressDialog.show();
                     register_user(charity_name, email, phone, charityReg, password);
                 }
-
             }
         });
 
@@ -106,15 +119,11 @@ public class RegisterActivityCharity extends AppCompatActivity {
             }
         });
 
-        proof.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                CropImage.activity()
-                        .setGuidelines(CropImageView.Guidelines.ON)
-                        .start(RegisterActivityCharity.this);
-            }
-        });
+
     }
+
+
+
 
     private void register_user(final String charity_name, final String email, final String phone, final String charityReg, final String password) {
         if(getProof_url() == null || getProof_url().isEmpty()){

@@ -37,7 +37,7 @@
 
 
         <TextView
-            android:id="@+id/Share_Mobile"
+            android:id="@+id/donation_donor_side_food_name"
             android:layout_width="331dp"
             android:layout_height="51dp"
             android:layout_alignParentStart="true"
@@ -53,7 +53,7 @@
             android:paddingLeft="10dp"
             android:singleLine="true"
             android:textSize="15sp"
-            app:layout_constraintBottom_toTopOf="@+id/share_edit_email"
+            app:layout_constraintBottom_toTopOf="@+id/donation_donor_side_food_quantity"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3"
@@ -61,7 +61,7 @@
             tools:ignore="RtlSymmetry" />
 
         <TextView
-            android:id="@+id/share_Mobile2"
+            android:id="@+id/donation_donor_side_food_exp_date"
             android:layout_width="331dp"
             android:layout_height="51dp"
             android:layout_alignParentStart="true"
@@ -82,12 +82,12 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Share_Mobile"
+            app:layout_constraintTop_toBottomOf="@+id/donation_donor_side_food_name"
             app:layout_constraintVertical_bias="0.0"
             tools:ignore="RtlSymmetry" />
 
         <TextView
-            android:id="@+id/share_Mobile7"
+            android:id="@+id/donation_donor_side_food_donation_date"
             android:layout_width="331dp"
             android:layout_height="51dp"
             android:layout_alignParentStart="true"
@@ -110,12 +110,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.487"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Share_Mobile"
+            app:layout_constraintTop_toBottomOf="@+id/donation_donor_side_food_name"
             app:layout_constraintVertical_bias="0.133"
             tools:ignore="RtlSymmetry" />
 
         <TextView
-            android:id="@+id/share_edit_email2"
+            android:id="@+id/donation_donor_side_requirment_items"
             android:layout_width="327dp"
             android:layout_height="173dp"
             android:layout_alignParentStart="true"
@@ -137,11 +137,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.416"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/share_Mobile3"
+            app:layout_constraintTop_toTopOf="@+id/donation_donor_side_money_amount"
             app:layout_constraintVertical_bias="0.838" />
 
         <TextView
-            android:id="@+id/share_Mobile8"
+            android:id="@+id/donation_donor_side_requirement_donation_date"
             android:layout_width="331dp"
             android:layout_height="51dp"
             android:layout_alignParentStart="true"
@@ -190,7 +190,7 @@
             app:layout_constraintVertical_bias="0.678" />
 
         <TextView
-            android:id="@+id/Share_edit_email"
+            android:id="@+id/donation_donor_side_money_purpose"
             android:layout_width="332dp"
             android:layout_height="189dp"
             android:layout_alignParentStart="true"
@@ -212,7 +212,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.443"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/share_Mobile3"
+            app:layout_constraintTop_toTopOf="@+id/donation_donor_side_money_amount"
             app:layout_constraintVertical_bias="0.01" />
 
         <TextView
@@ -238,7 +238,7 @@
             app:layout_constraintVertical_bias="0.354" />
 
         <TextView
-            android:id="@+id/share_Mobile3"
+            android:id="@+id/donation_donor_side_money_amount"
             android:layout_width="331dp"
             android:layout_height="51dp"
             android:layout_alignParentStart="true"
@@ -266,7 +266,7 @@
             tools:ignore="RtlSymmetry" />
 
         <TextView
-            android:id="@+id/share_edit_email"
+            android:id="@+id/donation_donor_side_food_quantity"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_alignParentStart="true"
@@ -283,10 +283,10 @@
             android:singleLine="true"
             android:textColor="@color/accent"
             android:textSize="15sp"
-            app:layout_constraintBottom_toTopOf="@+id/share_Mobile2"
+            app:layout_constraintBottom_toTopOf="@+id/donation_donor_side_food_exp_date"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Share_Mobile" />
+            app:layout_constraintTop_toBottomOf="@+id/donation_donor_side_food_name" />
 
         <TextView
             android:id="@+id/textView3"

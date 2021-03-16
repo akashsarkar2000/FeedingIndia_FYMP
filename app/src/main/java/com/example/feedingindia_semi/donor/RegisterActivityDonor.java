@@ -71,7 +71,12 @@ public class RegisterActivityDonor extends AppCompatActivity {
                 String profession = mProfession.getText().toString();
                 String password = mPassword.getText().toString();
                 SetValidation();
-                if (!TextUtils.isEmpty(donor_name) || !TextUtils.isEmpty(profession) || !TextUtils.isEmpty(email) || !TextUtils.isEmpty(phone) || !TextUtils.isEmpty(password)){
+                if (donor_name == null || donor_name.isEmpty() || profession == null || profession.isEmpty() || email == null
+                        || email.isEmpty() || phone == null || phone.isEmpty() || password == null
+                        || password.isEmpty() ){
+                    Toast.makeText(RegisterActivityDonor.this, "Please fill all detail first", Toast.LENGTH_SHORT).show();
+                }
+                else{
                     // PROGRESS BAR //
                     mRegProgress.setTitle("Registering User");
                     mRegProgress.setMessage("Please wait while we create your account !");
@@ -147,6 +152,17 @@ public class RegisterActivityDonor extends AppCompatActivity {
             nameError.setErrorEnabled(false);
         }
 
+        // Check for a Profession name.
+        if (mProfession.getText().toString().isEmpty()) {
+            professionError.setError(getResources().getString(R.string.profession_error));
+            isProfessionValid = false;
+            return;
+        } else  {
+            isProfessionValid = true;
+            professionError.setErrorEnabled(false);
+        }
+
+
         // Check for a valid email address.
         if (mEmail.getText().toString().isEmpty()) {
             emailError.setError(getResources().getString(R.string.email_error));
@@ -169,16 +185,6 @@ public class RegisterActivityDonor extends AppCompatActivity {
         } else  {
             isPhoneValid = true;
             phoneError.setErrorEnabled(false);
-        }
-
-        // Check for a registration name.
-        if (mProfession.getText().toString().isEmpty()) {
-            professionError.setError(getResources().getString(R.string.profession_error));
-            isProfessionValid = false;
-            return;
-        } else  {
-            isProfessionValid = true;
-            professionError.setErrorEnabled(false);
         }
 
         // Check for a valid password.
