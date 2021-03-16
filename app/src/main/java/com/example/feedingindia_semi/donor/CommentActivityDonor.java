@@ -70,6 +70,7 @@ public class CommentActivityDonor extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child("Charity").child(charityKey);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
+
         listeners();
         getAllComments();
     }
