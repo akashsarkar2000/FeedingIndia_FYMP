@@ -116,7 +116,10 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
         mDonateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if(getCharityKey() == null){
+                    Toast.makeText(CharityDescriptionActivityDonor.this, "Please Wait", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 Toast.makeText(CharityDescriptionActivityDonor.this,"Fill this form, The data will send to this charity",Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(getApplicationContext(), DonationDetailsToCharityDonor.class);
                 intent.putExtra("key",charityKey);
@@ -137,7 +140,6 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // redirect to LoginActivity
-
                 if(getCharityKey() == null){
                     Toast.makeText(CharityDescriptionActivityDonor.this, "Please Wait", Toast.LENGTH_SHORT).show();
                     return;
@@ -153,7 +155,6 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
         mProgressDialog.setMessage("Please wait while we load the charity data.");
         mProgressDialog.setCanceledOnTouchOutside(false);
         mProgressDialog.show();
-
 
         mUsersDatabase.addValueEventListener(new ValueEventListener() {
             @Override
@@ -190,8 +191,6 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
         });
 
     }
-
-
 
 
     public void setCharityKey(String charityKey) {
