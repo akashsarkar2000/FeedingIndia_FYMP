@@ -61,12 +61,10 @@
             android:textColor="#52489C"
             android:textSize="25sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/settings_image_btn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.483"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/account_setting_appBar"
-            app:layout_constraintVertical_bias="0.006" />
+            app:layout_constraintTop_toBottomOf="@+id/account_setting_appBar" />
 
         <Button
             android:id="@+id/settings_charity_reviews"
@@ -96,12 +94,10 @@
             android:textColor="#FFFFFF"
 
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/settings_charity_reviews"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/settings_charity_reviews" />
 
         <Button
             android:id="@+id/setting_edit_info_button"
@@ -143,50 +139,41 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="32dp"
             android:fontFamily="@font/krona_one"
             android:text="Email:"
             android:textColor="#52489C"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/textView5"
-            app:layout_constraintTop_toBottomOf="@+id/textView5"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_charity_phone" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginTop="32dp"
             android:fontFamily="@font/krona_one"
             android:text="Address:"
             android:textColor="#52489C"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3"
-            app:layout_constraintVertical_bias="0.014" />
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="32dp"
             android:fontFamily="@font/krona_one"
             android:text="Description:"
             android:textColor="#52489C"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/setting_charity_address" />
 
         <TextView
             android:id="@+id/textView5"
@@ -223,23 +210,21 @@
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="20dp"
 
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/krona_one"
             android:gravity="center"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/textView5"
-            app:layout_constraintTop_toBottomOf="@+id/charity_proof"
-            app:layout_constraintVertical_bias="0.004" />
+            app:layout_constraintTop_toBottomOf="@+id/divider4" />
 
         <TextView
             android:id="@+id/setting_charity_email"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="14dp"
+            android:layout_marginStart="24dp"
             android:fontFamily="@font/krona_one"
             android:gravity="center"
             android:textColor="@color/black"
@@ -254,7 +239,7 @@
             android:id="@+id/setting_charity_address"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/krona_one"
             android:gravity="center"
             android:hint="Charity Address"
@@ -264,17 +249,16 @@
             android:paddingBottom="10dp"
             android:scrollbars="vertical"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/textView4"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         <TextView
             android:id="@+id/setting_charity_description"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/krona_one"
             android:gravity="center"
             android:hint="Charity Description"
@@ -284,12 +268,10 @@
 
             android:scrollbars="vertical"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         <View
             android:id="@+id/divider"

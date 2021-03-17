@@ -14,11 +14,9 @@
         tools:context=".donor.DonationDetailsToCharityDonor">
 
 
-
         <include
             android:id="@+id/donor_side_donation_details_page"
             layout="@layout/app_bar_layout"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -30,11 +28,29 @@
             android:gravity="center"
             android:minHeight="750dp"
             android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
             tools:context=".MainActivity"
             tools:ignore="MissingConstraints">
 
+
+            <Button
+                android:id="@+id/donation_donor_side_submit_button"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="#512DA8"
+                android:text="SUBMIT"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider15" />
 
             <EditText
                 android:id="@+id/donation_donor_side_food_name"
@@ -42,6 +58,7 @@
                 android:layout_height="51dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
+                android:layout_marginTop="8dp"
                 android:autofillHints=""
                 android:fontFamily="@font/krona_one"
                 android:foregroundGravity="center"
@@ -52,11 +69,9 @@
                 android:paddingStart="10dp"
                 android:singleLine="true"
                 android:textSize="15sp"
-                app:layout_constraintBottom_toTopOf="@+id/donation_donor_side_food_quantity"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView3"
-                app:layout_constraintVertical_bias="0.0"
                 tools:ignore="RtlSymmetry" />
 
             <EditText
@@ -65,6 +80,7 @@
                 android:layout_height="51dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
+                android:layout_marginTop="8dp"
                 android:autofillHints=""
                 android:fontFamily="@font/krona_one"
                 android:foregroundGravity="center"
@@ -75,11 +91,9 @@
                 android:paddingStart="10dp"
                 android:singleLine="true"
                 android:textSize="15sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/donation_donor_side_food_name"
-                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintTop_toBottomOf="@+id/donation_donor_side_food_quantity"
                 tools:ignore="RtlSymmetry" />
 
             <EditText
@@ -88,7 +102,7 @@
                 android:layout_height="51dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="8dp"
                 android:autofillHints=""
                 android:fontFamily="@font/krona_one"
                 android:foregroundGravity="center"
@@ -99,11 +113,10 @@
                 android:paddingStart="10dp"
                 android:singleLine="true"
                 android:textSize="15sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.562"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/donation_donor_side_food_name"
-                app:layout_constraintVertical_bias="0.102"
+                app:layout_constraintTop_toBottomOf="@+id/donation_donor_side_food_exp_date"
                 tools:ignore="RtlSymmetry" />
 
             <EditText
@@ -112,7 +125,7 @@
                 android:layout_height="173dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="8dp"
                 android:autofillHints=""
                 android:fontFamily="@font/krona_one"
                 android:gravity="center"
@@ -122,12 +135,10 @@
                 android:singleLine="true"
                 android:textColor="@color/black"
                 android:textSize="15sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.448"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/donation_donor_side_money_amount"
-                app:layout_constraintVertical_bias="0.604"
+                app:layout_constraintTop_toBottomOf="@+id/donation_donor_side_requirement_donation_date"
                 tools:ignore="RtlSymmetry" />
 
             <EditText
@@ -136,6 +147,7 @@
                 android:layout_height="51dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
+                android:layout_marginTop="8dp"
                 android:autofillHints=""
                 android:fontFamily="@font/krona_one"
                 android:foregroundGravity="center"
@@ -146,33 +158,10 @@
                 android:paddingStart="10dp"
                 android:singleLine="true"
                 android:textSize="15sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.45"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView5"
-                app:layout_constraintVertical_bias="0.016"
                 tools:ignore="RtlSymmetry" />
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:fontFamily="@font/krona_one"
-                android:foregroundGravity="center"
-                android:gravity="center"
-                android:text="Requirement Donation"
-                android:textColor="#52489C"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                android:typeface="normal"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.598" />
 
             <EditText
                 android:id="@+id/donation_donor_side_money_purpose"
@@ -180,7 +169,7 @@
                 android:layout_height="189dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="8dp"
                 android:autofillHints=""
                 android:fontFamily="@font/krona_one"
                 android:gravity="center"
@@ -190,33 +179,11 @@
                 android:singleLine="true"
                 android:textColor="@color/black"
                 android:textSize="15sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/donation_donor_side_money_amount"
-                app:layout_constraintVertical_bias="0.008"
+                app:layout_constraintTop_toBottomOf="@+id/donation_donor_side_money_amount"
                 tools:ignore="RtlSymmetry,TextFields" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="341dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:fontFamily="@font/krona_one"
-                android:foregroundGravity="center"
-                android:gravity="center"
-                android:text="Money Donation"
-                android:textColor="#52489C"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                android:typeface="normal"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.31" />
 
             <EditText
                 android:id="@+id/donation_donor_side_money_amount"
@@ -224,7 +191,7 @@
                 android:layout_height="51dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginBottom="320dp"
+                android:layout_marginTop="8dp"
                 android:autofillHints=""
                 android:fontFamily="@font/krona_one"
                 android:foregroundGravity="center"
@@ -235,12 +202,10 @@
                 android:paddingStart="10dp"
                 android:singleLine="true"
                 android:textSize="15sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.487"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView4"
-                app:layout_constraintVertical_bias="0.0"
                 tools:ignore="RtlSymmetry" />
 
             <EditText
@@ -249,6 +214,7 @@
                 android:layout_height="50dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
+                android:layout_marginTop="8dp"
                 android:autofillHints=""
                 android:fontFamily="@font/krona_one"
                 android:gravity="center"
@@ -258,11 +224,49 @@
                 android:singleLine="true"
                 android:textColor="@color/accent"
                 android:textSize="15sp"
-                app:layout_constraintBottom_toTopOf="@+id/donation_donor_side_food_exp_date"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/donation_donor_side_food_name"
                 tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/krona_one"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:text="Requirement Donation"
+                android:textColor="#52489C"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:typeface="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider13" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="341dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/krona_one"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:text="Money Donation"
+                android:textColor="#52489C"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:typeface="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider14" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -270,6 +274,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
+                android:layout_marginTop="8dp"
                 android:fontFamily="@font/krona_one"
                 android:foregroundGravity="center"
                 android:gravity="center"
@@ -278,77 +283,55 @@
                 android:textSize="30sp"
                 android:textStyle="bold"
                 android:typeface="normal"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.074" />
-
-            <View
-                android:id="@+id/divider13"
-                android:layout_width="500dp"
-                android:layout_height="1dp"
-                android:background="?android:attr/listDivider"
-                app:layout_constraintBottom_toTopOf="@+id/textView5"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.523"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/donation_donor_side_money_purpose"
-                app:layout_constraintVertical_bias="0.461" />
-
-            <View
-                android:id="@+id/divider15"
-                android:layout_width="450dp"
-                android:layout_height="1dp"
-                android:background="?android:attr/listDivider"
-                app:layout_constraintBottom_toTopOf="@+id/donation_donor_side_submit_button"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.523"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/donation_donor_side_requirment_items"
-                app:layout_constraintVertical_bias="0.431" />
-
-            <View
-                android:id="@+id/divider14"
-                android:layout_width="500dp"
-                android:layout_height="1dp"
-                android:background="?android:attr/listDivider"
-                app:layout_constraintBottom_toTopOf="@+id/textView4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.523"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/donation_donor_side_food_donation_date"
-                app:layout_constraintVertical_bias="0.482" />
-
-            <Button
-                android:id="@+id/donation_donor_side_submit_button"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:background="#512DA8"
-                android:text="SUBMIT"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/donation_donor_side_requirment_items"
-                app:layout_constraintVertical_bias="0.294" />
+                app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp"
+                android:layout_marginTop="55dp"
                 android:text='(If not then write "NA" on that field)'
                 android:textColor="#FF0000"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/textView3"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/divider13"
+                android:layout_width="500dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.523"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/donation_donor_side_money_purpose" />
+
+            <View
+                android:id="@+id/divider15"
+                android:layout_width="450dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.512"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/donation_donor_side_requirment_items" />
+
+            <View
+                android:id="@+id/divider14"
+                android:layout_width="500dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.516"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/donation_donor_side_food_donation_date" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
