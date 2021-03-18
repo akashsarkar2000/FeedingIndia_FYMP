@@ -127,12 +127,21 @@
                     android:autofillHints="" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:id="@+id/forget_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="135dp"
+                android:text="Forget password"
+                android:textColor="@color/gray"
+                android:textSize="15sp" />
             <Button
                 android:id="@+id/login_donor_button"
                 android:layout_width="200dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/buttons2"
                 android:text="@string/login"
                 android:textColor="@android:color/white"
@@ -142,20 +151,12 @@
                 android:id="@+id/login_to_register_charity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="18dp"
                 android:layout_marginLeft="14dp"
                 android:text="@string/create_new"
                 android:textColor="@color/gray"
                 android:textSize="15sp" />
-            <TextView
-                android:id="@+id/forget_password"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-20dp"
-                android:layout_marginLeft="245dp"
-                android:text="Forget password"
-                android:textColor="@color/gray"
-                android:textSize="15sp" />
+
 
 
         </LinearLayout>
