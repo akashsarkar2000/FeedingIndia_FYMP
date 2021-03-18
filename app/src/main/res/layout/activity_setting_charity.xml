@@ -55,6 +55,7 @@
             android:id="@+id/setting_charity_name"
             android:layout_width="380dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/krona_one"
             android:gravity="center|center_horizontal|center_vertical"
             android:text="CHARITY NAME"
