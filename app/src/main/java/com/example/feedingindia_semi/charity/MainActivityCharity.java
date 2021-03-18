@@ -9,9 +9,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.example.feedingindia_semi.R;
+import com.example.feedingindia_semi.donor.CharityDescriptionActivityDonor;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -53,7 +55,6 @@ public class MainActivityCharity extends AppCompatActivity {
         settingCharity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // redirect to RegisterActivity
                 Intent intent = new Intent(getApplicationContext(), SettingActivityCharity.class);
                 startActivity(intent);
             }
@@ -62,8 +63,7 @@ public class MainActivityCharity extends AppCompatActivity {
         donorList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // redirect to RegisterActivity
-                Intent intent = new Intent(getApplicationContext(), DonorListActivityCharity.class);
+                Intent intent = new Intent(getApplicationContext(), DonorDonationDetailListActivity.class);
                 startActivity(intent);
             }
         });
@@ -71,7 +71,6 @@ public class MainActivityCharity extends AppCompatActivity {
         requirement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // redirect to RegisterActivity
                 Intent intent = new Intent(getApplicationContext(), SelectionPostRequirementActivityCharity.class);
                 startActivity(intent);
             }
