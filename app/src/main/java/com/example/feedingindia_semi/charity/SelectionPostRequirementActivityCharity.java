@@ -25,15 +25,12 @@ public class SelectionPostRequirementActivityCharity extends AppCompatActivity {
         getSupportActionBar().setTitle("Post & Requirements");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
         requirementSelect = findViewById(R.id.selection_requirements_pic);
         postSelect = findViewById(R.id.selection_posts_pic);
-
 
         requirementSelect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // redirect to RegisterActivity
                 Intent intent = new Intent(getApplicationContext(), RequirementActivityCharity.class);
                 startActivity(intent);
             }
@@ -42,7 +39,6 @@ public class SelectionPostRequirementActivityCharity extends AppCompatActivity {
         postSelect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // redirect to RegisterActivity
                 Intent intent = new Intent(getApplicationContext(), PostActivityCharity.class);
                 startActivity(intent);
             }

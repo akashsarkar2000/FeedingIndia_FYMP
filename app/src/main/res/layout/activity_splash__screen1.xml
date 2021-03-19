@@ -22,21 +22,25 @@
         app:layout_constraintVertical_bias="0.333"
         app:srcCompat="@drawable/logo" />
 
+    zzz
+
     <TextView
         android:id="@+id/textView1"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="200dp"
         android:background="@drawable/background"
         android:elevation="10dp"
         android:fontFamily="sans-serif-condensed"
-        android:text="Connection between Donor And Charity"
+        android:text="Connection between \nDonor And Charity"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/white"
-        android:textSize="30sp"
+        android:textSize="27sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

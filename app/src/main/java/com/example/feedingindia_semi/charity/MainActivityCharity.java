@@ -9,11 +9,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.example.feedingindia_semi.BaseActivity;
 import com.example.feedingindia_semi.R;
-import com.example.feedingindia_semi.donor.CharityDescriptionActivityDonor;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -34,7 +33,7 @@ public class MainActivityCharity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         settingCharity = findViewById(R.id.setting_pic);
         donorList = findViewById(R.id.donor_details_pic);
-        requirement = findViewById(R.id.selection_posts_requirements_pic);
+        requirement = findViewById(R.id.donor_base_lottie);
         chatSection = findViewById(R.id.chat_section_pic);
 
         mAuth = FirebaseAuth.getInstance();

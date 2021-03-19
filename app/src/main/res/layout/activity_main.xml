@@ -17,7 +17,7 @@
 
 
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/selection_posts_requirements_pic"
+        android:id="@+id/donor_base_lottie"
         android:layout_width="171dp"
         android:layout_height="176dp"
         android:layout_marginStart="16dp"
@@ -54,7 +54,7 @@
         app:layout_constraintEnd_toStartOf="@+id/setting_pic"
         app:layout_constraintHorizontal_bias="0.301"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/post_requirements"
+        app:layout_constraintTop_toBottomOf="@+id/donor"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/chat_section_lottie" />
@@ -73,7 +73,7 @@
         app:lottie_rawRes="@raw/setting_lottie" />
 
     <TextView
-        android:id="@+id/post_requirements"
+        android:id="@+id/donor"
         android:layout_width="171dp"
         android:layout_height="54dp"
         android:layout_marginTop="8dp"
@@ -84,10 +84,10 @@
         android:textColor="#52489C"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/selection_posts_requirements_pic"
+        app:layout_constraintEnd_toEndOf="@+id/donor_base_lottie"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/selection_posts_requirements_pic"
-        app:layout_constraintTop_toBottomOf="@+id/selection_posts_requirements_pic" />
+        app:layout_constraintStart_toStartOf="@+id/donor_base_lottie"
+        app:layout_constraintTop_toBottomOf="@+id/donor_base_lottie" />
 
     <TextView
         android:id="@+id/donor_details"
@@ -96,7 +96,7 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/krona_one"
         android:gravity="center"
-        android:text="CONNECTED \nDONORS"
+        android:text="Donation \nRequests"
         android:textAllCaps="true"
         android:textColor="#52489C"
         android:textSize="15sp"

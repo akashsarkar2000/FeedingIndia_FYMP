@@ -3,7 +3,9 @@ package com.example.feedingindia_semi.donor;
 import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,12 +14,14 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Patterns;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.feedingindia_semi.BaseActivity;
 import com.example.feedingindia_semi.charity.LoginActivityCharity;
 import com.example.feedingindia_semi.R;
 import com.example.feedingindia_semi.charity.MainActivityCharity;
@@ -47,22 +51,30 @@ public class LoginActivityDonor extends AppCompatActivity {
     private FirebaseAuth mAuth;
     public boolean isEmailExist;
     private DatabaseReference databaseReference;
+    private Toolbar mToolbar;
 
+    @SuppressLint("CommitPrefEdits")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_donor);
 
+
+        mToolbar = findViewById(R.id.login_donor_page_toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("Login : Donor");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         mEmail = findViewById(R.id.email);
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child("Donor");
         mPassword = findViewById(R.id.password);
         registerDonor = findViewById(R.id.login_to_register_donor);
+        loginCharity = findViewById(R.id.donor_to_charity_login);
         emailError = findViewById(R.id.emailError);
         passError = findViewById(R.id.passError);
         mLoginProgress = new ProgressDialog(this);
         mAuth = FirebaseAuth.getInstance();
         login = findViewById(R.id.login_donor_button);
-        loginCharity = findViewById(R.id.to_login_charity);
         preferences = getSharedPreferences("login",MODE_PRIVATE);
         editor = preferences.edit();
 
@@ -74,7 +86,6 @@ public class LoginActivityDonor extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
         loginCharity.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,6 +116,20 @@ public class LoginActivityDonor extends AppCompatActivity {
                 }
             }
         });
+    }
+
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent intent = new Intent(LoginActivityDonor.this, BaseActivity.class);
+                startActivity(intent);
+                Toast.makeText(getApplicationContext(),"Back button clicked", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return true;
     }
 
 

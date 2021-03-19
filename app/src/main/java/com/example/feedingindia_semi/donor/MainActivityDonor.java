@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.feedingindia_semi.BaseActivity;
 import com.example.feedingindia_semi.R;
 import com.example.feedingindia_semi.UsersCharity;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;

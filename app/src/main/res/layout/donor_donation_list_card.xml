@@ -53,6 +53,22 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.015"
+        app:layout_constraintStart_toEndOf="@+id/charity_donation_donor_list_money_rs2"
+        app:layout_constraintTop_toBottomOf="@+id/charity_donation_donor_list_phone3"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/charity_donation_donor_list_money_rs2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/charity_donation_donor_list_name"
+        android:text="Rs."
+        android:textColor="#7B1FA2"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.173"
         app:layout_constraintStart_toStartOf="@+id/charity_donation_donor_list_phone3"
         app:layout_constraintTop_toBottomOf="@+id/charity_donation_donor_list_phone3"
@@ -69,7 +85,23 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.195"
+        app:layout_constraintHorizontal_bias="0.026"
+        app:layout_constraintStart_toEndOf="@+id/charity_donation_donor_list_req_date2"
+        app:layout_constraintTop_toBottomOf="@+id/charity_donation_donor_list_phone4"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/charity_donation_donor_list_req_date2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/charity_donation_donor_list_name"
+        android:text="Donation Date:"
+        android:textColor="#00796B"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.211"
         app:layout_constraintStart_toStartOf="@+id/charity_donation_donor_list_phone4"
         app:layout_constraintTop_toBottomOf="@+id/charity_donation_donor_list_phone4"
         app:layout_constraintVertical_bias="0.0" />
@@ -84,9 +116,9 @@
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/charity_donation_donor_list_req_date"
+        app:layout_constraintEnd_toEndOf="@+id/charity_donation_donor_list_req_date2"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/charity_donation_donor_list_req_date"
+        app:layout_constraintStart_toStartOf="@+id/charity_donation_donor_list_req_date2"
         app:layout_constraintTop_toBottomOf="@+id/charity_donation_donor_list_req_date"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -101,7 +133,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/charity_donation_donor_list_money_rs"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="@+id/charity_donation_donor_list_money_rs"
         app:layout_constraintTop_toBottomOf="@+id/charity_donation_donor_list_money_rs"
         app:layout_constraintVertical_bias="0.0" />
@@ -117,10 +149,26 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toEndOf="@+id/charity_donation_donor_list_food_quantity2"
+        app:layout_constraintTop_toBottomOf="@+id/charity_donation_donor_list_food_name"
+        app:layout_constraintVertical_bias="0.002" />
+
+    <TextView
+        android:id="@+id/charity_donation_donor_list_food_quantity2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/charity_donation_donor_list_name"
+        android:text="Quantity:"
+        android:textColor="#303F9F"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/charity_donation_donor_list_food_name"
         app:layout_constraintTop_toBottomOf="@+id/charity_donation_donor_list_food_name"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.002" />
 
     <TextView
         android:id="@+id/charity_donation_donor_list_food_exp_date"
@@ -133,8 +181,24 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toEndOf="@+id/charity_donation_donor_list_food_exp_date2"
+        app:layout_constraintTop_toBottomOf="@+id/charity_donation_donor_list_food_quantity"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/charity_donation_donor_list_food_exp_date2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/charity_donation_donor_list_name"
+        android:text="Exp. Date:"
+        android:textColor="#303F9F"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/charity_donation_donor_list_food_quantity"
+        app:layout_constraintStart_toStartOf="@+id/charity_donation_donor_list_food_quantity2"
         app:layout_constraintTop_toBottomOf="@+id/charity_donation_donor_list_food_quantity"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -149,8 +213,24 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/charity_donation_donor_list_phone2"
+        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintStart_toEndOf="@+id/charity_donation_donor_list_food_don_date2"
+        app:layout_constraintTop_toBottomOf="@+id/charity_donation_donor_list_food_exp_date"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/charity_donation_donor_list_food_don_date2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/charity_donation_donor_list_name"
+        android:text="Donation Date:"
+        android:textColor="#303F9F"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/charity_donation_donor_list_phone2"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/charity_donation_donor_list_food_exp_date"
+        app:layout_constraintStart_toStartOf="@+id/charity_donation_donor_list_food_exp_date2"
         app:layout_constraintTop_toBottomOf="@+id/charity_donation_donor_list_food_exp_date"
         app:layout_constraintVertical_bias="0.0" />
 

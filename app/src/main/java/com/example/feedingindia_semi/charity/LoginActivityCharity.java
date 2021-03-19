@@ -2,6 +2,7 @@ package com.example.feedingindia_semi.charity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -45,22 +46,28 @@ public class LoginActivityCharity extends AppCompatActivity {
     private SharedPreferences.Editor editor;
     private FirebaseAuth mAuth;
     public boolean isEmailExist;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_charity);
 
+        mToolbar = findViewById(R.id.login_charity_page_toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("Login : Charity");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         mEmail = findViewById(R.id.email);
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child("Charity");
         mPassword = findViewById(R.id.password);
         registerCharity = findViewById(R.id.login_to_register_charity);
+        loginDonor = findViewById(R.id.charity_to_donor_login);
         emailError = findViewById(R.id.emailError);
         passError = findViewById(R.id.passError);
         mLoginProgress = new ProgressDialog(this);
         mAuth = FirebaseAuth.getInstance();
         login = findViewById(R.id.login_charity_button);
-        loginDonor = findViewById(R.id.to_login_donor);
         preferences = getSharedPreferences("login",MODE_PRIVATE);
         editor = preferences.edit();
         registerCharity.setOnClickListener(new View.OnClickListener() {
