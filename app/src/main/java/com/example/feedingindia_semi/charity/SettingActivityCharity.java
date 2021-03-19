@@ -120,7 +120,7 @@ public class SettingActivityCharity extends AppCompatActivity {
                                 }
 
                             });
-                    Picasso.get().load(image).networkPolicy(NetworkPolicy.OFFLINE).placeholder(R.drawable.default_image)
+                    Picasso.get().load(proof_url).networkPolicy(NetworkPolicy.OFFLINE).placeholder(R.drawable.default_image)
                             .into(mRegistrationImage, new Callback() {
                                 @Override
                                 public void onSuccess() {
