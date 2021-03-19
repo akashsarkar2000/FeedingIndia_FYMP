@@ -44,7 +44,8 @@ public class DonationDetailsToCharityDonor extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private View view;
     private RecyclerView recyclerView;
-    private EditText mFoodName, mFoodQuantity, mFoodExpDate, mDonationDate, mMoneyDonation, mMoneyPurpose, mRequirementsDate, mRequirementsItems;
+    private EditText mFoodName, mFoodQuantity, mFoodExpDate, mDonationDate;
+    private EditText mDonorName, mDonorPhone, mMoneyDonation, mMoneyPurpose, mRequirementsDate, mRequirementsItems;
 
 
     @Override
@@ -75,6 +76,8 @@ public class DonationDetailsToCharityDonor extends AppCompatActivity {
         mMoneyPurpose = findViewById(R.id.donation_donor_side_money_purpose);
         mRequirementsDate = findViewById(R.id.donation_donor_side_requirement_donation_date);
         mRequirementsItems = findViewById(R.id.donation_donor_side_requirment_items);
+        mDonorName = findViewById(R.id.donation_donor_side_donor_name);
+        mDonorPhone = findViewById(R.id.donation_donor_side_donor_phone);
 
         listeners();
 //        getAllComments();
@@ -106,10 +109,13 @@ public class DonationDetailsToCharityDonor extends AppCompatActivity {
         String money_purpose = mMoneyPurpose.getText().toString();
         String requirement_date = mRequirementsDate.getText().toString();
         String requirements_items = mRequirementsItems.getText().toString();
+        String donor_name = mDonorName.getText().toString();
+        String donor_phone = mDonorPhone.getText().toString();
         if (food_name == null || food_name.isEmpty() || food_quantity_kg == null || food_quantity_kg.isEmpty() || food_expiry_date == null
                 || food_expiry_date.isEmpty() || food_donation_date == null || food_donation_date.isEmpty() || money_amount == null
                 || money_amount.isEmpty() || money_purpose == null || money_purpose.isEmpty() || requirement_date == null
-                || requirement_date.isEmpty() || requirements_items == null || requirements_items.isEmpty() ){
+                || requirement_date.isEmpty() || requirements_items == null || requirements_items.isEmpty()
+                || donor_name == null || donor_name.isEmpty() || donor_phone == null || donor_phone.isEmpty()){
             Toast.makeText(this, "Please fill all detail first", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -124,7 +130,8 @@ public class DonationDetailsToCharityDonor extends AppCompatActivity {
         donationDetailsData.setMoneyPurpose(money_purpose);
         donationDetailsData.setRequirementsDate(requirement_date);
         donationDetailsData.setRequirementsItems(requirements_items);
-//        commentData.setEmail(firebaseAuth.getCurrentUser().getEmail());
+        donationDetailsData.setDonorName(donor_name);
+        donationDetailsData.setDonorPhone(donor_phone);
         databaseReference.child("Donor_Donation_Details").child(firebaseAuth.getCurrentUser().getUid()+System.currentTimeMillis()).setValue(donationDetailsData).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

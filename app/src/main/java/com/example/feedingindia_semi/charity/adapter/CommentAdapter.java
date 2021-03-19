@@ -41,7 +41,6 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ChatView
         }catch (Exception e){
             e.printStackTrace();
         }
-
     }
 
     @Override
@@ -58,5 +57,6 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ChatView
             date = itemView.findViewById(R.id.date);
         }
     }
+
 
 }
