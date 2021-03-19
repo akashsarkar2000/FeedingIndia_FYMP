@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FI Charity Demo</string>
+    <string name="app_name">Feeding India</string>
     <string name="post_requirements">Post and Requirements</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>

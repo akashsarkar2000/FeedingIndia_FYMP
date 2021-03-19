@@ -3,7 +3,8 @@ package com.example.feedingindia_semi.charity.datamodels;
 public class DonorModel {
     String donor_name;
     String profession;
-    String thumb_image;
+    String image;
+    String email;
 
     public DonorModel (){}
 
@@ -22,12 +23,18 @@ public class DonorModel {
         return profession;
     }
 
-    public void setThumb_image(String thumb_image) {
-        this.thumb_image = thumb_image;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    public String getEmail() {
+        return email;
     }
 
-    public String getThumb_image() {
-        return thumb_image;
+    public void setImage(String image) {
+        this.image = image;
+    }
+    public String getImage() {
+        return image;
     }
 
 }

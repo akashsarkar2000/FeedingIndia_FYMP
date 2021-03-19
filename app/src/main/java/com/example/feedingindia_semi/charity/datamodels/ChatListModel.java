@@ -2,7 +2,6 @@ package com.example.feedingindia_semi.charity.datamodels;
 
 public class ChatListModel {
     String name;
-    String image;
     String thumb_image;
     String profession;
     ChatListModel(){}
@@ -13,14 +12,6 @@ public class ChatListModel {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-    public String getImage() {
-        return image;
     }
 
     public void setThumb_image(String thumb_image) {

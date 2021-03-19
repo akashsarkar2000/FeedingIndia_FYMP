@@ -42,6 +42,7 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ChatLi
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child("Donor");
     }
 
+
     @NonNull
     @Override
     public ChatListHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -85,14 +86,12 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ChatLi
         }
     }
 
-    //dekh bhai ye function use karra mi donor ka data lane ke liye, ab maine bas name laya, tu chahe toh photo waghere bhi la skta usko cool dikhane ke liye
-    // tu bas firebase ke child ki chronology samaz baki apne aap tu figure out kar lega
     private void getUserInfoName(String key, final TextView textView){
         databaseReference.child(key).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 DonorModel donorModel = snapshot.getValue(DonorModel.class);
-                textView.setText(donorModel.getDonor_name());
+                 textView.setText(donorModel.getDonor_name());
             }
 
             @Override
@@ -101,6 +100,7 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ChatLi
             }
         });
     }
+
     private void getUserInfoProfession(String key, final TextView textView){
         databaseReference.child(key).addValueEventListener(new ValueEventListener() {
             @Override
@@ -121,7 +121,7 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ChatLi
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 DonorModel donorModel = snapshot.getValue(DonorModel.class);
-                Picasso.get().load(donorModel.getThumb_image()).placeholder(R.drawable.default_image).into(imageView);
+                Picasso.get().load(donorModel.getImage()).placeholder(R.drawable.default_image).into(imageView);
             }
 
             @Override
