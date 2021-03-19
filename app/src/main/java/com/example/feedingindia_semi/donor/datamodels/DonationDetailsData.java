@@ -1,6 +1,8 @@
 package com.example.feedingindia_semi.donor.datamodels;
 
 public class DonationDetailsData {
+        String donor_donation_name;
+        String donor_donation_phone;
         String food_name;
         String food_quantity_kg;
         String food_expiry_date;
@@ -13,6 +15,12 @@ public class DonationDetailsData {
         String uid;
 
     public DonationDetailsData(){}
+
+        public String getDonorName() { return donor_donation_name; }
+        public void setDonorName(String donor_donation_name) { this.donor_donation_name = donor_donation_name; }
+
+        public String getDonorPhone() { return donor_donation_phone; }
+        public void setDonorPhone(String donor_donation_phone) { this.donor_donation_phone = donor_donation_phone; }
 
         public String getFoodName() { return food_name; }
         public void setFoodName(String food_name) { this.food_name = food_name; }
