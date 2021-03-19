@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/charity_donation_donor_list_card"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    android:background="#EDFFEA">
+
+    <TextView
+        android:id="@+id/charity_donation_donor_list_email"
+        android:layout_width="240dp"
+        android:layout_height="21dp"
+        android:layout_below="@+id/charity_donation_donor_list_name"
+        android:text="Email"
+        android:textColor="#303F9F"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/charity_donation_donor_list_name"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/charity_donation_donor_list_food_name"
+        android:layout_width="240dp"
+        android:layout_height="21dp"
+        android:layout_below="@+id/charity_donation_donor_list_name"
+        android:text="Food Name"
+        android:textColor="#303F9F"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintStart_toStartOf="@+id/charity_donation_donor_list_phone2"
+        app:layout_constraintTop_toBottomOf="@+id/charity_donation_donor_list_phone2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/charity_donation_donor_list_food_name2"
+        android:layout_width="240dp"
+        android:layout_height="21dp"
+        android:layout_below="@+id/charity_donation_donor_list_name"
+        android:text="Quantity"
+        android:textColor="#303F9F"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/charity_donation_donor_list_food_name"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/charity_donation_donor_list_food_name"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/charity_donation_donor_list_food_name3"
+        android:layout_width="240dp"
+        android:layout_height="21dp"
+        android:layout_below="@+id/charity_donation_donor_list_name"
+        android:text="Expiry Date"
+        android:textColor="#303F9F"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/charity_donation_donor_list_food_name2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/charity_donation_donor_list_food_name2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/charity_donation_donor_list_food_name4"
+        android:layout_width="240dp"
+        android:layout_height="21dp"
+        android:layout_below="@+id/charity_donation_donor_list_name"
+        android:text="Donation Date"
+        android:textColor="#303F9F"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/charity_donation_donor_list_food_name3"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/charity_donation_donor_list_food_name3"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/charity_donation_donor_list_phone"
+        android:layout_width="240dp"
+        android:layout_height="21dp"
+        android:layout_below="@+id/charity_donation_donor_list_name"
+        android:text="Phone"
+        android:textColor="#E47EA7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/charity_donation_donor_list_email"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/charity_donation_donor_list_email"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/charity_donation_donor_list_phone2"
+        android:layout_width="240dp"
+        android:layout_height="21dp"
+        android:layout_below="@+id/charity_donation_donor_list_name"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/krona_one"
+        android:text="FOOD DONATION"
+        android:textColor="#00796B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/charity_donation_donor_list_phone"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/charity_donation_donor_list_email"
+        app:layout_constraintVertical_bias="0.032" />
+
+    <TextView
+        android:id="@+id/charity_donation_donor_list_name"
+        android:layout_width="240dp"
+        android:layout_height="29dp"
+        android:layout_alignParentTop="true"
+        android:fontFamily="@font/krona_one"
+        android:text="@string/donor_name"
+        android:textColor="#8F2200"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.005" />
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/user_single_online_icon"-->
+    <!--        android:layout_width="23dp"-->
+    <!--        android:layout_height="12dp"-->
+    <!--        android:layout_alignParentTop="true"-->
+    <!--        android:layout_alignParentEnd="true"-->
+    <!--        android:layout_marginEnd="4dp"-->
+    <!--        android:visibility="invisible"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:srcCompat="@drawable/greendot" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
