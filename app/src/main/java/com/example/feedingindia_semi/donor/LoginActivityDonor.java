@@ -22,6 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.feedingindia_semi.BaseActivity;
+import com.example.feedingindia_semi.charity.ForgotPasswordCharity;
 import com.example.feedingindia_semi.charity.LoginActivityCharity;
 import com.example.feedingindia_semi.R;
 import com.example.feedingindia_semi.charity.MainActivityCharity;
@@ -42,7 +43,7 @@ public class LoginActivityDonor extends AppCompatActivity {
 
     private EditText mEmail, mPassword;
     Button login;
-    TextView registerDonor, loginCharity;
+    TextView registerDonor, loginCharity, forgotPasswordDonor;
     boolean isEmailValid, isPasswordValid;
     TextInputLayout emailError, passError;
     private ProgressDialog mLoginProgress;
@@ -75,6 +76,7 @@ public class LoginActivityDonor extends AppCompatActivity {
         mLoginProgress = new ProgressDialog(this);
         mAuth = FirebaseAuth.getInstance();
         login = findViewById(R.id.login_donor_button);
+        forgotPasswordDonor = findViewById(R.id.donor_forget_password_page);
         preferences = getSharedPreferences("login",MODE_PRIVATE);
         editor = preferences.edit();
 
@@ -95,6 +97,16 @@ public class LoginActivityDonor extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        forgotPasswordDonor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // redirect to RegisterActivity
+                Intent intent = new Intent(getApplicationContext(), ForgotPasswordDonor.class);
+                startActivity(intent);
+            }
+        });
+
 
 
         login.setOnClickListener(new View.OnClickListener() {

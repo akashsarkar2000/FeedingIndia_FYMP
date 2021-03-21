@@ -37,7 +37,7 @@ public class LoginActivityCharity extends AppCompatActivity {
 
     private EditText mEmail, mPassword;
     Button login;
-    TextView registerCharity, loginDonor;
+    TextView registerCharity, loginDonor, forgotPasswordCharity;
     boolean isEmailValid, isPasswordValid;
     TextInputLayout emailError, passError;
     private DatabaseReference databaseReference;
@@ -68,6 +68,7 @@ public class LoginActivityCharity extends AppCompatActivity {
         mLoginProgress = new ProgressDialog(this);
         mAuth = FirebaseAuth.getInstance();
         login = findViewById(R.id.login_charity_button);
+        forgotPasswordCharity = findViewById(R.id.charity_forget_password_page);
         preferences = getSharedPreferences("login",MODE_PRIVATE);
         editor = preferences.edit();
         registerCharity.setOnClickListener(new View.OnClickListener() {
@@ -75,6 +76,15 @@ public class LoginActivityCharity extends AppCompatActivity {
             public void onClick(View v) {
                 // redirect to RegisterActivity
                 Intent intent = new Intent(getApplicationContext(), RegisterActivityCharity.class);
+                startActivity(intent);
+            }
+        });
+
+        forgotPasswordCharity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // redirect to RegisterActivity
+                Intent intent = new Intent(getApplicationContext(), ForgotPasswordCharity.class);
                 startActivity(intent);
             }
         });

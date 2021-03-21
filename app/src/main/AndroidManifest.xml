@@ -3,14 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.feedingindia_semi">
 
-
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
 
     <application
         android:allowBackup="true"
@@ -19,8 +17,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".BaseActivity"/>
+        <activity android:name=".donor.ForgotPasswordDonor" android:parentActivityName=".donor.LoginActivityDonor"/>
+        <activity android:name=".charity.ForgotPasswordCharity" android:parentActivityName=".charity.LoginActivityCharity"/>
+        <activity android:name=".BaseActivity" />
         <activity
             android:name=".donor.DonationDetailsToCharityDonor"
             android:parentActivityName="donor.CharityDescriptionActivityDonor" />
@@ -42,6 +41,7 @@
         <activity android:name=".Splash_Screen1">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -62,7 +62,9 @@
             android:parentActivityName=".donor.MainActivityDonor" />
         <activity android:name=".donor.MainActivityDonor" />
         <activity android:name=".donor.RegisterActivityDonor" />
-        <activity android:name=".donor.LoginActivityDonor" android:parentActivityName=".BaseActivity"/>
+        <activity
+            android:name=".donor.LoginActivityDonor"
+            android:parentActivityName=".BaseActivity" />
         <activity
             android:name=".ChatActivity"
             android:parentActivityName=".charity.MainActivityCharity" />
@@ -95,7 +97,9 @@
             android:parentActivityName=".charity.SettingActivityCharity"
             tools:targetApi="jelly_bean" />
         <activity android:name=".charity.RegisterActivityCharity" />
-        <activity android:name=".charity.LoginActivityCharity" android:parentActivityName=".BaseActivity"/>
+        <activity
+            android:name=".charity.LoginActivityCharity"
+            android:parentActivityName=".BaseActivity" />
         <activity android:name=".charity.MainActivityCharity" />
         <activity
             android:name=".donor.PostDetailsActivityDonor"
@@ -103,11 +107,10 @@
         <activity
             android:name=".donor.ChatActivity"
             android:parentActivityName=".donor.CharityListActivityDonor" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
-
-
 
 </manifest>

@@ -99,12 +99,12 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
-                android:id="@+id/forget_password"
+                android:id="@+id/charity_forget_password_page"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="12dp"
-                android:text="Forgot password"
+                android:text="Forgot Password ?"
                 android:textColor="#447046"
                 android:textSize="15sp" />
 
