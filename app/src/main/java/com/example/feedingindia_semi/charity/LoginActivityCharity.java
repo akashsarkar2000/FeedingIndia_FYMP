@@ -26,11 +26,14 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.Objects;
 
 
 public class LoginActivityCharity extends AppCompatActivity {
@@ -162,15 +165,21 @@ public class LoginActivityCharity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     mLoginProgress.dismiss();
-                    Intent mainIntent = new Intent(LoginActivityCharity.this, MainActivityCharity.class);
-                    Toast.makeText(LoginActivityCharity.this, "Login Successful, Welcome to Charity Section", Toast.LENGTH_LONG).show();
-                    mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);  // this line is to stick to main page after login
-                    editor.putBoolean("charity",true);
-                    editor.apply();
-                    editor.putBoolean("donor",false);
-                    editor.apply();
-                    startActivity(mainIntent);
-                    finish();
+                    if (Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).isEmailVerified()){
+                        Intent mainIntent = new Intent(LoginActivityCharity.this, MainActivityCharity.class);
+                        Toast.makeText(LoginActivityCharity.this, "Login Successful, Welcome to Charity Section", Toast.LENGTH_LONG).show();
+                        mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);  // this line is to stick to main page after login
+                        editor.putBoolean("charity",true);
+                        editor.apply();
+                        editor.putBoolean("donor",false);
+                        editor.apply();
+                        startActivity(mainIntent);
+                        finish();
+                    }
+                    else {
+                        Toast.makeText(LoginActivityCharity.this, "Verify your email first, link has been sent to your mail", Toast.LENGTH_LONG).show();
+                    }
+
                 } else {
                     mLoginProgress.hide();
                     Toast.makeText(LoginActivityCharity.this, "Cannot Sign in. Please check the details and try again", Toast.LENGTH_LONG).show();
