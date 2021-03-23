@@ -12,12 +12,14 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Patterns;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.feedingindia_semi.BaseActivity;
 import com.example.feedingindia_semi.R;
 import com.example.feedingindia_semi.donor.LoginActivityDonor;
 import com.example.feedingindia_semi.donor.datamodels.CharityData;
@@ -119,10 +121,25 @@ public class LoginActivityCharity extends AppCompatActivity {
 
                     loginUser(email, password);
                 }
+
             }
         });
-//        listeners();
+        listeners();
     }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent intent = new Intent(LoginActivityCharity.this, BaseActivity.class);
+                startActivity(intent);
+                Toast.makeText(getApplicationContext(),"Back button clicked", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return true;
+    }
+
 
     // Email Password Validation Check //
     public void SetValidation() {
@@ -159,13 +176,12 @@ public class LoginActivityCharity extends AppCompatActivity {
     // Login Button Function //
     private void loginUser(String email, String password) {
 
-
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     mLoginProgress.dismiss();
-                    if (Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).isEmailVerified()){
+//                    if (FirebaseAuth.getInstance().getCurrentUser().isEmailVerified()){
                         Intent mainIntent = new Intent(LoginActivityCharity.this, MainActivityCharity.class);
                         Toast.makeText(LoginActivityCharity.this, "Login Successful, Welcome to Charity Section", Toast.LENGTH_LONG).show();
                         mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);  // this line is to stick to main page after login
@@ -175,10 +191,10 @@ public class LoginActivityCharity extends AppCompatActivity {
                         editor.apply();
                         startActivity(mainIntent);
                         finish();
-                    }
-                    else {
-                        Toast.makeText(LoginActivityCharity.this, "Verify your email first, link has been sent to your mail", Toast.LENGTH_LONG).show();
-                    }
+//                    }
+//                    else {
+//                        Toast.makeText(LoginActivityCharity.this, "Verify your email first, link has been sent to your mail", Toast.LENGTH_LONG).show();
+//                    }
 
                 } else {
                     mLoginProgress.hide();

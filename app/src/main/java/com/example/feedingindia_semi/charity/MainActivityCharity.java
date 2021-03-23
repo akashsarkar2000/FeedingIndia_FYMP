@@ -6,13 +6,19 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.example.feedingindia_semi.BaseActivity;
 import com.example.feedingindia_semi.R;
+import com.example.feedingindia_semi.donor.CharityDescriptionActivityDonor;
+import com.example.feedingindia_semi.donor.CommentActivityDonor;
+import com.example.feedingindia_semi.donor.MainActivityDonor;
+import com.example.feedingindia_semi.donor.SettingActivityDonor;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -26,6 +32,7 @@ public class MainActivityCharity extends AppCompatActivity {
     private DatabaseReference mUserRef;
     private Toolbar mToolbar;
     LottieAnimationView settingCharity, donorList, requirement, chatSection;
+    private String charityKey;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +81,6 @@ public class MainActivityCharity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
         if(mAuth.getCurrentUser() != null){
             mUserRef = FirebaseDatabase.getInstance().getReference().child("Users").child("Charity").child(mAuth.getCurrentUser().getUid());
@@ -140,11 +146,15 @@ public class MainActivityCharity extends AppCompatActivity {
 
         }
 
+        if (item.getItemId() == R.id.id_main_trusted_donor_charity){
+
+            Intent intent = new Intent(getApplicationContext(), CommentActivityDonor.class);
+            Intent allUserIntent = new Intent (MainActivityCharity.this, TrustedDonorCharity.class);
+            startActivity(allUserIntent);
+
+        }
 
         return true;
     }
-
-
-
 
 }

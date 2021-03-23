@@ -1,4 +1,4 @@
-package com.example.feedingindia_semi.charity.adapter;
+package com.example.feedingindia_semi.donor.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,17 +10,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.feedingindia_semi.R;
-import com.example.feedingindia_semi.charity.datamodels.CommentData;
+import com.example.feedingindia_semi.charity.datamodels.TrustedDonorData;
+import com.example.feedingindia_semi.donor.datamodels.TrustedDonorByCharityData;
 
 import java.util.List;
 
-public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ChatViewHolder>{
+public class TrustedDonorByCharityAdapter extends RecyclerView.Adapter<TrustedDonorByCharityAdapter.ChatViewHolder>{
 
-    private List<CommentData> commentDataList;
+    private List<TrustedDonorByCharityData> trustedDonorByCharityData;
     Context context;
 
-    public CommentAdapter(List<CommentData> commentDataList, Context context) {
-        this.commentDataList = commentDataList;
+    public TrustedDonorByCharityAdapter(List<TrustedDonorByCharityData> trustedDonorByCharityData, Context context) {
+        this.trustedDonorByCharityData = trustedDonorByCharityData;
         this.context = context;
     }
 
@@ -28,12 +29,12 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ChatView
     @Override
     public ChatViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        return new ChatViewHolder(LayoutInflater.from(context).inflate(R.layout.comment_card, parent, false));
+        return new ChatViewHolder(LayoutInflater.from(context).inflate(R.layout.trusted_donor_card, parent, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull ChatViewHolder holder, int position) {
-        CommentData commentData = commentDataList.get(position);
+        TrustedDonorByCharityData commentData = trustedDonorByCharityData.get(position);
         try {
             holder.date.setText(commentData.getDatetime());
             holder.email.setText(commentData.getEmail());
@@ -46,16 +47,16 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ChatView
 
     @Override
     public int getItemCount() {
-        return commentDataList != null ? commentDataList.size() : 0;
+        return trustedDonorByCharityData != null ? trustedDonorByCharityData.size() : 0;
     }
     public static class ChatViewHolder extends RecyclerView.ViewHolder{
 
         public TextView email,message,date;
         public ChatViewHolder(@NonNull View itemView) {
             super(itemView);
-            email = itemView.findViewById(R.id.email);
-            message = itemView.findViewById(R.id.message);
-            date = itemView.findViewById(R.id.date);
+            email = itemView.findViewById(R.id.charity_email_trusted);
+            message = itemView.findViewById(R.id.charity_info_trusted);
+            date = itemView.findViewById(R.id.charity_date_trusted);
         }
     }
 

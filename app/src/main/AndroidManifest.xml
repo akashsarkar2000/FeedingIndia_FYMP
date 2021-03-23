@@ -17,8 +17,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".donor.ForgotPasswordDonor" android:parentActivityName=".donor.LoginActivityDonor"/>
-        <activity android:name=".charity.ForgotPasswordCharity" android:parentActivityName=".charity.LoginActivityCharity"/>
+        <activity android:name=".donor.TrustedDonorByCharityDonor"></activity>
+        <activity
+            android:name=".charity.TrustedDonorCharity"
+            android:parentActivityName=".charity.MainActivityCharity" />
+        <activity
+            android:name=".donor.ForgotPasswordDonor"
+            android:parentActivityName=".donor.LoginActivityDonor" />
+        <activity
+            android:name=".charity.ForgotPasswordCharity"
+            android:parentActivityName=".charity.LoginActivityCharity" />
         <activity android:name=".BaseActivity" />
         <activity
             android:name=".donor.DonationDetailsToCharityDonor"

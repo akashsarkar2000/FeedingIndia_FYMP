@@ -17,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.feedingindia_semi.R;
+import com.example.feedingindia_semi.charity.AllCommentsByDonorForCharity;
+import com.example.feedingindia_semi.charity.SettingActivityCharity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -36,7 +38,7 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
     private RecyclerView mUsersList;
     private ImageView mCharityImages;
     private TextView mCharityAddress, mCharityPhone,mCharityName,mCharityDescription, mCharityEmail;
-    private Button mPostButton, mContactButton, mDonateButton, mMessageButton, mCommentPageButton;
+    private Button mPostButton, mContactButton, mDonateButton, mMessageButton, mCommentPageButton, mTrustedPageButton;
     private DatabaseReference mUsersDatabase;
     private DatabaseReference mFriendReqDatabase;
     private ProgressDialog mProgressDialog;
@@ -80,6 +82,7 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
         mContactButton = findViewById(R.id.charity_description_contact_button);
         mDonateButton = findViewById(R.id.charity_description_donate_button);
         mMessageButton = findViewById(R.id.charity_description_message_button);
+        mTrustedPageButton = findViewById(R.id.donor_trusted_charity_button);
 
         if (mAuth.getCurrentUser() != null) {
             mUserRef = FirebaseDatabase.getInstance().getReference().child("Users").child("Donor").child(mAuth.getCurrentUser().getUid());
@@ -145,6 +148,16 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        mTrustedPageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent status_intent = new Intent(CharityDescriptionActivityDonor.this, TrustedDonorByCharityDonor.class);
+                status_intent.putExtra("key",charityKey);
+                startActivity(status_intent);
+            }
+        });
+
 
         mProgressDialog = new ProgressDialog(CharityDescriptionActivityDonor.this);
         mProgressDialog.setTitle("Loading Charity data");

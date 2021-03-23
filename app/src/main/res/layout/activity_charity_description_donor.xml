@@ -60,7 +60,7 @@
         android:id="@+id/charity_description_phone2"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/krona_one"
         android:gravity="center"
@@ -74,7 +74,7 @@
         android:id="@+id/charity_description_phone3"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="32dp"
         android:fontFamily="@font/krona_one"
         android:gravity="center"
@@ -86,11 +86,11 @@
 
     <TextView
         android:id="@+id/charity_description_email"
-        android:layout_width="280dp"
-        android:layout_height="0dp"
+        android:layout_width="299dp"
+        android:layout_height="40dp"
         android:layout_marginStart="12dp"
         android:autoLink="email"
-        android:gravity="center"
+        android:gravity="center_vertical"
         android:hint="Not Available"
         android:textColor="@color/black"
         android:textColorLink="#62AC66"
@@ -98,17 +98,17 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/charity_description_phone2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintHorizontal_bias="0.024"
         app:layout_constraintStart_toEndOf="@+id/charity_description_phone2"
         app:layout_constraintTop_toTopOf="@+id/charity_description_phone2"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/charity_description_phone4"
-        android:layout_width="149dp"
+        android:layout_width="196dp"
         android:layout_height="40dp"
-        android:layout_marginStart="28dp"
-        android:gravity="center"
+        android:layout_marginStart="12dp"
+        android:gravity="center_vertical"
         android:hint="Not Available"
         android:textColor="@color/black"
         android:textSize="16sp"
@@ -122,7 +122,7 @@
         android:id="@+id/charity_description_address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/krona_one"
         android:gravity="center"
         android:inputType="textMultiLine"
@@ -131,6 +131,7 @@
         android:textSize="13sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/charity_description_address2" />
 
@@ -171,7 +172,7 @@
         android:id="@+id/charity_description_description2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/krona_one"
         android:foregroundGravity="center"
         android:gravity="center"
@@ -183,7 +184,6 @@
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/charity_description_description" />
 
@@ -191,7 +191,7 @@
         android:id="@+id/charity_description_donate_button"
         android:layout_width="160dp"
         android:layout_height="60dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="4dp"
         android:background="@drawable/buttons2"
         android:text="Donate"
@@ -220,11 +220,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/donor_comment_charity_review_button" />
 
+
     <Button
         android:id="@+id/charity_description_message_button"
         android:layout_width="160dp"
         android:layout_height="60dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
 
         android:layout_marginBottom="4dp"
         android:background="@drawable/buttons2"
@@ -235,9 +236,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/charity_description_contact_button"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/charity_description_contact_button"
-        app:layout_constraintTop_toBottomOf="@+id/charity_description_contact_button" />
-
+        app:layout_constraintTop_toBottomOf="@+id/charity_description_contact_button"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/charity_description_contact_button"
@@ -312,6 +314,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider9" />
+
+    <Button
+        android:id="@+id/donor_trusted_charity_button"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/buttons2"
+        android:fontFamily="sans-serif-medium"
+        android:text="Our Trusted Donors"
+        android:textColor="@color/white"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textColorLink="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/charity_description_donate_button" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

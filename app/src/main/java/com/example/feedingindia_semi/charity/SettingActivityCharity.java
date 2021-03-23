@@ -79,6 +79,7 @@ public class SettingActivityCharity extends AppCompatActivity {
 
         mImageStorage = FirebaseStorage.getInstance().getReference();
         //  USER OBJECT REFERENCE IN KEY //
+        key = intent.getStringExtra("user_id");
         mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();
         assert mCurrentUser != null;
         String current_uid = mCurrentUser.getUid();
