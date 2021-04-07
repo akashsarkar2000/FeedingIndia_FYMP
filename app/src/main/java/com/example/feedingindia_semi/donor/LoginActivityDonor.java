@@ -117,8 +117,13 @@ public class LoginActivityDonor extends AppCompatActivity {
                 String email = mEmail.getText().toString();
                 String password = mPassword.getText().toString();
                 SetValidation();
+                if (!isEmailExist()){
+                    Toast.makeText(LoginActivityDonor.this, "You have not registered yet", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 if (email == null || email.isEmpty() || password == null || password.isEmpty()) {
                     Toast.makeText(LoginActivityDonor.this, "Email & Password are mandatory for login", Toast.LENGTH_SHORT).show();
+                    return;
                 }
                 else{
                     mLoginProgress.setTitle("Login In");

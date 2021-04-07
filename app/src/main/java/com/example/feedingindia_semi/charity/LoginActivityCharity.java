@@ -110,6 +110,10 @@ public class LoginActivityCharity extends AppCompatActivity {
                 String email = mEmail.getText().toString();
                 String password = mPassword.getText().toString();
                 SetValidation();
+                if(!isEmailExist()){
+                    Toast.makeText(LoginActivityCharity.this, "Please register first", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 if (email == null || email.isEmpty() || password == null || password.isEmpty()) {
                     Toast.makeText(LoginActivityCharity.this, "Email & Password are mandatory for login", Toast.LENGTH_SHORT).show();
                 }
