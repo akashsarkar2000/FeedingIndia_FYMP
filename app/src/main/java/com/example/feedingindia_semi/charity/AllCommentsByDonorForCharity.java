@@ -3,8 +3,10 @@ package com.example.feedingindia_semi.charity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -47,6 +49,7 @@ public class AllCommentsByDonorForCharity extends AppCompatActivity {
 
     private Toolbar mToolbar;
     private RecyclerView mUsersList;
+    private AlertDialog.Builder builder;
     private DatabaseReference mUsersDatabase;
     private ProgressDialog mProgressDialog;
     private FirebaseUser mCurrentUser;
@@ -56,8 +59,9 @@ public class AllCommentsByDonorForCharity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private DatabaseReference databaseReference;
     private View view;
+    public String key;
     private RecyclerView recyclerView;
-    String key;
+    public static String deletekey;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +69,8 @@ public class AllCommentsByDonorForCharity extends AppCompatActivity {
         setContentView(R.layout.activity_all_comments_by_donor_for_charity);
 
         recyclerView = findViewById(R.id.id_all_charity_comment_list_charity_side);
-
+        builder = new AlertDialog.Builder(this);
+        builder.setMessage("Delete") .setTitle("Delete Charity");
         mToolbar = findViewById(R.id.charity_side_comment_all_users_appBar);
         setSupportActionBar(mToolbar);
         Objects.requireNonNull(getSupportActionBar()).setTitle("Donor's Reviews");
@@ -75,7 +80,7 @@ public class AllCommentsByDonorForCharity extends AppCompatActivity {
         commentDataList = new ArrayList<CommentData>();
         charityKey = getIntent().getStringExtra("key");
         firebaseAuth = FirebaseAuth.getInstance();
-
+        //Toast.makeText(this, "LOL NIGGA", Toast.LENGTH_SHORT).show();
         Intent intent = getIntent();
         key = intent.getStringExtra("user_id");
 
@@ -97,7 +102,7 @@ public class AllCommentsByDonorForCharity extends AppCompatActivity {
         mProgressDialog.setCanceledOnTouchOutside(false);
         mProgressDialog.show();
 
-
+        generateAlertBuilder();
         getAllComments();
     }
 
@@ -109,8 +114,9 @@ public class AllCommentsByDonorForCharity extends AppCompatActivity {
                 commentDataList.clear();
                 for (DataSnapshot data : snapshot.getChildren()){
                     CommentData commentData = data.getValue(CommentData.class);
+                    commentData.setKeyvalue(data.getKey());
                     commentDataList.add(commentData);
-                    CommentAdapter commentAdapter = new CommentAdapter(commentDataList, AllCommentsByDonorForCharity.this);
+                    CommentAdapter commentAdapter = new CommentAdapter(commentDataList, AllCommentsByDonorForCharity.this,builder);
                     recyclerView.setAdapter(commentAdapter);
                 }
             }
@@ -122,7 +128,33 @@ public class AllCommentsByDonorForCharity extends AppCompatActivity {
         });
         mProgressDialog.dismiss();
     }
+    public void generateAlertBuilder(){
 
+        builder.setMessage("Do you really want to delete this Donor ?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        finish();
+                        deleteComment(getDeletekey());
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        //  Action for 'NO' Button
+                        dialog.cancel();
+                    }
+                });
+    }
 
+    private void deleteComment(String uid){
+        mUsersDatabase.child(uid).removeValue();
+    }
 
+    public static void setDeletekey(String deletekey) {
+        deletekey = deletekey;
+    }
+
+    public static String getDeletekey() {
+        return deletekey;
+    }
 }
