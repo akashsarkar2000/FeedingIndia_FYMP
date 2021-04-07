@@ -3,7 +3,9 @@ package com.example.feedingindia_semi.donor;
 import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,12 +14,15 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Patterns;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.feedingindia_semi.BaseActivity;
+import com.example.feedingindia_semi.charity.ForgotPasswordCharity;
 import com.example.feedingindia_semi.charity.LoginActivityCharity;
 import com.example.feedingindia_semi.R;
 import com.example.feedingindia_semi.charity.MainActivityCharity;
@@ -33,12 +38,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Objects;
+
 
 public class LoginActivityDonor extends AppCompatActivity {
 
     private EditText mEmail, mPassword;
     Button login;
-    TextView registerDonor, loginCharity;
+    TextView registerDonor, loginCharity, forgotPasswordDonor;
     boolean isEmailValid, isPasswordValid;
     TextInputLayout emailError, passError;
     private ProgressDialog mLoginProgress;
@@ -47,22 +54,31 @@ public class LoginActivityDonor extends AppCompatActivity {
     private FirebaseAuth mAuth;
     public boolean isEmailExist;
     private DatabaseReference databaseReference;
+    private Toolbar mToolbar;
 
+    @SuppressLint("CommitPrefEdits")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_donor);
 
+
+        mToolbar = findViewById(R.id.login_donor_page_toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("Login : Donor");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         mEmail = findViewById(R.id.email);
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child("Donor");
         mPassword = findViewById(R.id.password);
         registerDonor = findViewById(R.id.login_to_register_donor);
+        loginCharity = findViewById(R.id.donor_to_charity_login);
         emailError = findViewById(R.id.emailError);
         passError = findViewById(R.id.passError);
         mLoginProgress = new ProgressDialog(this);
         mAuth = FirebaseAuth.getInstance();
         login = findViewById(R.id.login_donor_button);
-        loginCharity = findViewById(R.id.to_login_charity);
+        forgotPasswordDonor = findViewById(R.id.donor_forget_password_page);
         preferences = getSharedPreferences("login",MODE_PRIVATE);
         editor = preferences.edit();
 
@@ -75,7 +91,6 @@ public class LoginActivityDonor extends AppCompatActivity {
             }
         });
 
-
         loginCharity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,6 +100,16 @@ public class LoginActivityDonor extends AppCompatActivity {
             }
         });
 
+        forgotPasswordDonor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // redirect to RegisterActivity
+                Intent intent = new Intent(getApplicationContext(), ForgotPasswordDonor.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,11 +117,10 @@ public class LoginActivityDonor extends AppCompatActivity {
                 String email = mEmail.getText().toString();
                 String password = mPassword.getText().toString();
                 SetValidation();
-                if (!TextUtils.isEmpty(email) || !TextUtils.isEmpty(password)) {
-//                    if(!isEmailExist()){
-//                        Toast.makeText(LoginActivityDonor.this, "You are not registered as Donor", Toast.LENGTH_SHORT).show();
-//                        return;
-//                    }
+                if (email == null || email.isEmpty() || password == null || password.isEmpty()) {
+                    Toast.makeText(LoginActivityDonor.this, "Email & Password are mandatory for login", Toast.LENGTH_SHORT).show();
+                }
+                else{
                     mLoginProgress.setTitle("Login In");
                     mLoginProgress.setMessage("Please wait while we check your credentials !");
                     mLoginProgress.setCanceledOnTouchOutside(false);
@@ -106,7 +130,21 @@ public class LoginActivityDonor extends AppCompatActivity {
                 }
             }
         });
-//        listeners();
+        listeners();
+    }
+
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent intent = new Intent(LoginActivityDonor.this, BaseActivity.class);
+                startActivity(intent);
+                Toast.makeText(getApplicationContext(),"Back button clicked", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return true;
     }
 
 
@@ -151,15 +189,20 @@ public class LoginActivityDonor extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     mLoginProgress.dismiss();
+//                    if (Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).isEmailVerified()) {
                         Intent mainIntent = new Intent(LoginActivityDonor.this, MainActivityDonor.class);
-                    Toast.makeText(LoginActivityDonor.this, "Login Successful, Welcome to Donor Section", Toast.LENGTH_LONG).show();
-                    mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);  // this line is to stick to main page after login
-                    editor.putBoolean("donor",true);
-                    editor.apply();
-                    editor.putBoolean("charity",false);
-                    editor.apply();
-                    startActivity(mainIntent);
-                    finish();
+                        Toast.makeText(LoginActivityDonor.this, "Login Successful, Welcome to Donor Section", Toast.LENGTH_LONG).show();
+                        mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);  // this line is to stick to main page after login
+                        editor.putBoolean("donor", true);
+                        editor.apply();
+                        editor.putBoolean("charity", false);
+                        editor.apply();
+                        startActivity(mainIntent);
+                        finish();
+//                    }
+//                    else {
+//                        Toast.makeText(LoginActivityDonor.this, "Verify your email first, link has been sent to your mail", Toast.LENGTH_LONG).show();
+//                    }
                 } else {
                     mLoginProgress.hide();
                     Toast.makeText(LoginActivityDonor.this, "Cannot Sign in. Please check the details and try again", Toast.LENGTH_LONG).show();

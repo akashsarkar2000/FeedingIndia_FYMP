@@ -1,5 +1,4 @@
 package com.example.feedingindia_semi.donor.datamodels;
-
 public class CommentData {
 
     String message;
@@ -12,7 +11,6 @@ public class CommentData {
     public String getMessage() {
         return message;
     }
-
     public void setMessage(String message) {
         this.message = message;
     }
@@ -20,7 +18,6 @@ public class CommentData {
     public String getUid() {
         return uid;
     }
-
     public void setUid(String uid) {
         this.uid = uid;
     }
@@ -28,7 +25,6 @@ public class CommentData {
     public String getDatetime() {
         return datetime;
     }
-
     public void setDatetime(String datetime) {
         this.datetime = datetime;
     }
@@ -36,7 +32,6 @@ public class CommentData {
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }

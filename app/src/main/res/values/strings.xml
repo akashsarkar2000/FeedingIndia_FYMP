@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FI Charity Demo</string>
+    <string name="app_name">Feeding India</string>
     <string name="post_requirements">Post and Requirements</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -24,7 +24,6 @@
     <string name="registration_number">Registration Number</string>
     <string name="logout">Logout</string>
     <string name="edit_information">Edit Information</string>
-    <string name="todo">TODO</string>
     <string name="edit_image">Edit Image</string>
     <string name="address">Address</string>
     <string name="charity_description">Charity Description</string>
@@ -62,4 +61,5 @@
     <string name="upload_validity_proof">UPLOAD VALIDITY PROOF</string>
     <string name="food_name_required">Food Name (Required)</string>
     <string name="donation_details">Donation Details</string>
+    <string name="todo">TODO</string>
 </resources>

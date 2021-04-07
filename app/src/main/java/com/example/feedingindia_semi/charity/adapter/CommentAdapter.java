@@ -28,7 +28,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ChatView
     @Override
     public ChatViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        return new ChatViewHolder(LayoutInflater.from(context).inflate(R.layout.comment_card,parent,false));
+        return new ChatViewHolder(LayoutInflater.from(context).inflate(R.layout.comment_card, parent, false));
     }
 
     @Override
@@ -48,8 +48,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ChatView
     public int getItemCount() {
         return commentDataList != null ? commentDataList.size() : 0;
     }
-
-    public class ChatViewHolder extends RecyclerView.ViewHolder{
+    public static class ChatViewHolder extends RecyclerView.ViewHolder{
 
         public TextView email,message,date;
         public ChatViewHolder(@NonNull View itemView) {
@@ -59,4 +58,6 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ChatView
             date = itemView.findViewById(R.id.date);
         }
     }
+
+
 }

@@ -18,25 +18,21 @@
         android:id="@+id/edit_charity_post_description_button"
         android:layout_width="137dp"
         android:layout_height="51dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="64dp"
         android:background="@drawable/buttons2"
         android:text="@string/save_changes"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.759" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_charity_post_description" />
 
     <EditText
         android:id="@+id/edit_charity_post_description"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:layout_marginStart="25dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="25dp"
         android:autofillHints=""
         android:background="@drawable/input_style"
@@ -45,12 +41,10 @@
         android:hint="Add Post Description"
         android:inputType="textMultiLine"
         android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/post_requirements_page_toolbar"
-        app:layout_constraintVertical_bias="0.209"
         tools:ignore="TextFields" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -79,6 +79,7 @@ public class SettingActivityCharity extends AppCompatActivity {
 
         mImageStorage = FirebaseStorage.getInstance().getReference();
         //  USER OBJECT REFERENCE IN KEY //
+        key = intent.getStringExtra("user_id");
         mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();
         assert mCurrentUser != null;
         String current_uid = mCurrentUser.getUid();
@@ -120,7 +121,7 @@ public class SettingActivityCharity extends AppCompatActivity {
                                 }
 
                             });
-                    Picasso.get().load(image).networkPolicy(NetworkPolicy.OFFLINE).placeholder(R.drawable.default_image)
+                    Picasso.get().load(proof_url).networkPolicy(NetworkPolicy.OFFLINE).placeholder(R.drawable.default_image)
                             .into(mRegistrationImage, new Callback() {
                                 @Override
                                 public void onSuccess() {

@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:padding="16dp"
     android:scrollbarThumbVertical="@null"
     tools:context=".charity.RegisterActivityCharity">
@@ -148,11 +147,11 @@
             <Button
                 android:id="@+id/proof"
                 android:layout_width="match_parent"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/buttons2"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/white"
-                android:text="@string/upload_validity_proof"/>
+                android:layout_marginTop="20dp"
+                android:background="@android:color/holo_green_dark"
+                android:text="@string/upload_validity_proof"
+                android:textColor="@android:color/white" />
 
             <Button
                 android:id="@+id/register_charity_button"
@@ -172,7 +171,7 @@
                 android:layout_marginBottom="5dp"
                 android:gravity="center"
                 android:text="@string/want_to_login"
-                android:textColor="@color/gray"
+                android:textColor="#4E4D4D"
                 android:textSize="12sp" />
 
         </LinearLayout>

@@ -73,9 +73,14 @@ public class RequirementDetailsActivityDonor extends AppCompatActivity {
                 // redirect to LoginActivity
 //                Intent intent = new Intent(getApplicationContext(), PostActivityCharity.class);
 //                startActivity(intent);
+                if(key == null){
+                    Toast.makeText(RequirementDetailsActivityDonor.this, "Please Wait", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 Toast.makeText(RequirementDetailsActivityDonor.this,"Fill this form, The data will send to this charity",Toast.LENGTH_LONG).show();
-                DonationDetailsFragment  myDialogFragment = new DonationDetailsFragment();
-                myDialogFragment.show(getSupportFragmentManager(), "My Fragment");
+                Intent intent = new Intent(getApplicationContext(), DonationDetailsToCharityDonor.class);
+                intent.putExtra("key",key);
+                startActivity(intent);
             }
         });
         try {

@@ -7,6 +7,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +16,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.feedingindia_semi.R;
+import com.example.feedingindia_semi.charity.RegisterActivityCharity;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
@@ -24,6 +28,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
+import java.util.Objects;
 
 public class RegisterActivityDonor extends AppCompatActivity {
 
@@ -71,7 +76,12 @@ public class RegisterActivityDonor extends AppCompatActivity {
                 String profession = mProfession.getText().toString();
                 String password = mPassword.getText().toString();
                 SetValidation();
-                if (!TextUtils.isEmpty(donor_name) || !TextUtils.isEmpty(profession) || !TextUtils.isEmpty(email) || !TextUtils.isEmpty(phone) || !TextUtils.isEmpty(password)){
+                if (donor_name == null || donor_name.isEmpty() || profession == null || profession.isEmpty() || email == null
+                        || email.isEmpty() || phone == null || phone.isEmpty() || password == null
+                        || password.isEmpty() ){
+                    Toast.makeText(RegisterActivityDonor.this, "Please fill all detail first", Toast.LENGTH_SHORT).show();
+                }
+                else{
                     // PROGRESS BAR //
                     mRegProgress.setTitle("Registering User");
                     mRegProgress.setMessage("Please wait while we create your account !");
@@ -117,6 +127,7 @@ public class RegisterActivityDonor extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()){
                                 mRegProgress.dismiss();
+                                sendVerificationEmail();
                                 Intent mainIntent = new Intent(RegisterActivityDonor.this, LoginActivityDonor.class);
                                 Toast.makeText(RegisterActivityDonor.this,"Account created successfully, now login",Toast.LENGTH_LONG).show();
                                 mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -128,12 +139,33 @@ public class RegisterActivityDonor extends AppCompatActivity {
                 }
                 else{
                     mRegProgress.hide();
+                    Log.i("lol", Objects.requireNonNull(Objects.requireNonNull(task.getException()).getMessage()));
                     Toast.makeText(RegisterActivityDonor.this,"Cannot Register. Please check the form and try again",Toast.LENGTH_LONG).show();
                 }
             }
         });
     }
 
+
+    private void sendVerificationEmail() {
+
+        // send verification link
+        FirebaseUser user = mAuth.getCurrentUser();
+        assert user != null;
+        user.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(RegisterActivityDonor.this, "Verification email has been sent", Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.i("key","onFailure: Email not sent"+e.getMessage());
+            }
+        });
+
+
+    }
 
 
     public void SetValidation() {
@@ -146,6 +178,17 @@ public class RegisterActivityDonor extends AppCompatActivity {
             isNameValid = true;
             nameError.setErrorEnabled(false);
         }
+
+        // Check for a Profession name.
+        if (mProfession.getText().toString().isEmpty()) {
+            professionError.setError(getResources().getString(R.string.profession_error));
+            isProfessionValid = false;
+            return;
+        } else  {
+            isProfessionValid = true;
+            professionError.setErrorEnabled(false);
+        }
+
 
         // Check for a valid email address.
         if (mEmail.getText().toString().isEmpty()) {
@@ -169,16 +212,6 @@ public class RegisterActivityDonor extends AppCompatActivity {
         } else  {
             isPhoneValid = true;
             phoneError.setErrorEnabled(false);
-        }
-
-        // Check for a registration name.
-        if (mProfession.getText().toString().isEmpty()) {
-            professionError.setError(getResources().getString(R.string.profession_error));
-            isProfessionValid = false;
-            return;
-        } else  {
-            isProfessionValid = true;
-            professionError.setErrorEnabled(false);
         }
 
         // Check for a valid password.

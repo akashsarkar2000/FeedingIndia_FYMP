@@ -67,66 +67,66 @@ public class DonorListActivityCharity extends AppCompatActivity {
         FirebaseRecyclerOptions<Users> options=
                 new FirebaseRecyclerOptions.Builder<Users>()
                         .setQuery(mUsersDatabase,Users.class)
-                        .setLifecycleOwner(this)
-                        .build();
+                    .setLifecycleOwner(this)
+                    .build();
 
-        FirebaseRecyclerAdapter<Users, UsersViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Users, UsersViewHolder>(options) {
-
-
-            @NonNull
-            @Override
-            public UsersViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                return new UsersViewHolder(LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.donor_single_layout, parent, false));
-            }
-
-            @Override
-            protected void onBindViewHolder(@NonNull UsersViewHolder usersViewHolder, int position, @NonNull Users users) {
+            FirebaseRecyclerAdapter<Users, UsersViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Users, UsersViewHolder>(options) {
 
 
-                usersViewHolder.setName(users.getName());
-                usersViewHolder.setUserStatus(users.getStatus());
-                usersViewHolder.setUserImage(users.getThumb_image(),getApplicationContext());
+                @NonNull
+                @Override
+                public UsersViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                    return new UsersViewHolder(LayoutInflater.from(parent.getContext())
+                            .inflate(R.layout.donor_single_layout, parent, false));
+                }
 
-                final String user_id = getRef(position).getKey();
+                @Override
+                protected void onBindViewHolder(@NonNull UsersViewHolder usersViewHolder, int position, @NonNull Users users) {
 
-                mProgressDialog.dismiss();
 
-                usersViewHolder.mView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
+                    usersViewHolder.setName(users.getName());
+                    usersViewHolder.setUserStatus(users.getStatus());
+                    usersViewHolder.setUserImage(users.getThumb_image(),getApplicationContext());
 
-                        Intent profileIntent = new Intent(DonorListActivityCharity.this, DonorDonationDetails.class);
-                        profileIntent.putExtra("user_id",user_id);
-                        startActivity(profileIntent);
+                    final String user_id = getRef(position).getKey();
 
-                    }
-                });
+                    mProgressDialog.dismiss();
 
-            }
-        };
-        mUsersList.setAdapter(firebaseRecyclerAdapter);
-    }
+                    usersViewHolder.mView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
 
-    public static class UsersViewHolder extends RecyclerView.ViewHolder{
+                            Intent profileIntent = new Intent(DonorListActivityCharity.this, MainActivityCharity.class);
+                            profileIntent.putExtra("user_id",user_id);
+                            startActivity(profileIntent);
 
-        View mView;
+                        }
+                    });
 
-        public UsersViewHolder(View itemView){
-            super(itemView);
-            mView = itemView;
+                }
+            };
+            mUsersList.setAdapter(firebaseRecyclerAdapter);
         }
 
-        public void setName(String name){
+        public static class UsersViewHolder extends RecyclerView.ViewHolder{
 
-            TextView userNameView = mView.findViewById(R.id.user_single_name);
-            userNameView.setText(name);
+            View mView;
 
-        }
+            public UsersViewHolder(View itemView){
+                super(itemView);
+                mView = itemView;
+            }
 
-        public void setUserStatus(String status){
+            public void setName(String name){
 
-            TextView userStatusView = mView.findViewById(R.id.user_single_address);
+                TextView userNameView = mView.findViewById(R.id.user_single_name);
+                userNameView.setText(name);
+
+            }
+
+            public void setUserStatus(String status){
+
+                TextView userStatusView = mView.findViewById(R.id.user_single_address);
             userStatusView.setText(status);
 
         }

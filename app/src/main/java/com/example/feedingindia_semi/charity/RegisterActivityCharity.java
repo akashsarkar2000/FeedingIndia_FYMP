@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.feedingindia_semi.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
@@ -34,7 +35,10 @@ import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.Random;
+
+import kotlin.Result;
 
 public class RegisterActivityCharity extends AppCompatActivity {
 
@@ -149,6 +153,7 @@ public class RegisterActivityCharity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()){
                                 mRegProgress.dismiss();
+                                sendVerificationEmail();
                                 Intent mainIntent = new Intent(RegisterActivityCharity.this, LoginActivityCharity.class);
                                 Toast.makeText(RegisterActivityCharity.this,"Account created successfully, now login",Toast.LENGTH_LONG).show();
                                 mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -160,11 +165,31 @@ public class RegisterActivityCharity extends AppCompatActivity {
                 }
                 else{
                     mRegProgress.hide();
-                    Log.i("lol",task.getException().getMessage());
+                    Log.i("lol", Objects.requireNonNull(Objects.requireNonNull(task.getException()).getMessage()));
                     Toast.makeText(RegisterActivityCharity.this,"Cannot Sign in. Please check the form and try again",Toast.LENGTH_LONG).show();
                 }
             }
         });
+
+    }
+
+    private void sendVerificationEmail() {
+
+        // send verification link
+        FirebaseUser user = mAuth.getCurrentUser();
+        assert user != null;
+        user.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(RegisterActivityCharity.this, "Verification email has been sent", Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.i("key","onFailure: Email not sent"+e.getMessage());
+            }
+        });
+
 
     }
 
@@ -310,5 +335,4 @@ public class RegisterActivityCharity extends AppCompatActivity {
         return proof_url;
     }
 }
-
 

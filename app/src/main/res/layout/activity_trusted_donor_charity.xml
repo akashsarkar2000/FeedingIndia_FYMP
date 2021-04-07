@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".charity.TrustedDonorCharity">
+
+    <include
+        android:id="@+id/charity_trusted_donor_users_appBar"
+        layout="@layout/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentEnd="false" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/id_all_charity_trusted_donor_users_charity_side"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout"
+        android:layout_below="@id/charity_trusted_donor_users_appBar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/common_google_signin_btn_text_dark_default"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <EditText
+            android:id="@+id/charity_trusted_donor_info_send_text"
+            android:layout_width="308dp"
+            android:layout_height="62dp"
+            android:layout_weight="8"
+            android:autofillHints=""
+            android:background="#FCFFB5"
+            android:hint="Type Donor Information Here"
+            android:paddingLeft="10dp"
+            android:paddingTop="16dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="12dp"
+            android:textColorHint="@color/black" />
+
+        <ImageButton
+            android:id="@+id/charity_trusted_donor_info_send_btn"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FCFFB5"
+            android:clickable="true"
+            android:src="@drawable/send"
+            android:contentDescription="@string/todo"
+            android:focusable="true" />
+    </LinearLayout>
+
+
+</RelativeLayout>
+

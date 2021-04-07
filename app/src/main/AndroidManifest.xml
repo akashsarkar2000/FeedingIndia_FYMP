@@ -3,11 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.feedingindia_semi">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -16,18 +17,36 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".charity.ChatListActivity" android:parentActivityName=".charity.MainActivityCharity"/>
-        <activity android:name=".charity.ChatActivity"  android:parentActivityName=".charity.MainActivityCharity"/>
-        <activity android:name=".charity.AllCommentsByDonorForCharity"
+        <activity android:name=".donor.TrustedDonorByCharityDonor"></activity>
+        <activity
+            android:name=".charity.TrustedDonorCharity"
             android:parentActivityName=".charity.MainActivityCharity" />
-
+        <activity
+            android:name=".donor.ForgotPasswordDonor"
+            android:parentActivityName=".donor.LoginActivityDonor" />
+        <activity
+            android:name=".charity.ForgotPasswordCharity"
+            android:parentActivityName=".charity.LoginActivityCharity" />
+        <activity android:name=".BaseActivity" />
+        <activity
+            android:name=".donor.DonationDetailsToCharityDonor"
+            android:parentActivityName="donor.CharityDescriptionActivityDonor" />
+        <activity
+            android:name=".charity.ChatListActivity"
+            android:parentActivityName=".charity.MainActivityCharity" />
+        <activity
+            android:name=".charity.ChatActivity"
+            android:parentActivityName=".charity.MainActivityCharity" />
+        <activity
+            android:name=".charity.DonorDonationDetailListActivity"
+            android:parentActivityName=".charity.MainActivityCharity" />
+        <activity
+            android:name=".charity.AllCommentsByDonorForCharity"
+            android:parentActivityName=".charity.MainActivityCharity" />
         <activity
             android:name=".donor.CommentActivityDonor"
             android:parentActivityName=".donor.CharityDescriptionActivityDonor" />
-        <activity
-            android:name=".charity.DonorDonationDetails"
-            android:parentActivityName=".charity.DonorListActivityCharity" />
-        <activity android:name=".BaseActivity">
+        <activity android:name=".Splash_Screen1">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -49,10 +68,11 @@
         <activity
             android:name=".donor.CharityDescriptionActivityDonor"
             android:parentActivityName=".donor.MainActivityDonor" />
-        <activity
-            android:name=".donor.MainActivityDonor" />
+        <activity android:name=".donor.MainActivityDonor" />
         <activity android:name=".donor.RegisterActivityDonor" />
-        <activity android:name=".donor.LoginActivityDonor" />
+        <activity
+            android:name=".donor.LoginActivityDonor"
+            android:parentActivityName=".BaseActivity" />
         <activity
             android:name=".ChatActivity"
             android:parentActivityName=".charity.MainActivityCharity" />
@@ -65,46 +85,40 @@
         <activity
             android:name=".charity.SelectionPostRequirementActivityCharity"
             android:parentActivityName=".charity.MainActivityCharity" />
-
         <activity
             android:name=".charity.RequirementActivityCharity"
             android:parentActivityName=".charity.SelectionPostRequirementActivityCharity" />
-
         <activity
             android:name=".charity.RequirementEditActivityCharity"
             android:parentActivityName=".charity.RequirementActivityCharity" />
-
         <activity
             android:name=".charity.DonorListActivityCharity"
             android:parentActivityName=".charity.MainActivityCharity" />
-
         <activity
             android:name=".charity.SettingActivityCharity"
             android:parentActivityName=".charity.MainActivityCharity" />
-
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
-
         <activity
             android:name=".charity.SettingEditActivityCharity"
             android:parentActivityName=".charity.SettingActivityCharity"
             tools:targetApi="jelly_bean" />
-
         <activity android:name=".charity.RegisterActivityCharity" />
-
-        <activity android:name=".charity.LoginActivityCharity" />
-
+        <activity
+            android:name=".charity.LoginActivityCharity"
+            android:parentActivityName=".BaseActivity" />
         <activity android:name=".charity.MainActivityCharity" />
-
-        <activity android:name=".donor.PostDetailsActivityDonor" android:parentActivityName=".donor.MainActivityDonor"/>
-
-        <activity android:name=".donor.ChatActivity" android:parentActivityName=".donor.CharityListActivityDonor"/>
+        <activity
+            android:name=".donor.PostDetailsActivityDonor"
+            android:parentActivityName=".donor.MainActivityDonor" />
+        <activity
+            android:name=".donor.ChatActivity"
+            android:parentActivityName=".donor.CharityListActivityDonor" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
     </application>
 
 </manifest>

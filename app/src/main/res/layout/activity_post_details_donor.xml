@@ -10,7 +10,6 @@
     <include
         android:id="@+id/donor_post_page_toolbar"
         layout="@layout/app_bar_layout"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,18 +19,21 @@
         android:id="@+id/cardView"
         android:layout_width="380dp"
         android:layout_height="555dp"
+        android:layout_marginTop="8dp"
         android:background="#D2D65F"
         android:padding="30dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/donor_post_page_toolbar"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/post_charity_name"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15dp"
@@ -70,8 +72,8 @@
             android:layout_width="340dp"
             android:layout_height="340dp"
             android:layout_marginLeft="20dp"
-            android:elevation="10dp"
             android:layout_marginTop="65dp"
+            android:elevation="10dp"
             app:cardCornerRadius="15dp">
 
             <ImageView
@@ -91,9 +93,8 @@
         android:id="@+id/donor_post_like"
         android:layout_width="156dp"
         android:layout_height="54dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="212dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/buttons2"
         android:paddingLeft="20dp"
@@ -102,8 +103,6 @@
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.033"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/donor_profession_name"
         app:layout_constraintVertical_bias="0.052"
@@ -113,8 +112,8 @@
         android:id="@+id/donor_post_dislike"
         android:layout_width="156dp"
         android:layout_height="54dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/buttons2"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
@@ -123,10 +122,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/donor_post_like"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.966"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/donor_post_like"
         app:layout_constraintTop_toTopOf="@+id/donor_post_like"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

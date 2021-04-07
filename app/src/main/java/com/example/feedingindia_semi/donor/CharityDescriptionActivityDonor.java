@@ -16,10 +16,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.feedingindia_semi.charity.DonorDonationDetails;
-import com.example.feedingindia_semi.charity.MainActivityCharity;
-import com.example.feedingindia_semi.charity.PostActivityCharity;
 import com.example.feedingindia_semi.R;
+import com.example.feedingindia_semi.charity.AllCommentsByDonorForCharity;
 import com.example.feedingindia_semi.charity.SettingActivityCharity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -40,7 +38,7 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
     private RecyclerView mUsersList;
     private ImageView mCharityImages;
     private TextView mCharityAddress, mCharityPhone,mCharityName,mCharityDescription, mCharityEmail;
-    private Button mPostButton, mContactButton, mDonateButton, mMessageButton, mCommentPageButton;
+    private Button mPostButton, mContactButton, mDonateButton, mMessageButton, mCommentPageButton, mTrustedPageButton;
     private DatabaseReference mUsersDatabase;
     private DatabaseReference mFriendReqDatabase;
     private ProgressDialog mProgressDialog;
@@ -84,6 +82,7 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
         mContactButton = findViewById(R.id.charity_description_contact_button);
         mDonateButton = findViewById(R.id.charity_description_donate_button);
         mMessageButton = findViewById(R.id.charity_description_message_button);
+        mTrustedPageButton = findViewById(R.id.donor_trusted_charity_button);
 
         if (mAuth.getCurrentUser() != null) {
             mUserRef = FirebaseDatabase.getInstance().getReference().child("Users").child("Donor").child(mAuth.getCurrentUser().getUid());
@@ -92,7 +91,6 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
         mPostButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // redirect to LoginActivity
 
                 if(getCharityKey() == null){
                     Toast.makeText(CharityDescriptionActivityDonor.this, "Please Wait", Toast.LENGTH_SHORT).show();
@@ -106,9 +104,6 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
         mContactButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // redirect to LoginActivity
-//                Intent intent = new Intent(getApplicationContext(), MainActivityDonor.class);
-//                startActivity(intent);
 
                 String phone = mCharityPhone.getText().toString();
                 Intent phoneIntent = new Intent(Intent.ACTION_DIAL, Uri.fromParts(
@@ -120,10 +115,14 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
         mDonateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // redirect to LoginActivity
+                if(getCharityKey() == null){
+                    Toast.makeText(CharityDescriptionActivityDonor.this, "Please Wait", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 Toast.makeText(CharityDescriptionActivityDonor.this,"Fill this form, The data will send to this charity",Toast.LENGTH_LONG).show();
-                DonationDetailsFragment  myDialogFragment = new DonationDetailsFragment();
-                myDialogFragment.show(getSupportFragmentManager(), "My Fragment");
+                Intent intent = new Intent(getApplicationContext(), DonationDetailsToCharityDonor.class);
+                intent.putExtra("key",charityKey);
+                startActivity(intent);
             }
         });
         mMessageButton.setOnClickListener(new View.OnClickListener() {
@@ -140,7 +139,6 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // redirect to LoginActivity
-
                 if(getCharityKey() == null){
                     Toast.makeText(CharityDescriptionActivityDonor.this, "Please Wait", Toast.LENGTH_SHORT).show();
                     return;
@@ -151,12 +149,21 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
             }
         });
 
+        mTrustedPageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent status_intent = new Intent(CharityDescriptionActivityDonor.this, TrustedDonorByCharityDonor.class);
+                status_intent.putExtra("key",charityKey);
+                startActivity(status_intent);
+            }
+        });
+
+
         mProgressDialog = new ProgressDialog(CharityDescriptionActivityDonor.this);
         mProgressDialog.setTitle("Loading Charity data");
         mProgressDialog.setMessage("Please wait while we load the charity data.");
         mProgressDialog.setCanceledOnTouchOutside(false);
         mProgressDialog.show();
-
 
         mUsersDatabase.addValueEventListener(new ValueEventListener() {
             @Override
@@ -193,8 +200,6 @@ public class CharityDescriptionActivityDonor extends AppCompatActivity {
         });
 
     }
-
-
 
 
     public void setCharityKey(String charityKey) {
