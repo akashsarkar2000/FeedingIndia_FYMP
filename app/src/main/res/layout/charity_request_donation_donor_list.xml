@@ -3,27 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#ECEAFF"
-    android:layout_height="220dp">
+    android:layout_height="95dp"
+    android:background="#ECEAFF">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/donor_comment_image"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints"
         tools:src="@drawable/default_image" />
 
     <TextView
-        android:id="@+id/donor_comment_profession_name"
+        android:id="@+id/donor_request_donation_email"
         android:layout_width="240dp"
         android:layout_height="21dp"
         android:layout_below="@+id/user_single_name"
         android:layout_marginStart="24dp"
-        android:hint="Professsion"
+        android:layout_marginTop="8dp"
+        android:hint="Email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/donor_comment_image"
@@ -36,11 +40,11 @@
         android:layout_below="@+id/user_single_name"
         android:layout_marginStart="24dp"
         android:hint="Date"
-        app:layout_constraintBottom_toBottomOf="@+id/donor_comment_image"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/donor_comment_image"
-        app:layout_constraintTop_toBottomOf="@+id/donor_comment_profession_name"
+        app:layout_constraintTop_toBottomOf="@+id/donor_request_donation_email"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -49,7 +53,6 @@
         android:layout_height="24dp"
         android:layout_alignParentTop="true"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="4dp"
         android:fontFamily="@font/krona_one"
         android:text="Donor Name"
         android:textColor="#52489C"

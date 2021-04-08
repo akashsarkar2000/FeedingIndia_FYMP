@@ -17,7 +17,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".donor.TrustedDonorByCharityDonor"></activity>
+        <activity android:name=".charity.DonorDonationDetailsDescriptionCharity"></activity>
+        <activity android:name=".charity.DonorDonationProfileCharity" />
+        <activity android:name=".donor.TrustedDonorByCharityDonor" />
         <activity
             android:name=".charity.TrustedDonorCharity"
             android:parentActivityName=".charity.MainActivityCharity" />

@@ -61,10 +61,7 @@ public class PostActivityCharity extends AppCompatActivity {
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Post & Requirements");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
-
-//        mDisplayImage = findViewById(R.id.post_thumb_image);
+//      mDisplayImage = findViewById(R.id.post_thumb_image);
         mPostImage = findViewById(R.id.post_charity_image);
         mCharityName = findViewById(R.id.post_charity_name);
         mPostDescription = findViewById(R.id.post_charity_description);
