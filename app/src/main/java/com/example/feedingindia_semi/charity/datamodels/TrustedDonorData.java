@@ -6,6 +6,7 @@ public class TrustedDonorData {
     String uid;
     String datetime;
     String email;
+    String keyvalue;
 
     public TrustedDonorData(){}
 
@@ -35,5 +36,13 @@ public class TrustedDonorData {
     }
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getKeyvalue() {
+        return keyvalue;
+    }
+
+    public void setKeyvalue(String keyvalue) {
+        this.keyvalue = keyvalue;
     }
 }

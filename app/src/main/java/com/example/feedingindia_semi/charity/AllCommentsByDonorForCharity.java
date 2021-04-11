@@ -53,7 +53,6 @@ public class AllCommentsByDonorForCharity extends AppCompatActivity {
     private DatabaseReference mUsersDatabase;
     private ProgressDialog mProgressDialog;
     private FirebaseUser mCurrentUser;
-
     private List<CommentData> commentDataList;
     private String charityKey;
     private FirebaseAuth firebaseAuth;
@@ -70,7 +69,8 @@ public class AllCommentsByDonorForCharity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.id_all_charity_comment_list_charity_side);
         builder = new AlertDialog.Builder(this);
-        builder.setMessage("Delete") .setTitle("Delete Charity");
+        builder.setMessage("Delete") .setTitle("Delete Comment");
+
         mToolbar = findViewById(R.id.charity_side_comment_all_users_appBar);
         setSupportActionBar(mToolbar);
         Objects.requireNonNull(getSupportActionBar()).setTitle("Donor's Reviews");
@@ -81,6 +81,7 @@ public class AllCommentsByDonorForCharity extends AppCompatActivity {
         charityKey = getIntent().getStringExtra("key");
         firebaseAuth = FirebaseAuth.getInstance();
         //Toast.makeText(this, "LOL NIGGA", Toast.LENGTH_SHORT).show();
+
         Intent intent = getIntent();
         key = intent.getStringExtra("user_id");
 
@@ -106,7 +107,6 @@ public class AllCommentsByDonorForCharity extends AppCompatActivity {
         getAllComments();
     }
 
-
     private void getAllComments(){
         databaseReference.child("Comments").addValueEventListener(new ValueEventListener() {
             @Override
@@ -128,9 +128,10 @@ public class AllCommentsByDonorForCharity extends AppCompatActivity {
         });
         mProgressDialog.dismiss();
     }
+
     public void generateAlertBuilder(){
 
-        builder.setMessage("Do you really want to delete this Donor ?")
+        builder.setMessage("Do you really want to delete this comment ?")
                 .setCancelable(false)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {

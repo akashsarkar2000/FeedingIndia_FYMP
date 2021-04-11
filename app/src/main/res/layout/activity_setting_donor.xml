@@ -96,7 +96,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/donor_description_email2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.003"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/donor_description_email2"
             app:layout_constraintTop_toTopOf="@+id/donor_description_email2"
             app:layout_constraintVertical_bias="0.0" />
@@ -105,7 +105,7 @@
             android:id="@+id/donor_description_email2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
+            android:layout_marginStart="28dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/krona_one"
             android:text="Email:"
@@ -128,15 +128,16 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/donor_description_phone3"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.109"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/donor_description_phone3"
-            app:layout_constraintTop_toTopOf="@+id/donor_description_phone3" />
+            app:layout_constraintTop_toTopOf="@+id/donor_description_phone3"
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/donor_description_phone3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="39dp"
+            android:layout_marginStart="28dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/krona_one"
             android:text="Phone No:"

@@ -39,7 +39,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ChatView
         this.context = context;
         firebaseAuth = FirebaseAuth.getInstance();
         this.builder = new AlertDialog.Builder(context);
-        this.builder.setMessage("Delete") .setTitle("Delete Charity");
+        this.builder.setMessage("Delete") .setTitle("Delete Comment");
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child("Charity").child(firebaseAuth.getCurrentUser().getUid()).child("Comments");
         generateAlertBuilder();
     }
@@ -66,7 +66,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ChatView
                     AlertDialog alert = builder.create();
                     //Setting the title manually
                     //Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show();
-                    alert.setTitle("Delete Charity");
+                    alert.setTitle("Delete Comment");
                     alert.show();
                     return true;
                 }
@@ -93,9 +93,8 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ChatView
         }
     }
     public void generateAlertBuilder(){
-        log(2);
 
-        builder.setMessage("Do you really want to delete this Donor ?")
+        builder.setMessage("Do you really want to delete this comment ?")
                 .setCancelable(false)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
@@ -105,6 +104,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ChatView
                 })
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
+                        log(2);
                         //  Action for 'NO' Button
                         dialog.cancel();
                     }
@@ -120,7 +120,6 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ChatView
     public String getKey() {
         return key;
     }
-
     public void setKey(String key) {
         this.key = key;
     }

@@ -1,4 +1,5 @@
 package com.example.feedingindia_semi.charity.datamodels;
+
 public class CommentData {
 
     String message;
@@ -6,6 +7,7 @@ public class CommentData {
     String datetime;
     String email;
     String keyvalue;
+
     public CommentData(){}
 
     public String getMessage() {

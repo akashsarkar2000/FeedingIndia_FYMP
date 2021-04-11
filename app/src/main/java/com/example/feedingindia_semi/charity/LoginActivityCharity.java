@@ -185,7 +185,7 @@ public class LoginActivityCharity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     mLoginProgress.dismiss();
-                    if (FirebaseAuth.getInstance().getCurrentUser().isEmailVerified()){
+//                    if (FirebaseAuth.getInstance().getCurrentUser().isEmailVerified()){
                         Intent mainIntent = new Intent(LoginActivityCharity.this, MainActivityCharity.class);
                         Toast.makeText(LoginActivityCharity.this, "Login Successful, Welcome to Charity Section", Toast.LENGTH_LONG).show();
                         mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);  // this line is to stick to main page after login
@@ -195,10 +195,10 @@ public class LoginActivityCharity extends AppCompatActivity {
                         editor.apply();
                         startActivity(mainIntent);
                         finish();
-                    }
-                    else {
-                        Toast.makeText(LoginActivityCharity.this, "Verify your email first, link has been sent to your mail", Toast.LENGTH_LONG).show();
-                    }
+//                    }
+//                    else {
+//                        Toast.makeText(LoginActivityCharity.this, "Verify your email first, link has been sent to your mail", Toast.LENGTH_LONG).show();
+//                    }
 
                 } else {
                     mLoginProgress.hide();
