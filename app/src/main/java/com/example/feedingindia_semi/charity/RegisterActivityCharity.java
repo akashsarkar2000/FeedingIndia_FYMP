@@ -165,7 +165,7 @@ public class RegisterActivityCharity extends AppCompatActivity {
                 }
                 else{
                     mRegProgress.hide();
-                    Log.i("lol", Objects.requireNonNull(Objects.requireNonNull(task.getException()).getMessage()));
+                    Log.i("lol",task.getException().getMessage());
                     Toast.makeText(RegisterActivityCharity.this,"Cannot Sign in. Please check the form and try again",Toast.LENGTH_LONG).show();
                 }
             }
