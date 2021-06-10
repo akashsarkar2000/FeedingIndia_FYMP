@@ -189,7 +189,7 @@ public class LoginActivityDonor extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     mLoginProgress.dismiss();
-//                    if (Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).isEmailVerified()) {
+                    if (Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).isEmailVerified()) {
                         Intent mainIntent = new Intent(LoginActivityDonor.this, MainActivityDonor.class);
                         Toast.makeText(LoginActivityDonor.this, "Login Successful, Welcome to Donor Section", Toast.LENGTH_LONG).show();
                         mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);  // this line is to stick to main page after login
@@ -199,10 +199,10 @@ public class LoginActivityDonor extends AppCompatActivity {
                         editor.apply();
                         startActivity(mainIntent);
                         finish();
-//                    }
-//                    else {
-//                        Toast.makeText(LoginActivityDonor.this, "Verify your email first, link has been sent to your mail", Toast.LENGTH_LONG).show();
-//                    }
+                    }
+                    else {
+                        Toast.makeText(LoginActivityDonor.this, "Verify your email first, link has been sent to your mail", Toast.LENGTH_LONG).show();
+                    }
                 } else {
                     mLoginProgress.hide();
                     Toast.makeText(LoginActivityDonor.this, "Cannot Sign in. Please check the details and try again", Toast.LENGTH_LONG).show();
